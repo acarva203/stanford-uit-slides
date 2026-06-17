@@ -1,0 +1,135 @@
+{
+  "handoff_version": "1.0",
+  "target_skill": "pptx",
+  "last_updated": "2024-01-15",
+
+  "template_configurations": {
+    "sunset": {
+      "source_template": "template-configs/sunset/",
+      "aspect_ratio": "16:9",
+      "slide_dimensions": {
+        "width": "13.33in",
+        "height": "7.5in"
+      },
+      "branding_profile": "stanford_uit_standard"
+    },
+    "noe": {
+      "source_template": "template-configs/noe/",
+      "aspect_ratio": "16:9", 
+      "slide_dimensions": {
+        "width": "13.33in", 
+        "height": "7.5in"
+      },
+      "branding_profile": "stanford_uit_minimal"
+    },
+    "castro": {
+      "source_template": "template-configs/castro/",
+      "aspect_ratio": "16:9",
+      "slide_dimensions": {
+        "width": "13.33in",
+        "height": "7.5in" 
+      },
+      "branding_profile": "stanford_uit_bold"
+    },
+    "mission": {
+      "source_template": "template-configs/mission/",
+      "aspect_ratio": "16:10",
+      "slide_dimensions": {
+        "width": "10in",
+        "height": "6.25in"
+      },
+      "branding_profile": "stanford_uit_narrative",
+      "special_requirements": {
+        "font_primary": "Georgia",
+        "font_body": "Calibri", 
+        "expanded_color_palette": true,
+        "divider_slide_colors": ["poppy", "illuminating_dark", "palo_verde", "sky", "plum"]
+      }
+    }
+  },
+
+  "standardized_output_format": {
+    "metadata": {
+      "template_used": "string",
+      "aspect_ratio": "string",
+      "slide_count": "integer",
+      "generation_timestamp": "datetime",
+      "branding_compliance": "boolean"
+    },
+    "theme_configuration": {
+      "color_palette": "object",
+      "typography_settings": "object", 
+      "logo_specifications": "object",
+      "layout_preferences": "object"
+    },
+    "slide_definitions": [
+      {
+        "slide_number": "integer",
+        "slide_type": "string",
+        "layout": "string",
+        "content": "object",
+        "styling_overrides": "object"
+      }
+    ],
+    "assets": {
+      "logos": "array_of_file_paths",
+      "fonts": "array_of_font_files",
+      "icons": "array_of_icon_paths",
+      "images": "array_of_image_paths"
+    }
+  },
+
+  "branding_profiles": {
+    "stanford_uit_standard": {
+      "primary_logo": "horizontal_cardinal_black",
+      "color_emphasis": "stanford_cardinal_primary",
+      "typography_weight": "regular_semibold"
+    },
+    "stanford_uit_minimal": {
+      "primary_logo": "horizontal_black",
+      "color_emphasis": "minimal_stanford_accent",
+      "typography_weight": "light_regular"
+    },
+    "stanford_uit_bold": {
+      "primary_logo": "horizontal_cardinal_black", 
+      "color_emphasis": "high_contrast_cardinal",
+      "typography_weight": "semibold_bold"
+    },
+    "stanford_uit_narrative": {
+      "primary_logo": "horizontal_cardinal_black",
+      "color_emphasis": "expanded_brand_palette",
+      "typography_weight": "georgia_headlines_calibri_body",
+      "special_features": {
+        "section_dividers": true,
+        "storytelling_layouts": true,
+        "inspirational_colors": true
+      }
+    }
+  },
+
+  "quality_assurance": {
+    "brand_compliance_checks": [
+      "logo_placement_validation",
+      "color_palette_adherence", 
+      "typography_consistency",
+      "aspect_ratio_optimization"
+    ],
+    "template_specific_validation": {
+      "mission": [
+        "georgia_font_availability",
+        "16:10_aspect_ratio_confirmation",
+        "expanded_color_palette_implementation"
+      ]
+    }
+  },
+
+  "performance_optimization": {
+    "template_caching": true,
+    "asset_preloading": ["logos", "primary_fonts"],
+    "lazy_loading": ["extended_color_palettes", "optional_icons"],
+    "compression_settings": {
+      "images": "png_optimized",
+      "fonts": "woff2_preferred"
+    }
+  }
+}

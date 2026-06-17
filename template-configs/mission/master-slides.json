@@ -1,0 +1,126 @@
+{
+  "template_name": "mission",
+  "master_count": 1,
+  "master_slides": [
+    {
+      "id": "master_stanford",
+      "name": "Stanford University Master",
+      "description": "Single master slide. All 21 layouts inherit from this master. Background defaults to white (bg1 scheme color = #FFFFFF). Cardinal red is the primary brand color applied through layout backgrounds and accent elements.",
+      "background": {
+        "type": "scheme",
+        "scheme_ref": "bg1",
+        "resolved_color": "#FFFFFF"
+      },
+      "persistent_elements": {
+        "slide_number": {
+          "type": "text",
+          "x": 740, "y": 579, "width": 225, "height": 33,
+          "font_size": "13.5pt",
+          "font_family": "Calibri",
+          "color": "#53565A",
+          "content": "{{slide_number}}",
+          "note": "Present in all layouts via sldNum placeholder"
+        }
+      },
+      "font_defaults": {
+        "title": {
+          "family": "Georgia",
+          "fallback": "Cambria",
+          "size": "32pt",
+          "color_scheme": "tx1",
+          "resolved_color": "#8C1515",
+          "note": "Master title uses scheme tx1 = cardinal red #8C1515"
+        },
+        "body_level_1": {
+          "family": "Calibri Light",
+          "fallback": "Calibri",
+          "size": "23pt",
+          "color_scheme": "tx1"
+        },
+        "body_level_2": {
+          "family": "Calibri Light",
+          "fallback": "Calibri",
+          "size": "18pt",
+          "color_scheme": "tx1"
+        },
+        "body_levels_3_to_5": {
+          "family": "Calibri Light",
+          "fallback": "Calibri",
+          "size": "18pt",
+          "color_scheme": "tx1"
+        },
+        "caption_footer": {
+          "family": "Calibri",
+          "fallback": "Arial",
+          "size": "13.5pt",
+          "color": "#53565A"
+        }
+      },
+      "slide_layouts": [
+        "title_slide_text_only",
+        "title_slide_with_image",
+        "title_slide_image_graphic",
+        "title_slide_txt_graphic",
+        "title_slide_white",
+        "content_slide",
+        "content_slide_background",
+        "content_slide_with_image",
+        "two_column",
+        "data_slide",
+        "objective_slide",
+        "three_story_images",
+        "three_story_images_cardinal",
+        "divider_poppy",
+        "divider_illuminating",
+        "divider_palo_verde",
+        "divider_sky",
+        "divider_plum",
+        "thank_you",
+        "title_only",
+        "blank"
+      ]
+    }
+  ],
+  "placeholder_defaults": {
+    "ctrTitle": {
+      "font": "Georgia",
+      "fallback": "Cambria",
+      "size": "45pt",
+      "weight": "Regular",
+      "color_scheme": "bg1",
+      "resolved_color_on_dark": "#FFFFFF",
+      "resolved_color_on_light": "#2E2C28"
+    },
+    "title": {
+      "font": "Georgia",
+      "fallback": "Cambria",
+      "size": "32pt",
+      "weight": "Regular",
+      "color": "#2E2C28"
+    },
+    "subTitle": {
+      "font": "Calibri",
+      "fallback": "Arial",
+      "size": "18pt",
+      "weight": "Regular",
+      "color_on_dark": "#FFFFFF",
+      "color_on_light": "#53565A"
+    },
+    "body": {
+      "font": "Calibri",
+      "fallback": "Arial",
+      "size": "18pt",
+      "weight": "Regular",
+      "line_height": "1.4",
+      "color_on_dark": "#FFFFFF",
+      "color_on_light": "#2E2C28",
+      "bullet_indent": "0.25in"
+    },
+    "sldNum": {
+      "font": "Calibri",
+      "fallback": "Arial",
+      "size": "13.5pt",
+      "color": "#53565A"
+    }
+  }
+}

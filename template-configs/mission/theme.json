@@ -1,0 +1,90 @@
+{
+  "template_name": "mission",
+  "extracted_from": "Powerpoint_Slide_Template_D-Mission.pptx",
+  "extraction_date": "2024-01-15",
+  "theme_scheme_name": "Stanford University",
+  "color_palette": {
+    "primary": "#8C1515",
+    "secondary": "#FFFFFF",
+    "accent": "#2E2D29",
+    "background": "#FFFFFF",
+    "muted": "#E7E6E6",
+    "text_dark": "#2E2C28",
+    "text_light": "#FFFFFF",
+    "text_muted": "#53565A",
+    "brand_colors": {
+      "cardinal_red": "#8C1515",
+      "black": "#2E2D29",
+      "poppy": "#E98300",
+      "lagunita": "#007C92",
+      "palo_verde": "#279989",
+      "illuminating_dark": "#FEC51D",
+      "plum": "#620059",
+      "sky": "#4298B5"
+    },
+    "divider_backgrounds": {
+      "poppy": "#E98300",
+      "illuminating_dark": "#FEC51D",
+      "palo_verde": "#279989",
+      "sky": "#4298B5",
+      "plum": "#620059",
+      "thank_you": "#53565A"
+    }
+  },
+  "typography": {
+    "title_font": {
+      "family": "Georgia",
+      "fallback": "Cambria",
+      "weight": "Regular",
+      "size_large": "45pt",
+      "size_medium": "32pt",
+      "size_small": "23pt",
+      "color": "#2E2C28",
+      "note": "Georgia is the headline font per template instructions; Calibri Light used for sub-headers"
+    },
+    "heading_font": {
+      "family": "Calibri Light",
+      "fallback": "Calibri",
+      "weight": "Light",
+      "size": "23pt",
+      "color": "#2E2C28"
+    },
+    "body_font": {
+      "family": "Calibri",
+      "fallback": "Arial",
+      "weight": "Regular",
+      "size": "18pt",
+      "line_height": "1.4",
+      "color": "#2E2C28",
+      "note": "Calibri is the body copy font per template instructions"
+    },
+    "caption_font": {
+      "family": "Calibri",
+      "fallback": "Arial",
+      "weight": "Regular",
+      "size": "13.5pt",
+      "color": "#53565A"
+    },
+    "stat_font": {
+      "family": "Georgia",
+      "fallback": "Cambria",
+      "weight": "Regular",
+      "size": "48pt",
+      "color": "#8C1515"
+    }
+  },
+  "logo_placement": {
+    "position": "top_left",
+    "note": "Logo placement inherits from master slide. Use Stanford wordmark or lockup per Identity Guide."
+  },
+  "slide_dimensions": {
+    "width": "10in",
+    "height": "6.25in",
+    "aspect_ratio": "16:10",
+    "emu_width": 9144000,
+    "emu_height": 5715000,
+    "px_width": 1000,
+    "px_height": 625,
+    "note": "Mission template is 16:10 (not standard 16:9) — optimized for MacBook and office monitor presentations"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "template_selection_version": "1.0",
+  "last_updated": "2024-01-15",
+  
+  "available_templates": {
+    "sunset": {
+      "template_file": "Powerpoint_Slide_Template_A-Sunset.pptx",
+      "aspect_ratio": "16:9",
+      "style_category": "standard_professional"
+    },
+    "noe": {
+      "template_file": "Powerpoint_Slide_Template_B-Noe.pptx", 
+      "aspect_ratio": "16:9",
+      "style_category": "minimal_content_focused"
+    },
+    "castro": {
+      "template_file": "Powerpoint_Slide_Template_C-Castro.pptx",
+      "aspect_ratio": "16:9", 
+      "style_category": "bold_high_impact"
+    },
+    "mission": {
+      "template_file": "Powerpoint_Slide_Template_D-Mission.pptx",
+      "aspect_ratio": "16:10",
+      "style_category": "narrative_storytelling"
+    }
+  },
+
+  "selection_logic": {
+    "keyword_triggers": {
+      "sunset": {
+        "keywords": ["standard", "general", "briefing", "update", "routine", "regular"],
+        "context_hints": ["weekly update", "status report", "general presentation"]
+      },
+      "noe": {
+        "keywords": ["data", "technical", "metrics", "analysis", "detailed", "research"],
+        "context_hints": ["technical deep-dive", "data analysis", "research findings", "metrics review"]
+      },
+      "castro": {
+        "keywords": ["executive", "leadership", "pitch", "strategy", "high-level", "board"],
+        "context_hints": ["CIO briefing", "executive summary", "strategic initiative", "leadership presentation"]
+      },
+      "mission": {
+        "keywords": ["mission", "vision", "storytelling", "narrative", "inspiring", "values", "culture", "strategic vision"],
+        "context_hints": ["department mission", "strategic vision", "cultural presentation", "inspirational content", "storytelling presentation"]
+      }
+    },
+    
+    "presentation_type_mapping": {
+      "technical_briefing": {
+        "primary": "sunset",
+        "alternatives": ["noe", "castro"]
+      },
+      "security_training": {
+        "primary": "noe", 
+        "alternatives": ["sunset", "mission"]
+      },
+      "service_update": {
+        "primary": "sunset",
+        "alternatives": ["noe"]
+      },
+      "project_proposal": {
+        "primary": "castro",
+        "alternatives": ["sunset", "mission"]
+      },
+      "incident_report": {
+        "primary": "noe",
+        "alternatives": ["sunset"]
+      },
+      "training_workshop": {
+        "primary": "mission",
+        "alternatives": ["noe", "sunset"]
+      },
+      "vendor_presentation": {
+        "primary": "castro", 
+        "alternatives": ["mission", "sunset"]
+      },
+      "strategic_planning": {
+        "primary": "mission",
+        "alternatives": ["castro", "sunset"]
+      },
+      "department_overview": {
+        "primary": "mission",
+        "alternatives": ["castro", "sunset"]
+      }
+    },
+
+    "audience_considerations": {
+      "executive_leadership": {
+        "preferred": ["castro", "mission"],
+        "avoid": ["noe"]
+      },
+      "technical_staff": {
+        "preferred": ["noe", "sunset"],
+        "acceptable": ["mission"]
+      },
+      "general_university": {
+        "preferred": ["sunset", "mission"],
+        "acceptable": ["castro"]
+      },
+      "external_stakeholders": {
+        "preferred": ["mission", "castro"],
+        "avoid": ["noe"]
+      }
+    },
+
+    "content_type_hints": {
+      "heavy_data": "noe",
+      "storytelling": "mission", 
+      "standard_business": "sunset",
+      "high_impact": "castro"
+    }
+  },
+
+  "fallback_strategy": {
+    "default_template": "sunset",
+    "aspect_ratio_preference": {
+      "16:9": ["sunset", "noe", "castro"],
+      "16:10": ["mission"]
+    },
+    "uncertain_context": "sunset"
+  }
+}
