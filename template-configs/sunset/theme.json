@@ -1,0 +1,67 @@
+{
+  "template_name": "sunset",
+  "extracted_from": "Powerpoint_Slide_Template_A-Sunset.pptx",
+  "extraction_date": "2024-01-15",
+  "color_palette": {
+    "primary": "#8C1515",
+    "secondary": "#FFFFFF",
+    "accent": "#2E2D29",
+    "background": "#F9F9F9",
+    "highlight": "#B83A4D",
+    "muted": "#D4D4D4",
+    "text_dark": "#1A1A1A",
+    "text_light": "#FFFFFF"
+  },
+  "typography": {
+    "title_font": {
+      "family": "Source Sans Pro",
+      "fallback": "Calibri",
+      "weight": "Bold",
+      "size_large": "44pt",
+      "size_medium": "32pt",
+      "size_small": "24pt",
+      "color": "#8C1515"
+    },
+    "heading_font": {
+      "family": "Source Sans Pro",
+      "fallback": "Calibri",
+      "weight": "SemiBold",
+      "size": "24pt",
+      "color": "#2E2D29"
+    },
+    "body_font": {
+      "family": "Source Sans Pro",
+      "fallback": "Calibri",
+      "weight": "Regular",
+      "size": "18pt",
+      "line_height": "1.4",
+      "color": "#1A1A1A"
+    },
+    "caption_font": {
+      "family": "Source Sans Pro",
+      "fallback": "Calibri",
+      "weight": "Regular",
+      "size": "11pt",
+      "color": "#6B6B6B"
+    }
+  },
+  "logo_placement": {
+    "position": "top_left",
+    "margin_top": "20px",
+    "margin_left": "40px",
+    "max_height": "60px",
+    "max_width": "160px"
+  },
+  "decorative": {
+    "divider_color": "#8C1515",
+    "divider_weight": "2px",
+    "card_background": "#F5F5F5",
+    "card_border_radius": "4px",
+    "icon_circle_color": "#8C1515"
+  },
+  "slide_dimensions": {
+    "width": "13.33in",
+    "height": "7.5in",
+    "aspect_ratio": "16:9"
+  }
+}

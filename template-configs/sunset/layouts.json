@@ -1,0 +1,207 @@
+{
+  "template_name": "sunset",
+  "slide_size": {
+    "width": "13.33in",
+    "height": "7.5in"
+  },
+  "layouts": {
+    "title_slide": {
+      "description": "Opening slide with large title and subtitle",
+      "background": "solid_white",
+      "elements": {
+        "accent_bar": {
+          "type": "rectangle",
+          "x": "0",
+          "y": "0",
+          "width": "100%",
+          "height": "8px",
+          "fill": "#8C1515"
+        },
+        "title": {
+          "x": "center",
+          "y": "38%",
+          "width": "80%",
+          "text_align": "center",
+          "font_size": "44pt",
+          "font_weight": "Bold",
+          "color": "#8C1515"
+        },
+        "subtitle": {
+          "x": "center",
+          "y": "55%",
+          "width": "70%",
+          "text_align": "center",
+          "font_size": "22pt",
+          "font_weight": "Regular",
+          "color": "#2E2D29"
+        },
+        "date_or_byline": {
+          "x": "center",
+          "y": "68%",
+          "width": "60%",
+          "text_align": "center",
+          "font_size": "14pt",
+          "color": "#6B6B6B"
+        }
+      }
+    },
+    "section_divider": {
+      "description": "Section break slide with bold color block",
+      "background": "#8C1515",
+      "elements": {
+        "section_title": {
+          "x": "center",
+          "y": "42%",
+          "width": "75%",
+          "text_align": "center",
+          "font_size": "36pt",
+          "font_weight": "Bold",
+          "color": "#FFFFFF"
+        },
+        "section_subtitle": {
+          "x": "center",
+          "y": "57%",
+          "width": "65%",
+          "text_align": "center",
+          "font_size": "18pt",
+          "color": "#F0C0C0"
+        }
+      }
+    },
+    "content_slide": {
+      "description": "Standard content slide with header bar and content area",
+      "background": "#F9F9F9",
+      "elements": {
+        "header": {
+          "x": "0",
+          "y": "0",
+          "width": "100%",
+          "height": "80px",
+          "background": "#F5F5F5",
+          "border_bottom": "3px solid #8C1515"
+        },
+        "slide_title": {
+          "x": "40px",
+          "y": "center_in_header",
+          "width": "calc(100% - 220px)",
+          "font_size": "28pt",
+          "font_weight": "Bold",
+          "color": "#2E2D29"
+        },
+        "content_area": {
+          "x": "40px",
+          "y": "100px",
+          "width": "calc(100% - 80px)",
+          "height": "calc(100% - 160px)",
+          "font_size": "18pt",
+          "color": "#1A1A1A"
+        },
+        "footer": {
+          "x": "0",
+          "y": "calc(100% - 40px)",
+          "width": "100%",
+          "height": "40px",
+          "background": "#F5F5F5",
+          "font_size": "11pt",
+          "color": "#6B6B6B"
+        }
+      }
+    },
+    "two_column": {
+      "description": "Side-by-side content columns",
+      "background": "#F9F9F9",
+      "inherits_header_footer": true,
+      "elements": {
+        "left_column": {
+          "x": "40px",
+          "y": "100px",
+          "width": "48%",
+          "height": "calc(100% - 160px)"
+        },
+        "column_divider": {
+          "x": "calc(50% - 1px)",
+          "y": "110px",
+          "width": "2px",
+          "height": "calc(100% - 170px)",
+          "fill": "#D4D4D4"
+        },
+        "right_column": {
+          "x": "calc(52% + 0px)",
+          "y": "100px",
+          "width": "calc(48% - 40px)",
+          "height": "calc(100% - 160px)"
+        }
+      }
+    },
+    "image_left": {
+      "description": "Half-bleed image on the left, content on the right",
+      "background": "#FFFFFF",
+      "inherits_header_footer": false,
+      "elements": {
+        "image_panel": {
+          "x": "0",
+          "y": "0",
+          "width": "45%",
+          "height": "100%",
+          "object_fit": "cover"
+        },
+        "content_panel": {
+          "x": "48%",
+          "y": "60px",
+          "width": "calc(52% - 60px)",
+          "height": "calc(100% - 120px)"
+        }
+      }
+    },
+    "stat_callout": {
+      "description": "Large number / KPI highlight slide",
+      "background": "#F9F9F9",
+      "inherits_header_footer": true,
+      "elements": {
+        "stat_grid": {
+          "columns": 3,
+          "row_gap": "20px",
+          "column_gap": "30px",
+          "x": "40px",
+          "y": "110px",
+          "width": "calc(100% - 80px)",
+          "height": "calc(100% - 170px)"
+        },
+        "stat_number": {
+          "font_size": "64pt",
+          "font_weight": "Bold",
+          "color": "#8C1515",
+          "text_align": "center"
+        },
+        "stat_label": {
+          "font_size": "14pt",
+          "color": "#6B6B6B",
+          "text_align": "center"
+        }
+      }
+    },
+    "closing_slide": {
+      "description": "Thank you / Q&A / end slide",
+      "background": "#2E2D29",
+      "elements": {
+        "closing_text": {
+          "x": "center",
+          "y": "40%",
+          "width": "70%",
+          "text_align": "center",
+          "font_size": "44pt",
+          "font_weight": "Bold",
+          "color": "#FFFFFF"
+        },
+        "contact_info": {
+          "x": "center",
+          "y": "60%",
+          "width": "60%",
+          "text_align": "center",
+          "font_size": "16pt",
+          "color": "#D4D4D4"
+        }
+      }
+    }
+  }
+}

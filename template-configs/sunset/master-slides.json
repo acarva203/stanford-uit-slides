@@ -1,0 +1,133 @@
+{
+  "template_name": "sunset",
+  "master_slides": [
+    {
+      "id": "master_default",
+      "name": "Sunset Default Master",
+      "description": "Primary master slide — light background with cardinal red branding",
+      "background": {
+        "type": "solid",
+        "color": "#F9F9F9"
+      },
+      "persistent_elements": {
+        "logo": {
+          "type": "image",
+          "placeholder_id": "logo",
+          "x": "40px",
+          "y": "20px",
+          "max_width": "160px",
+          "max_height": "60px",
+          "z_index": 10
+        },
+        "slide_number": {
+          "type": "text",
+          "x": "calc(100% - 60px)",
+          "y": "calc(100% - 36px)",
+          "width": "48px",
+          "height": "24px",
+          "font_size": "11pt",
+          "color": "#6B6B6B",
+          "text_align": "right",
+          "content": "{{slide_number}}"
+        },
+        "footer_bar": {
+          "type": "rectangle",
+          "x": "0",
+          "y": "calc(100% - 40px)",
+          "width": "100%",
+          "height": "40px",
+          "fill": "#F5F5F5"
+        },
+        "footer_text": {
+          "type": "text",
+          "x": "40px",
+          "y": "calc(100% - 36px)",
+          "width": "60%",
+          "height": "24px",
+          "font_size": "11pt",
+          "color": "#6B6B6B",
+          "content": "{{presentation_title}}"
+        }
+      },
+      "slide_layouts": [
+        "title_slide",
+        "content_slide",
+        "two_column",
+        "image_left",
+        "stat_callout"
+      ]
+    },
+    {
+      "id": "master_dark",
+      "name": "Sunset Dark Master",
+      "description": "Dark accent master — used for section dividers and closing slides",
+      "background": {
+        "type": "solid",
+        "color": "#2E2D29"
+      },
+      "persistent_elements": {
+        "logo_light": {
+          "type": "image",
+          "placeholder_id": "logo_light",
+          "x": "40px",
+          "y": "20px",
+          "max_width": "160px",
+          "max_height": "60px",
+          "z_index": 10,
+          "note": "Use white/inverted version of logo on dark master"
+        }
+      },
+      "slide_layouts": [
+        "section_divider",
+        "closing_slide"
+      ]
+    },
+    {
+      "id": "master_bold_red",
+      "name": "Sunset Bold Red Master",
+      "description": "Cardinal red master — high-impact section openers",
+      "background": {
+        "type": "solid",
+        "color": "#8C1515"
+      },
+      "persistent_elements": {
+        "logo_white": {
+          "type": "image",
+          "placeholder_id": "logo_white",
+          "x": "40px",
+          "y": "20px",
+          "max_width": "160px",
+          "max_height": "60px",
+          "z_index": 10
+        }
+      },
+      "slide_layouts": [
+        "section_divider"
+      ]
+    }
+  ],
+  "placeholder_defaults": {
+    "title": {
+      "font": "Source Sans Pro",
+      "fallback": "Calibri",
+      "size": "32pt",
+      "weight": "Bold",
+      "color": "#8C1515"
+    },
+    "body": {
+      "font": "Source Sans Pro",
+      "fallback": "Calibri",
+      "size": "18pt",
+      "weight": "Regular",
+      "color": "#1A1A1A",
+      "bullet_color": "#8C1515"
+    },
+    "subtitle": {
+      "font": "Source Sans Pro",
+      "fallback": "Calibri",
+      "size": "22pt",
+      "weight": "Regular",
+      "color": "#2E2D29"
+    }
+  }
+}

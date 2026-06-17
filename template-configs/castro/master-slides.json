@@ -1,0 +1,113 @@
+{
+  "template_name": "castro",
+  "master_slides": [
+    {
+      "id": "master_dark",
+      "name": "Castro Dark Master",
+      "description": "Primary master — near-black background, white text, yellow accents",
+      "background": {
+        "type": "solid",
+        "color": "#0D0D0D"
+      },
+      "persistent_elements": {
+        "logo": {
+          "type": "image",
+          "placeholder_id": "logo_light",
+          "x": "48px",
+          "y": "calc(100% - 64px)",
+          "max_width": "120px",
+          "max_height": "40px",
+          "z_index": 10,
+          "note": "Use white or light version of logo"
+        },
+        "slide_number": {
+          "type": "text",
+          "x": "calc(100% - 72px)",
+          "y": "calc(100% - 40px)",
+          "width": "48px",
+          "height": "24px",
+          "font_size": "11pt",
+          "font_family": "Arial",
+          "color": "#3A3A3A",
+          "text_align": "right",
+          "content": "{{slide_number}}"
+        },
+        "bottom_rule": {
+          "type": "line",
+          "x": "0",
+          "y": "calc(100% - 48px)",
+          "width": "100%",
+          "height": "1px",
+          "fill": "#2A2A2A"
+        }
+      },
+      "slide_layouts": [
+        "title_slide",
+        "content_slide",
+        "two_column",
+        "image_full_bleed",
+        "stat_callout",
+        "closing_slide"
+      ]
+    },
+    {
+      "id": "master_yellow",
+      "name": "Castro Yellow Master",
+      "description": "Yellow accent master — used exclusively for section dividers",
+      "background": {
+        "type": "solid",
+        "color": "#F5C518"
+      },
+      "persistent_elements": {
+        "logo_dark": {
+          "type": "image",
+          "placeholder_id": "logo_dark",
+          "x": "48px",
+          "y": "calc(100% - 64px)",
+          "max_width": "120px",
+          "max_height": "40px",
+          "z_index": 10,
+          "note": "Use dark/black version of logo on yellow master"
+        }
+      },
+      "slide_layouts": [
+        "section_divider"
+      ]
+    }
+  ],
+  "placeholder_defaults": {
+    "title": {
+      "font": "Arial Black",
+      "fallback": "Arial",
+      "size": "28pt",
+      "weight": "900",
+      "color": "#FFFFFF",
+      "text_transform": "uppercase"
+    },
+    "body": {
+      "font": "Arial",
+      "fallback": "Calibri",
+      "size": "16pt",
+      "weight": "Regular",
+      "color": "#CCCCCC",
+      "bullet_color": "#F5C518",
+      "line_height": "1.5"
+    },
+    "subtitle": {
+      "font": "Arial",
+      "fallback": "Calibri",
+      "size": "20pt",
+      "weight": "Regular",
+      "color": "#CCCCCC"
+    },
+    "heading": {
+      "font": "Arial",
+      "fallback": "Calibri",
+      "size": "22pt",
+      "weight": "Bold",
+      "color": "#F5C518",
+      "text_transform": "uppercase",
+      "letter_spacing": "0.05em"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "template_name": "noe",
+  "extracted_from": "Powerpoint_Slide_Template_B-Noe.pptx",
+  "extraction_date": "2024-01-15",
+  "color_palette": {
+    "primary": "#1A1A2E",
+    "secondary": "#FFFFFF",
+    "accent": "#4A90D9",
+    "background": "#FFFFFF",
+    "highlight": "#E8F0FA",
+    "muted": "#E0E0E0",
+    "text_dark": "#1A1A2E",
+    "text_light": "#FFFFFF",
+    "text_muted": "#7A7A8C"
+  },
+  "typography": {
+    "title_font": {
+      "family": "Georgia",
+      "fallback": "Cambria",
+      "weight": "Regular",
+      "size_large": "48pt",
+      "size_medium": "36pt",
+      "size_small": "26pt",
+      "color": "#1A1A2E",
+      "style": "italic"
+    },
+    "heading_font": {
+      "family": "Calibri",
+      "fallback": "Arial",
+      "weight": "Bold",
+      "size": "22pt",
+      "color": "#1A1A2E",
+      "letter_spacing": "0.05em"
+    },
+    "body_font": {
+      "family": "Calibri",
+      "fallback": "Arial",
+      "weight": "Regular",
+      "size": "16pt",
+      "line_height": "1.6",
+      "color": "#1A1A2E"
+    },
+    "caption_font": {
+      "family": "Calibri",
+      "fallback": "Arial",
+      "weight": "Regular",
+      "size": "11pt",
+      "color": "#7A7A8C"
+    },
+    "label_font": {
+      "family": "Calibri",
+      "fallback": "Arial",
+      "weight": "Bold",
+      "size": "10pt",
+      "color": "#4A90D9",
+      "letter_spacing": "0.1em",
+      "text_transform": "uppercase"
+    }
+  },
+  "logo_placement": {
+    "position": "top_right",
+    "margin_top": "24px",
+    "margin_right": "48px",
+    "max_height": "48px",
+    "max_width": "140px"
+  },
+  "decorative": {
+    "divider_color": "#E0E0E0",
+    "divider_weight": "1px",
+    "accent_dot_color": "#4A90D9",
+    "accent_dot_size": "8px",
+    "card_background": "#F7F9FC",
+    "card_border": "1px solid #E0E0E0",
+    "card_border_radius": "2px"
+  },
+  "slide_dimensions": {
+    "width": "13.33in",
+    "height": "7.5in",
+    "aspect_ratio": "16:9"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "template_name": "noe",
+  "display_name": "Noe",
+  "source_file": "Powerpoint_Slide_Template_B-Noe.pptx",
+  "version": "1.0.0",
+  "description": "A refined minimalist template built around editorial whitespace and italic serif typography. Noe prioritizes legibility and calm authority over visual decoration.",
+  "visual_style": {
+    "mood": "clean, editorial, sophisticated",
+    "density": "low — whitespace is a feature",
+    "color_weight": "near-pure white with navy text and blue accents",
+    "imagery_style": "high-quality photography, editorial illustration; no clipart or icons without purpose"
+  },
+  "best_used_for": [
+    "Product or brand strategy presentations",
+    "Creative agency credentials decks",
+    "Investor updates and board briefings",
+    "Thought leadership and industry talks",
+    "Portfolio or case study presentations"
+  ],
+  "avoid_for": [
+    "Dense data-heavy reporting (use Castro or Sunset)",
+    "Presentations needing strong institutional color identity",
+    "Audiences expecting traditional slide chrome (header bars, bullets)"
+  ],
+  "available_layouts": [
+    "title_slide",
+    "section_divider",
+    "content_slide",
+    "two_column",
+    "image_right",
+    "quote_slide",
+    "closing_slide"
+  ],
+  "available_masters": [
+    "master_light",
+    "master_ink"
+  ],
+  "font_requirements": {
+    "primary_serif": "Georgia",
+    "primary_sans": "Calibri",
+    "fallback_serif": "Cambria",
+    "fallback_sans": "Arial",
+    "note": "Georgia is used for titles and display text; Calibri for body. Both are widely available on Windows and macOS."
+  },
+  "asset_placeholders": {
+    "logo": "Top-right, max 140×48px. Prefer monochrome or dark version on light master.",
+    "logo_light": "White/inverted logo for the ink (dark navy) master.",
+    "hero_image": "Right-bleed or full-bleed photography. Minimum 1920×1080px; crop-safe center composition recommended."
+  },
+  "accessibility": {
+    "min_contrast_ratio": "4.5:1",
+    "body_min_size": "16pt",
+    "caption_min_size": "11pt",
+    "note": "Muted gray (#B0B0BC) is for decorative/non-essential text only. Informational text must use #7A7A8C or darker."
+  }
+}

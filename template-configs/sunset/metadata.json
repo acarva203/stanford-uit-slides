@@ -1,0 +1,54 @@
+{
+  "template_name": "sunset",
+  "display_name": "Sunset",
+  "source_file": "Powerpoint_Slide_Template_A-Sunset.pptx",
+  "version": "1.0.0",
+  "description": "A professional template anchored in Stanford cardinal red. Balances warmth and authority — suited to academic presentations, institutional reports, and leadership communications.",
+  "visual_style": {
+    "mood": "professional, authoritative, warm",
+    "density": "moderate",
+    "color_weight": "light backgrounds with bold red accents",
+    "imagery_style": "photography or clean icons; avoid cartoons"
+  },
+  "best_used_for": [
+    "University or institutional presentations",
+    "Annual reports and year-in-review decks",
+    "Leadership and executive briefings",
+    "Conference talks and keynotes",
+    "Research presentations"
+  ],
+  "avoid_for": [
+    "Consumer-facing marketing with playful tone",
+    "Tech startup pitch decks needing dark/minimal aesthetic",
+    "Heavy data visualization decks (use Castro instead)"
+  ],
+  "available_layouts": [
+    "title_slide",
+    "section_divider",
+    "content_slide",
+    "two_column",
+    "image_left",
+    "stat_callout",
+    "closing_slide"
+  ],
+  "available_masters": [
+    "master_default",
+    "master_dark",
+    "master_bold_red"
+  ],
+  "font_requirements": {
+    "primary": "Source Sans Pro",
+    "fallback": "Calibri",
+    "note": "Source Sans Pro must be installed on the presenter's machine for exact rendering. Calibri is the safe fallback."
+  },
+  "asset_placeholders": {
+    "logo": "Top-left logo, max 160×60px. Prefer color version on light slides.",
+    "logo_light": "White/inverted logo for dark and red masters.",
+    "hero_image": "Full-bleed or half-bleed photography. Minimum 1920×1080px recommended."
+  },
+  "accessibility": {
+    "min_contrast_ratio": "4.5:1",
+    "body_min_size": "18pt",
+    "caption_min_size": "11pt"
+  }
+}

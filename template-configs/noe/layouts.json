@@ -1,0 +1,240 @@
+{
+  "template_name": "noe",
+  "slide_size": {
+    "width": "13.33in",
+    "height": "7.5in"
+  },
+  "design_principles": {
+    "note": "Noe is a minimalist template. Generous whitespace is a core design element — do not fill every available area. Prefer understated over decorative.",
+    "min_margin": "60px",
+    "max_content_width": "85%"
+  },
+  "layouts": {
+    "title_slide": {
+      "description": "Clean title slide with generous vertical centering and minimal decoration",
+      "background": "solid_white",
+      "elements": {
+        "overline_label": {
+          "x": "center",
+          "y": "28%",
+          "width": "70%",
+          "text_align": "center",
+          "font_size": "11pt",
+          "font_weight": "Bold",
+          "color": "#4A90D9",
+          "letter_spacing": "0.1em",
+          "text_transform": "uppercase"
+        },
+        "title": {
+          "x": "center",
+          "y": "36%",
+          "width": "75%",
+          "text_align": "center",
+          "font_size": "48pt",
+          "font_style": "italic",
+          "font_family": "Georgia",
+          "color": "#1A1A2E"
+        },
+        "thin_rule": {
+          "type": "line",
+          "x": "center",
+          "y": "54%",
+          "width": "80px",
+          "height": "1px",
+          "fill": "#E0E0E0"
+        },
+        "subtitle": {
+          "x": "center",
+          "y": "57%",
+          "width": "55%",
+          "text_align": "center",
+          "font_size": "18pt",
+          "font_weight": "Regular",
+          "color": "#7A7A8C"
+        },
+        "date_or_byline": {
+          "x": "center",
+          "y": "70%",
+          "width": "50%",
+          "text_align": "center",
+          "font_size": "12pt",
+          "color": "#B0B0BC"
+        }
+      }
+    },
+    "section_divider": {
+      "description": "Minimal section break — number + title only, high whitespace",
+      "background": "solid_white",
+      "elements": {
+        "section_number": {
+          "x": "60px",
+          "y": "38%",
+          "width": "80px",
+          "font_size": "72pt",
+          "font_style": "italic",
+          "font_family": "Georgia",
+          "color": "#E0E0E0"
+        },
+        "section_title": {
+          "x": "60px",
+          "y": "52%",
+          "width": "65%",
+          "font_size": "36pt",
+          "font_style": "italic",
+          "font_family": "Georgia",
+          "color": "#1A1A2E"
+        },
+        "accent_dot": {
+          "type": "circle",
+          "x": "60px",
+          "y": "calc(52% - 14px)",
+          "diameter": "8px",
+          "fill": "#4A90D9"
+        }
+      }
+    },
+    "content_slide": {
+      "description": "Standard content slide — no header bar, title floats in generous top margin",
+      "background": "solid_white",
+      "elements": {
+        "slide_title": {
+          "x": "60px",
+          "y": "48px",
+          "width": "calc(100% - 200px)",
+          "height": "72px",
+          "font_size": "28pt",
+          "font_style": "italic",
+          "font_family": "Georgia",
+          "color": "#1A1A2E"
+        },
+        "thin_rule": {
+          "type": "line",
+          "x": "60px",
+          "y": "128px",
+          "width": "calc(100% - 120px)",
+          "height": "1px",
+          "fill": "#E0E0E0"
+        },
+        "content_area": {
+          "x": "60px",
+          "y": "148px",
+          "width": "calc(100% - 120px)",
+          "height": "calc(100% - 208px)",
+          "font_size": "16pt",
+          "color": "#1A1A2E"
+        },
+        "footer": {
+          "x": "60px",
+          "y": "calc(100% - 44px)",
+          "width": "calc(100% - 120px)",
+          "height": "32px",
+          "font_size": "11pt",
+          "color": "#B0B0BC"
+        }
+      }
+    },
+    "two_column": {
+      "description": "Equal two-column layout with thin center rule",
+      "background": "solid_white",
+      "inherits_header_footer": true,
+      "elements": {
+        "left_column": {
+          "x": "60px",
+          "y": "148px",
+          "width": "calc(47% - 30px)",
+          "height": "calc(100% - 208px)"
+        },
+        "column_rule": {
+          "type": "line",
+          "x": "50%",
+          "y": "148px",
+          "width": "1px",
+          "height": "calc(100% - 208px)",
+          "fill": "#E0E0E0"
+        },
+        "right_column": {
+          "x": "calc(50% + 30px)",
+          "y": "148px",
+          "width": "calc(50% - 90px)",
+          "height": "calc(100% - 208px)"
+        }
+      }
+    },
+    "image_right": {
+      "description": "Text left, image flush right — editorial feel",
+      "background": "solid_white",
+      "inherits_header_footer": false,
+      "elements": {
+        "content_panel": {
+          "x": "60px",
+          "y": "60px",
+          "width": "45%",
+          "height": "calc(100% - 120px)"
+        },
+        "image_panel": {
+          "x": "52%",
+          "y": "0",
+          "width": "48%",
+          "height": "100%",
+          "object_fit": "cover"
+        }
+      }
+    },
+    "quote_slide": {
+      "description": "Pull-quote / highlight slide with large italic text",
+      "background": "solid_white",
+      "elements": {
+        "quote_mark": {
+          "x": "60px",
+          "y": "28%",
+          "font_size": "120pt",
+          "font_style": "italic",
+          "font_family": "Georgia",
+          "color": "#E8F0FA",
+          "content": "\u201c"
+        },
+        "quote_text": {
+          "x": "80px",
+          "y": "34%",
+          "width": "75%",
+          "font_size": "28pt",
+          "font_style": "italic",
+          "font_family": "Georgia",
+          "color": "#1A1A2E",
+          "line_height": "1.5"
+        },
+        "attribution": {
+          "x": "80px",
+          "y": "68%",
+          "width": "60%",
+          "font_size": "13pt",
+          "color": "#7A7A8C"
+        }
+      }
+    },
+    "closing_slide": {
+      "description": "Minimal closing — single centered line",
+      "background": "solid_white",
+      "elements": {
+        "closing_text": {
+          "x": "center",
+          "y": "42%",
+          "width": "60%",
+          "text_align": "center",
+          "font_size": "40pt",
+          "font_style": "italic",
+          "font_family": "Georgia",
+          "color": "#1A1A2E"
+        },
+        "contact_info": {
+          "x": "center",
+          "y": "58%",
+          "width": "50%",
+          "text_align": "center",
+          "font_size": "14pt",
+          "color": "#7A7A8C"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "template_name": "noe",
+  "master_slides": [
+    {
+      "id": "master_light",
+      "name": "Noe Light Master",
+      "description": "Primary master — pure white, minimal persistent chrome",
+      "background": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      },
+      "persistent_elements": {
+        "logo": {
+          "type": "image",
+          "placeholder_id": "logo",
+          "x": "calc(100% - 188px)",
+          "y": "24px",
+          "max_width": "140px",
+          "max_height": "48px",
+          "z_index": 10
+        },
+        "slide_number": {
+          "type": "text",
+          "x": "60px",
+          "y": "calc(100% - 36px)",
+          "width": "48px",
+          "height": "24px",
+          "font_size": "11pt",
+          "font_family": "Calibri",
+          "color": "#B0B0BC",
+          "content": "{{slide_number}}"
+        }
+      },
+      "slide_layouts": [
+        "title_slide",
+        "content_slide",
+        "two_column",
+        "image_right",
+        "quote_slide",
+        "section_divider",
+        "closing_slide"
+      ]
+    },
+    {
+      "id": "master_ink",
+      "name": "Noe Ink Master",
+      "description": "Dark navy master for high-contrast accent slides",
+      "background": {
+        "type": "solid",
+        "color": "#1A1A2E"
+      },
+      "persistent_elements": {
+        "logo_light": {
+          "type": "image",
+          "placeholder_id": "logo_light",
+          "x": "calc(100% - 188px)",
+          "y": "24px",
+          "max_width": "140px",
+          "max_height": "48px",
+          "z_index": 10,
+          "note": "Use white/reversed logo on dark master"
+        },
+        "slide_number": {
+          "type": "text",
+          "x": "60px",
+          "y": "calc(100% - 36px)",
+          "width": "48px",
+          "height": "24px",
+          "font_size": "11pt",
+          "font_family": "Calibri",
+          "color": "#4A4A6A",
+          "content": "{{slide_number}}"
+        }
+      },
+      "slide_layouts": [
+        "section_divider"
+      ]
+    }
+  ],
+  "placeholder_defaults": {
+    "title": {
+      "font": "Georgia",
+      "fallback": "Cambria",
+      "size": "28pt",
+      "style": "italic",
+      "color": "#1A1A2E"
+    },
+    "body": {
+      "font": "Calibri",
+      "fallback": "Arial",
+      "size": "16pt",
+      "weight": "Regular",
+      "color": "#1A1A2E",
+      "bullet_color": "#4A90D9",
+      "line_height": "1.6"
+    },
+    "subtitle": {
+      "font": "Calibri",
+      "fallback": "Arial",
+      "size": "18pt",
+      "weight": "Regular",
+      "color": "#7A7A8C"
+    },
+    "label": {
+      "font": "Calibri",
+      "fallback": "Arial",
+      "size": "10pt",
+      "weight": "Bold",
+      "color": "#4A90D9",
+      "letter_spacing": "0.1em",
+      "text_transform": "uppercase"
+    }
+  }
+}
