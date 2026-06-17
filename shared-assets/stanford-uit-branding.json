@@ -1,0 +1,186 @@
+{
+  "branding_version": "1.0",
+  "organization": "Stanford University IT Department",
+  "last_updated": "2024-01-15",
+  
+  "colors": {
+    "stanford_cardinal": {
+      "hex": "#8C1515",
+      "rgb": "140, 21, 21",
+      "usage": "primary_brand_color"
+    },
+    "white": {
+      "hex": "#FFFFFF", 
+      "usage": "primary_background"
+    },
+    "cool_grey": {
+      "hex": "#4D4F53",
+      "usage": "text_secondary"
+    },
+    "black": {
+      "hex": "#2E2D29",
+      "usage": "text_primary"
+    },
+    "tech_blue": {
+      "hex": "#007C92",
+      "usage": "technology_emphasis_uit_accent"
+    },
+    "success_green": {
+      "hex": "#175E54",
+      "usage": "uptime_metrics_positive_status"
+    },
+    "warning_orange": {
+      "hex": "#EAAB00", 
+      "usage": "maintenance_alerts_caution"
+    },
+    "error_red": {
+      "hex": "#B1040E",
+      "usage": "incidents_critical_status"
+    }
+  },
+  
+  "typography": {
+    "primary_font": {
+      "family": "Source Sans Pro",
+      "weights": ["Light", "Regular", "Semibold", "Bold"],
+      "usage": "all_text_elements"
+    },
+    "code_font": {
+      "family": "Monaco",
+      "fallbacks": ["Consolas", "Courier New"],
+      "usage": "code_snippets_technical_details"
+    }
+  },
+  
+  "logos": {
+    "horizontal_layouts": {
+      "stanford_uit_horizontal_black": {
+        "file_path": "logos/stanford-uit-horizontal-black.svg",
+        "description": "Stanford | University IT - black text on light backgrounds",
+        "usage": "primary_option_white_backgrounds",
+        "layout": "horizontal_pipe_separator",
+        "colors": {
+          "stanford": "black",
+          "separator": "black", 
+          "university_it": "black"
+        }
+      },
+      "stanford_uit_horizontal_cardinal": {
+        "file_path": "logos/stanford-uit-horizontal-cardinal.svg", 
+        "description": "Stanford | University IT - cardinal red Stanford, black University IT",
+        "usage": "branded_emphasis_light_backgrounds",
+        "layout": "horizontal_pipe_separator",
+        "colors": {
+          "stanford": "stanford_cardinal",
+          "separator": "black",
+          "university_it": "black"
+        }
+      },
+      "stanford_uit_horizontal_white": {
+        "file_path": "logos/stanford-uit-horizontal-white.svg",
+        "description": "Stanford | University IT - white text for dark backgrounds", 
+        "usage": "dark_backgrounds_overlays",
+        "layout": "horizontal_pipe_separator",
+        "colors": {
+          "stanford": "white",
+          "separator": "white",
+          "university_it": "white"
+        }
+      }
+    },
+    
+    "stacked_layouts": {
+      "stanford_uit_stacked_black": {
+        "file_path": "logos/stanford-uit-stacked-black.svg",
+        "description": "Stanford over University IT - black text",
+        "usage": "compact_spaces_square_formats",
+        "layout": "vertical_stack",
+        "colors": {
+          "stanford": "black",
+          "university_it": "black"
+        }
+      },
+      "stanford_uit_stacked_cardinal": {
+        "file_path": "logos/stanford-uit-stacked-cardinal.svg",
+        "description": "Stanford over University IT - cardinal Stanford, black University IT",
+        "usage": "branded_compact_spaces",
+        "layout": "vertical_stack", 
+        "colors": {
+          "stanford": "stanford_cardinal",
+          "university_it": "black"
+        }
+      },
+      "stanford_uit_stacked_white": {
+        "file_path": "logos/stanford-uit-stacked-white.svg",
+        "description": "Stanford over University IT - white text for dark backgrounds",
+        "usage": "dark_backgrounds_compact",
+        "layout": "vertical_stack",
+        "colors": {
+          "stanford": "white", 
+          "university_it": "white"
+        }
+      }
+    },
+
+    "usage_guidelines": {
+      "primary_logo": "stanford_uit_horizontal_cardinal",
+      "light_backgrounds": ["stanford_uit_horizontal_cardinal", "stanford_uit_horizontal_black"],
+      "dark_backgrounds": ["stanford_uit_horizontal_white", "stanford_uit_stacked_white"],
+      "compact_spaces": ["stanford_uit_stacked_cardinal", "stanford_uit_stacked_black"],
+      "minimum_width": "2_inches_horizontal_1.5_inches_stacked",
+      "clear_space": "x_height_of_text_all_sides"
+    }
+  },
+  
+  "slide_elements": {
+    "footers": {
+      "standard": {
+        "left": "Stanford University IT",
+        "center": "slide_number",
+        "right": "date"
+      },
+      "confidential": {
+        "left": "Stanford University IT - Internal Use Only",
+        "center": "slide_number",
+        "right": "date", 
+        "background_color": "warning_orange"
+      }
+    },
+    
+    "headers": {
+      "logo_placement": {
+        "position": "top_left",
+        "margin": "20px",
+        "preferred_logo": "stanford_uit_horizontal_cardinal"
+      }
+    }
+  },
+  
+  "template_specific_usage": {
+    "sunset": {
+      "primary_logo": "stanford_uit_horizontal_cardinal",
+      "fallback_logo": "stanford_uit_horizontal_black"
+    },
+    "noe": {
+      "primary_logo": "stanford_uit_horizontal_black", 
+      "fallback_logo": "stanford_uit_stacked_black"
+    },
+    "castro": {
+      "primary_logo": "stanford_uit_horizontal_cardinal",
+      "fallback_logo": "stanford_uit_stacked_cardinal"
+    }
+  },
+  
+  "technical_elements": {
+    "status_indicators": {
+      "operational": {"color": "success_green", "icon": "icons/check.svg"},
+      "maintenance": {"color": "warning_orange", "icon": "icons/wrench.svg"},
+      "incident": {"color": "error_red", "icon": "icons/alert.svg"}
+    },
+    "service_icons": {
+      "email": "icons/tech-services/email-icon.svg",
+      "wifi": "icons/tech-services/wifi-icon.svg",
+      "security": "icons/security/shield-icon.svg"
+    }
+  }
+}
