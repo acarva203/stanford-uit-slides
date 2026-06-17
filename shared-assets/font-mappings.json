@@ -1,0 +1,239 @@
+{
+  "font_mapping_version": "1.0",
+  "last_updated": "2024-01-15",
+  "strategy": "graceful_degradation_with_platform_detection",
+  
+  "primary_fonts": {
+    "source_sans_pro": {
+      "family_name": "Source Sans Pro",
+      "category": "sans_serif",
+      "weights": {
+        "light": {
+          "font_weight": "300",
+          "font_files": {
+            "woff2": "fonts/SourceSansPro-Light.woff2",
+            "woff": "fonts/SourceSansPro-Light.woff",
+            "ttf": "fonts/SourceSansPro-Light.ttf"
+          },
+          "fallback_sequence": [
+            "Source Sans Pro Light",
+            "Helvetica Neue Light",
+            "Arial",
+            "sans-serif"
+          ]
+        },
+        "regular": {
+          "font_weight": "400",
+          "font_files": {
+            "woff2": "fonts/SourceSansPro-Regular.woff2",
+            "woff": "fonts/SourceSansPro-Regular.woff", 
+            "ttf": "fonts/SourceSansPro-Regular.ttf"
+          },
+          "fallback_sequence": [
+            "Source Sans Pro",
+            "Helvetica Neue",
+            "Arial",
+            "sans-serif"
+          ]
+        },
+        "semibold": {
+          "font_weight": "600",
+          "font_files": {
+            "woff2": "fonts/SourceSansPro-SemiBold.woff2",
+            "woff": "fonts/SourceSansPro-SemiBold.woff",
+            "ttf": "fonts/SourceSansPro-SemiBold.ttf"
+          },
+          "fallback_sequence": [
+            "Source Sans Pro SemiBold",
+            "Helvetica Neue Medium",
+            "Arial Bold",
+            "sans-serif"
+          ]
+        },
+        "bold": {
+          "font_weight": "700",
+          "font_files": {
+            "woff2": "fonts/SourceSansPro-Bold.woff2",
+            "woff": "fonts/SourceSansPro-Bold.woff",
+            "ttf": "fonts/SourceSansPro-Bold.ttf"
+          },
+          "fallback_sequence": [
+            "Source Sans Pro Bold",
+            "Helvetica Neue Bold",
+            "Arial Bold",
+            "sans-serif"
+          ]
+        }
+      }
+    },
+    
+    "monaco": {
+      "family_name": "Monaco",
+      "category": "monospace",
+      "usage": "code_snippets_technical_content",
+      "weights": {
+        "regular": {
+          "font_weight": "400",
+          "font_files": {
+            "ttf": "fonts/Monaco.ttf",
+            "otf": "fonts/Monaco.otf"
+          },
+          "fallback_sequence": [
+            "Monaco",
+            "Menlo",
+            "Consolas",
+            "Courier New",
+            "monospace"
+          ]
+        }
+      }
+    }
+  },
+
+  "platform_compatibility": {
+    "web_browsers": {
+      "modern": {
+        "preferred_format": "woff2",
+        "fallback_format": "woff",
+        "css_font_face": true
+      },
+      "legacy": {
+        "preferred_format": "woff",
+        "fallback_format": "ttf"
+      }
+    },
+    "operating_systems": {
+      "windows": {
+        "system_fonts": {
+          "sans_serif": ["Segoe UI", "Arial", "sans-serif"],
+          "monospace": ["Consolas", "Courier New", "monospace"]
+        },
+        "font_rendering": "cleartype",
+        "line_height_adjustment": "+5%"
+      },
+      "mac": {
+        "system_fonts": {
+          "sans_serif": ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+          "monospace": ["Menlo", "Monaco", "Courier", "monospace"]
+        },
+        "font_rendering": "subpixel_antialiasing",
+        "line_height_adjustment": "default"
+      },
+      "linux": {
+        "system_fonts": {
+          "sans_serif": ["Liberation Sans", "Arial", "sans-serif"],
+          "monospace": ["Liberation Mono", "Courier New", "monospace"]
+        },
+        "font_rendering": "fontconfig",
+        "line_height_adjustment": "+3%"
+      }
+    }
+  },
+
+  "presentation_contexts": {
+    "slide_titles": {
+      "font_family": "source_sans_pro",
+      "font_weight": "bold",
+      "size_mapping": {
+        "large": "44pt",
+        "medium": "36pt", 
+        "small": "28pt"
+      },
+      "line_height": "1.2",
+      "letter_spacing": "-0.02em"
+    },
+    "slide_headers": {
+      "font_family": "source_sans_pro",
+      "font_weight": "semibold",
+      "size_mapping": {
+        "large": "32pt",
+        "medium": "24pt",
+        "small": "20pt"
+      },
+      "line_height": "1.3"
+    },
+    "body_text": {
+      "font_family": "source_sans_pro", 
+      "font_weight": "regular",
+      "size_mapping": {
+        "large": "20pt",
+        "medium": "18pt",
+        "small": "16pt"
+      },
+      "line_height": "1.4"
+    },
+    "bullet_points": {
+      "font_family": "source_sans_pro",
+      "font_weight": "regular", 
+      "size_mapping": {
+        "large": "18pt",
+        "medium": "16pt",
+        "small": "14pt"
+      },
+      "line_height": "1.5"
+    },
+    "code_snippets": {
+      "font_family": "monaco",
+      "font_weight": "regular",
+      "size_mapping": {
+        "large": "16pt",
+        "medium": "14pt",
+        "small": "12pt"
+      },
+      "line_height": "1.6",
+      "background_color": "#F5F5F5"
+    },
+    "captions": {
+      "font_family": "source_sans_pro",
+      "font_weight": "light",
+      "size_mapping": {
+        "large": "14pt", 
+        "medium": "12pt",
+        "small": "10pt"
+      },
+      "line_height": "1.3",
+      "color": "cool_grey"
+    }
+  },
+
+  "template_specific_settings": {
+    "sunset": {
+      "preferred_weights": ["regular", "semibold"],
+      "size_preference": "medium",
+      "emphasis_style": "semibold_headers"
+    },
+    "noe": {
+      "preferred_weights": ["light", "regular"],
+      "size_preference": "medium", 
+      "emphasis_style": "light_clean"
+    },
+    "castro": {
+      "preferred_weights": ["semibold", "bold"],
+      "size_preference": "large",
+      "emphasis_style": "bold_impact"
+    }
+  },
+
+  "accessibility": {
+    "minimum_font_sizes": {
+      "body_text": "14pt",
+      "captions": "10pt"
+    },
+    "contrast_ratios": {
+      "normal_text": "4.5:1",
+      "large_text": "3:1"
+    },
+    "dyslexia_friendly": {
+      "recommended_fonts": ["source_sans_pro"],
+      "avoid_fonts": ["serif", "script"],
+      "line_spacing": "1.5_minimum"
+    }
+  },
+
+  "loading_strategy": {
+    "preload_fonts": ["source_sans_pro_regular", "source_sans_pro_bold"],
+    "lazy_load": ["monaco"],
+    "font_display": "swap",
+    "timeout": "3000ms"
+  }
+}
