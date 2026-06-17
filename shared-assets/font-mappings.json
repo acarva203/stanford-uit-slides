@@ -1,6 +1,6 @@
 {
   "font_mapping_version": "1.0",
-  "last_updated": "2024-01-15",
+  "last_updated": "2026-06-17",
   "strategy": "graceful_degradation_with_platform_detection",
   
   "primary_fonts": {

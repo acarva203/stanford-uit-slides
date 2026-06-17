@@ -1,0 +1,242 @@
+{
+  "test_suite_version": "1.0",
+  "last_updated": "2026-06-17",
+  "test_environment": "stanford_uit_slides_validation",
+  
+  "test_configurations": {
+    "sunset_template_tests": {
+      "template_name": "sunset",
+      "test_cases": [
+        {
+          "test_id": "sunset_001",
+          "test_name": "standard_technical_briefing",
+          "input": {
+            "presentation_type": "technical_briefing",
+            "content": "Cloud migration project status update",
+            "slides_requested": 8,
+            "audience": "technical_staff"
+          },
+          "expected_output": {
+            "template_selected": "sunset",
+            "slide_count": 8,
+            "primary_colors": ["#8C1515", "#FFFFFF", "#2E2D29"],
+            "font_family": "Source Sans Pro",
+            "logo_used": "horizontal_cardinal_black",
+            "aspect_ratio": "16:9"
+          }
+        },
+        {
+          "test_id": "sunset_002", 
+          "test_name": "service_update_announcement",
+          "input": {
+            "presentation_type": "service_update",
+            "content": "Email system maintenance window",
+            "slides_requested": 5,
+            "audience": "general_university"
+          },
+          "expected_output": {
+            "template_selected": "sunset",
+            "slide_count": 5,
+            "footer_type": "standard",
+            "includes_status_indicators": true
+          }
+        }
+      ]
+    },
+    
+    "noe_template_tests": {
+      "template_name": "noe",
+      "test_cases": [
+        {
+          "test_id": "noe_001",
+          "test_name": "data_heavy_metrics_review",
+          "input": {
+            "presentation_type": "technical_briefing",
+            "content": "Q4 infrastructure metrics and performance analysis",
+            "keywords": ["data", "metrics", "analysis"],
+            "slides_requested": 12,
+            "audience": "technical_staff"
+          },
+          "expected_output": {
+            "template_selected": "noe",
+            "slide_count": 12,
+            "layout_emphasis": "content_focused",
+            "chart_layouts": true,
+            "minimal_styling": true
+          }
+        }
+      ]
+    },
+
+    "castro_template_tests": {
+      "template_name": "castro", 
+      "test_cases": [
+        {
+          "test_id": "castro_001",
+          "test_name": "executive_strategic_presentation",
+          "input": {
+            "presentation_type": "project_proposal",
+            "content": "Digital transformation initiative for CIO review",
+            "keywords": ["executive", "strategy", "leadership"],
+            "slides_requested": 10,
+            "audience": "executive_leadership"
+          },
+          "expected_output": {
+            "template_selected": "castro",
+            "slide_count": 10,
+            "font_weights": ["semibold", "bold"],
+            "high_impact_styling": true,
+            "logo_prominence": "high"
+          }
+        }
+      ]
+    },
+
+    "mission_template_tests": {
+      "template_name": "mission",
+      "test_cases": [
+        {
+          "test_id": "mission_001",
+          "test_name": "department_vision_presentation", 
+          "input": {
+            "presentation_type": "strategic_planning",
+            "content": "University IT mission and strategic vision for 2025",
+            "keywords": ["mission", "vision", "strategic", "culture"],
+            "slides_requested": 15,
+            "audience": "external_stakeholders"
+          },
+          "expected_output": {
+            "template_selected": "mission",
+            "slide_count": 15,
+            "aspect_ratio": "16:10",
+            "font_primary": "Georgia",
+            "font_body": "Calibri",
+            "expanded_color_palette": true,
+            "section_dividers": true
+          }
+        },
+        {
+          "test_id": "mission_002",
+          "test_name": "inspirational_training_content",
+          "input": {
+            "presentation_type": "training_workshop",
+            "content": "Building a culture of cybersecurity awareness",
+            "keywords": ["culture", "training", "inspiring"],
+            "slides_requested": 20,
+            "audience": "general_university"
+          },
+          "expected_output": {
+            "template_selected": "mission",
+            "storytelling_layouts": true,
+            "divider_colors": ["poppy", "palo_verde", "sky"]
+          }
+        }
+      ]
+    }
+  },
+
+  "cross_template_tests": {
+    "template_selection_logic": [
+      {
+        "test_id": "selection_001",
+        "test_name": "ambiguous_keyword_resolution",
+        "input": {
+          "content": "Technical briefing for executive leadership",
+          "keywords": ["technical", "executive"],
+          "audience": "executive_leadership"
+        },
+        "expected_behavior": "prioritize_audience_over_content_type",
+        "expected_template": "castro"
+      },
+      {
+        "test_id": "selection_002", 
+        "test_name": "fallback_to_default",
+        "input": {
+          "content": "Generic presentation with no specific indicators",
+          "keywords": [],
+          "audience": "unknown"
+        },
+        "expected_behavior": "use_default_template",
+        "expected_template": "sunset"
+      }
+    ]
+  },
+
+  "integration_tests": {
+    "pptx_handoff": [
+      {
+        "test_id": "integration_001",
+        "test_name": "complete_workflow_test",
+        "input": {
+          "user_request": "Create a security incident report for the recent phishing attack",
+          "expected_flow": [
+            "parse_user_request",
+            "identify_presentation_type: incident_report", 
+            "select_template: noe",
+            "generate_content_structure",
+            "apply_branding_configuration",
+            "handoff_to_pptx_skill"
+          ]
+        },
+        "validation_points": [
+          "correct_template_selection",
+          "proper_json_structure",
+          "brand_compliance",
+          "complete_asset_references"
+        ]
+      }
+    ]
+  },
+
+  "performance_tests": {
+    "load_time_benchmarks": {
+      "template_selection": "< 50ms",
+      "configuration_loading": "< 100ms", 
+      "json_generation": "< 200ms",
+      "total_processing": "< 500ms"
+    },
+    "stress_tests": [
+      {
+        "test_name": "concurrent_requests",
+        "scenario": "10_simultaneous_presentation_requests",
+        "success_criteria": "all_complete_within_performance_targets"
+      }
+    ]
+  },
+
+  "edge_case_tests": {
+    "aspect_ratio_handling": [
+      {
+        "test_id": "aspect_001",
+        "test_name": "mission_16_10_compatibility",
+        "input": "Request mission template presentation",
+        "validation": "confirm_16_10_aspect_ratio_applied"
+      }
+    ],
+    "font_fallback_scenarios": [
+      {
+        "test_id": "font_001",
+        "test_name": "georgia_font_unavailable",
+        "scenario": "Mission template requested on system without Georgia font",
+        "expected_behavior": "graceful_fallback_to_cambria"
+      }
+    ],
+    "logo_selection_edge_cases": [
+      {
+        "test_id": "logo_001",
+        "test_name": "dark_background_logo_selection",
+        "scenario": "User requests dark theme presentation",
+        "expected_behavior": "select_white_logo_variant"
+      }
+    ]
+  },
+
+  "regression_tests": {
+    "template_update_impact": [
+      {
+        "test_name": "backwards_compatibility",
+        "scenario": "Ensure existing presentation requests still work after template updates"
+      }
+    ]
+  }
+}

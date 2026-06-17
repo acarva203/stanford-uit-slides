@@ -1,0 +1,382 @@
+{
+  "compliance_rules_version": "1.0",
+  "stanford_brand_standards": "2024_guidelines",
+  "last_updated": "2026-06-17",
+
+
+  "stanford_brand_requirements": {
+    "color_compliance": {
+      "required_colors": {
+        "stanford_cardinal": {
+          "hex": "#8C1515",
+          "tolerance": "exact_match",
+          "usage": "primary_brand_color_required"
+        },
+        "stanford_black": {
+          "hex": "#2E2D29", 
+          "tolerance": "exact_match",
+          "usage": "approved_text_color"
+        },
+        "stanford_white": {
+          "hex": "#FFFFFF",
+          "tolerance": "exact_match", 
+          "usage": "approved_background"
+        }
+      },
+      
+      "prohibited_colors": {
+        "unapproved_reds": ["#FF0000", "#CC0000", "#990000"],
+        "brand_conflicting": ["#FF6600", "#0066CC"],
+        "low_contrast": ["#CCCCCC", "#EEEEEE"]
+      },
+      
+      "color_usage_rules": {
+        "stanford_cardinal_minimum": "must_appear_in_logo_or_accent",
+        "color_contrast_ratio": "4.5:1_minimum_for_text",
+        "background_color_approved": ["white", "very_light_grey", "stanford_cardinal_sparingly"]
+      }
+    },
+
+    "typography_compliance": {
+      "approved_fonts": {
+        "primary": {
+          "family": "Source Sans Pro",
+          "weights": ["Light", "Regular", "Semibold", "Bold"],
+          "usage": "preferred_for_all_text"
+        },
+        "alternative_sans_serif": {
+          "families": ["Arial", "Helvetica"],
+          "usage": "fallback_only_when_source_sans_unavailable"
+        },
+        "approved_serif": {
+          "family": "Georgia", 
+          "usage": "headlines_in_mission_template_only",
+          "restriction": "mission_template_specific"
+        }
+      },
+      
+      "prohibited_fonts": {
+        "decorative": ["Comic Sans", "Papyrus", "Brush Script"],
+        "inappropriate": ["Times New Roman", "Courier"],
+        "licensing_issues": ["proprietary_fonts_without_license"]
+      },
+      
+      "font_sizing_rules": {
+        "minimum_body_text": "14pt",
+        "minimum_caption_text": "10pt", 
+        "maximum_title_size": "48pt",
+        "line_height_minimum": "1.2_for_headlines",
+        "line_height_body": "1.4_minimum"
+      }
+    },
+
+    "logo_compliance": {
+      "required_elements": {
+        "stanford_wordmark": {
+          "must_include": "Stanford_text_wordmark",
+          "university_it_addition": "required_for_uit_presentations",
+          "placement": "top_left_preferred"
+        }
+      },
+      
+      "logo_usage_rules": {
+        "minimum_size": "1_inch_width_horizontal_layouts",
+        "clear_space": "x_height_of_wordmark_all_sides",
+        "background_contrast": "sufficient_contrast_required",
+        "modification_prohibited": "no_stretching_rotating_effects",
+        "color_variations": {
+          "cardinal_black": "light_backgrounds",
+          "white": "dark_backgrounds_only", 
+          "black": "minimal_design_contexts"
+        }
+      },
+      
+      "prohibited_usage": {
+        "placement": ["bottom_left", "center_only"],
+        "sizing": ["too_small_under_1_inch", "oversized_dominating"],
+        "modifications": ["drop_shadows", "gradients", "outlines", "rotation"]
+      }
+    }
+  },
+
+  "uit_specific_requirements": {
+    "department_identification": {
+      "required_text": "University IT",
+      "placement": "with_stanford_wordmark",
+      "typography": "Source Sans Pro Semibold",
+      "color": "stanford_black_or_white"
+    },
+    
+    "footer_requirements": {
+      "standard_footer": {
+        "left": "Stanford University IT",
+        "center": "slide_number", 
+        "right": "date_or_presentation_title"
+      },
+      "confidential_footer": {
+        "marking": "Internal Use Only",
+        "background_highlight": "warning_orange_#EAAB00",
+        "required_for": "sensitive_technical_content"
+      }
+    },
+    
+    "technical_content_standards": {
+      "code_display": {
+        "font": "Monaco_or_monospace_fallback",
+        "background": "light_grey_#F5F5F5",
+        "size": "14pt_minimum"
+      },
+      "status_indicators": {
+        "operational": "success_green_#175E54",
+        "maintenance": "warning_orange_#EAAB00", 
+        "incident": "error_red_#B1040E"
+      }
+    }
+  },
+
+  "validation_checks": {
+    "automated_compliance": {
+      "color_validation": {
+        "check_stanford_cardinal_presence": true,
+        "verify_color_contrast_ratios": true,
+        "detect_prohibited_colors": true,
+        "validate_hex_codes": true
+      },
+      
+      "typography_validation": {
+        "verify_approved_fonts": true,
+        "check_minimum_font_sizes": true,
+        "validate_line_heights": true,
+        "detect_prohibited_fonts": true
+      },
+      
+      "logo_validation": {
+        "verify_logo_presence": true,
+        "check_logo_positioning": true,
+        "validate_logo_sizing": true, 
+        "verify_clear_space": true
+      },
+      
+      "layout_validation": {
+        "check_aspect_ratios": true,
+        "verify_margin_compliance": true,
+        "validate_slide_dimensions": true
+      }
+    },
+
+    "manual_review_required": {
+      "aesthetic_quality": "visual_design_appropriateness",
+      "brand_message_alignment": "content_reflects_stanford_values",
+      "accessibility_compliance": "readability_for_diverse_audiences",
+      "professional_appearance": "appropriate_for_university_context"
+    }
+  },
+
+  "compliance_scoring": {
+    "scoring_criteria": {
+      "critical_violations": {
+        "score_impact": "-50_points",
+        "examples": ["missing_stanford_logo", "prohibited_colors", "illegible_text"]
+      },
+      "major_violations": {
+        "score_impact": "-20_points", 
+        "examples": ["incorrect_logo_sizing", "poor_color_contrast", "inappropriate_fonts"]
+      },
+      "minor_violations": {
+        "score_impact": "-5_points",
+        "examples": ["suboptimal_spacing", "minor_sizing_issues"]
+      }
+    },
+    
+    "passing_score": "85_points_minimum",
+    "excellence_score": "95_points_plus"
+  },
+
+  "remediation_guidelines": {
+    "common_fixes": {
+      "color_issues": "replace_with_approved_stanford_colors",
+      "font_issues": "substitute_with_source_sans_pro",
+      "logo_issues": "resize_and_reposition_per_guidelines",
+      "contrast_issues": "adjust_colors_for_accessibility"
+    },
+    
+    "escalation_process": {
+      "critical_violations": "block_presentation_generation",
+      "major_violations": "flag_for_manual_review", 
+      "minor_violations": "auto_correct_if_possible"
+    }
+  },
+
+  "exception_handling": {
+    "approved_exceptions": {
+      "mission_template_fonts": {
+        "exception": "Georgia_headlines_allowed",
+        "justification": "official_template_design",
+        "scope": "mission_template_only"
+      }
+    },
+    
+   "exception_approval_process": {
+      "requester": "presentation_creator",
+      "approver": "uit_design_lead",
+      "documentation_required": "justification_and_context",
+      "approval_duration": "single_presentation_or_project_specific",
+      "review_frequency": "quarterly_exception_audit"
+    }
+  },
+
+  "template_specific_compliance": {
+    "sunset": {
+      "brand_profile": "stanford_uit_standard",
+      "critical_requirements": [
+        "stanford_cardinal_accent_required",
+        "source_sans_pro_typography_only",
+        "horizontal_cardinal_black_logo_preferred"
+      ],
+      "acceptable_variations": [
+        "horizontal_black_logo_alternative",
+        "subtle_grey_accents_allowed"
+      ]
+    },
+    
+    "noe": {
+      "brand_profile": "stanford_uit_minimal", 
+      "critical_requirements": [
+        "stanford_cardinal_must_appear_somewhere",
+        "high_contrast_text_required",
+        "clean_minimal_aesthetic"
+      ],
+      "acceptable_variations": [
+        "reduced_color_usage_permitted", 
+        "light_font_weights_encouraged"
+      ]
+    },
+    
+    "castro": {
+      "brand_profile": "stanford_uit_bold",
+      "critical_requirements": [
+        "strong_stanford_cardinal_presence",
+        "bold_typography_emphasis",
+        "high_impact_visual_hierarchy"
+      ],
+      "acceptable_variations": [
+        "larger_font_sizes_encouraged",
+        "bold_color_usage_permitted"
+      ]
+    },
+    
+    "mission": {
+      "brand_profile": "stanford_uit_narrative",
+      "critical_requirements": [
+        "georgia_headlines_approved_exception",
+        "expanded_brand_palette_usage",
+        "16:10_aspect_ratio_maintained"
+      ],
+      "special_allowances": [
+        "serif_typography_for_headlines",
+        "section_divider_colors_approved",
+        "storytelling_layout_flexibility"
+      ]
+    }
+  },
+
+  "accessibility_compliance": {
+    "wcag_requirements": {
+      "color_contrast": {
+        "normal_text": "4.5:1_minimum_ratio",
+        "large_text": "3:1_minimum_ratio",
+        "ui_elements": "3:1_minimum_ratio"
+      },
+      "font_requirements": {
+        "minimum_sizes": {
+          "body_text": "14pt_minimum",
+          "captions": "10pt_absolute_minimum"
+        },
+        "readability": {
+          "dyslexia_friendly": "sans_serif_fonts_preferred",
+          "line_spacing": "1.5_minimum_for_body_text"
+        }
+      }
+    },
+    
+    "stanford_accessibility_standards": {
+      "visual_accessibility": [
+        "sufficient_color_contrast_all_elements",
+        "text_readable_without_color_dependence",
+        "clear_visual_hierarchy"
+      ],
+      "cognitive_accessibility": [
+        "consistent_navigation_patterns",
+        "clear_headings_and_structure",
+        "simple_language_when_possible"
+      ]
+    }
+  },
+
+  "quality_assurance_workflow": {
+    "pre_generation_checks": [
+      "template_selection_appropriateness",
+      "content_type_template_matching",
+      "audience_template_alignment"
+    ],
+    
+    "generation_time_validation": [
+      "real_time_color_compliance",
+      "font_availability_verification", 
+      "logo_placement_validation",
+      "layout_constraint_checking"
+    ],
+    
+    "post_generation_review": [
+      "complete_brand_compliance_scan",
+      "accessibility_validation",
+      "visual_quality_assessment",
+      "template_fidelity_verification"
+    ]
+  },
+
+  "monitoring_and_reporting": {
+    "compliance_metrics": {
+      "track_metrics": [
+        "presentations_generated_per_template",
+        "compliance_score_distribution", 
+        "common_violation_types",
+        "exception_usage_frequency"
+      ],
+      "reporting_frequency": "monthly_compliance_dashboard"
+    },
+    
+    "continuous_improvement": {
+      "feedback_collection": [
+        "user_reported_issues",
+        "visual_quality_feedback",
+        "brand_compliance_concerns"
+      ],
+      "improvement_tracking": [
+        "violation_trend_analysis",
+        "template_usage_patterns",
+        "performance_optimization_opportunities"
+      ]
+    }
+  },
+
+  "emergency_procedures": {
+    "critical_brand_violation": {
+      "immediate_action": "halt_presentation_generation",
+      "notification": "alert_uit_design_team",
+      "resolution": "manual_review_required_before_resume"
+    },
+    
+    "template_corruption": {
+      "detection": "configuration_validation_failure",
+      "fallback": "revert_to_last_known_good_config",
+      "recovery": "reload_from_reference_templates"
+    },
+    
+    "compliance_system_failure": {
+      "fallback_mode": "basic_stanford_branding_only",
+      "manual_override": "require_explicit_approval",
+      "restoration": "full_compliance_check_after_fix"
+    }
+  }
+}
