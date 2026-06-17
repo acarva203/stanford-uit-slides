@@ -42,7 +42,7 @@
   "typography": {
     "primary_font": {
       "family": "Source Sans Pro",
-      "weights": ["Light", "Regular", "Semibold", "Bold"],
+      "weights": ["Light", "Regular", "Bold"],
       "usage": "all_text_elements"
     },
     "code_font": {
