@@ -6,7 +6,8 @@
 > build procedure**. This document is the executable companion: exact input
 > paths, the end-to-end generation procedure with selector citations, the CSS→EMU
 > unit-translation rules, per-slide-type python-pptx recipes, branding
-> application, the asset-integrity remediation tables, and a runnable compliance
+> application, the asset-integrity status (now mostly remediated — see §7), and a
+> runnable compliance
 > evaluator. All values are quoted from repo files; every in-repo conflict is
 > flagged explicitly (see §8.4) rather than silently resolved.
 
@@ -30,11 +31,10 @@ Repo root: `/Users/asirur/claude_skills/project1_uit/stanford-uit-slides`
 | Purpose | Path |
 |---|---|
 | Skill spec | `SKILL.md` |
-| Template selector logic | `validation/template-selector.json` |
-| Brand colors / typography (master) | `validation/stanford-uit-branding.json` |
+| Template selector logic | `integration/template-selector.json` |
+| Brand colors / typography + asset references (master) | `shared-assets/stanford-uit-branding.json` |
 | Compliance rules / scoring | `validation/brand-compliance.json` |
-| Font filename mappings | `shared-assets/config/font-mappings.json` |
-| Branding asset references | `shared-assets/config/branding.json` |
+| Font filename mappings | `shared-assets/font-mappings.json` |
 | PPTX handoff / canvas config | `integration/pptx-handoff-config.json` |
 | Per-template theme | `template-configs/<tpl>/theme.json` |
 | Per-template layouts | `template-configs/<tpl>/layouts.json` |
@@ -46,6 +46,15 @@ Repo root: `/Users/asirur/claude_skills/project1_uit/stanford-uit-slides`
 
 where `<tpl>` ∈ {`sunset`, `noe`, `castro`, `mission`}.
 
+> **Path note (changed):** the recent "incorrect file references" commits moved
+> several files. `template-selector.json` now lives under **`integration/`**
+> (not `validation/`). The former `validation/stanford-uit-branding.json` and the
+> separate `shared-assets/config/branding.json` are now a **single merged file**,
+> `shared-assets/stanford-uit-branding.json`, which holds brand colors,
+> typography, logo references, and service-icon references together. There is no
+> longer a `shared-assets/config/` directory; `font-mappings.json` is now at
+> `shared-assets/font-mappings.json`.
+
 > **Canvas note (16:9):** `integration/pptx-handoff-config.json` declares
 > `"width": "13.33in"` (lines 11/20/29 for the 16:9 templates; line 38 is the
 > 10in 4:3 variant). See §4.2 for the **13.33-vs-13.333-vs-px-grid** nuance —
@@ -53,7 +62,7 @@ where `<tpl>` ∈ {`sunset`, `noe`, `castro`, `mission`}.
 
 ---
 
-## §3. Template selection procedure (cited to `template-selector.json`)
+## §3. Template selection procedure (cited to `integration/template-selector.json`)
 
 Apply in precedence order; first match wins, then validate against audience
 avoid-lists.
@@ -166,42 +175,62 @@ match the handoff config exactly; the narrative profile's `special_features`
 are as cited. Apply the profile matching the chosen template.
 
 ### §6.2 Colors (verified hexes)
-All hexes match `validation/stanford-uit-branding.json` and
+All hexes match `shared-assets/stanford-uit-branding.json` and
 `mission/theme.json` `brand_colors`. Prohibited-color set matches
 `validation/brand-compliance.json`:
 `prohibited_colors.low_contrast = ["#CCCCCC", "#EEEEEE"]` (line 30).
 
 ---
 
-## §7. Asset-integrity remediation (core of this doc — all defects TRUE)
+## §7. Asset-integrity status (mostly remediated — remaining defects flagged)
 
-These tables map **referenced-but-missing** assets to the **real on-disk** file
-to substitute.
+The recent commits fixed most of the asset-reference defects this section used
+to enumerate. The logo refs were repointed from nonexistent `.svg` to real
+PNGs, the font family was switched to Source Sans 3 / Roboto (both on disk), and
+the missing-icon block was deleted. What remains is one logo-naming mismatch and
+two path-style quirks; everything else now resolves.
 
-### §7.1 Logos — referenced `.svg` do not exist; real files are PNGs
-The 6 logo `file_path` entries are all `.svg` and **nonexistent**. The real
-files are 6 PNGs. Substitution:
+### §7.1 Logos — now PNGs; **only the cardinal refs are still broken**
+`shared-assets/stanford-uit-branding.json` now references 6 PNGs (was 6 missing
+`.svg`). The black and white refs match disk exactly. The **two cardinal refs
+do not**:
 
-| Referenced (missing) | Real on-disk file |
-|---|---|
-| `*_stacked.svg` | `*_vertical.png` |
-| `*_cardinal.svg` | `*_cardinal-black.png` |
-| (other 4 `.svg` refs) | corresponding `.png` (vertical/cardinal mapping) |
+| Referenced in branding.json | Real on-disk file | Status |
+|---|---|---|
+| `University-IT_wordmark_horizontal_black.png` | same | ✅ OK |
+| `University-IT_wordmark_horizontal_white.png` | same | ✅ OK |
+| `University-IT_wordmark_vertical_black.png` | same | ✅ OK |
+| `University-IT_wordmark_vertical_white.png` | same | ✅ OK |
+| `University-IT_wordmark_horizontal_cardinal.png` | `…horizontal_cardinal-black.png` | ❌ missing `-black` |
+| `University-IT_wordmark_vertical_cardinal.png` | `…vertical_cardinal-black.png` | ❌ missing `-black` |
 
-Rule: **stacked ↔ vertical**, **`*_cardinal` ↔ `*_cardinal-black.png`**.
+Rule: when resolving a `*_cardinal.png` ref, substitute
+**`*_cardinal-black.png`** (the only cardinal variant on disk). The horizontal
+"stacked" naming is now `vertical` on both sides, so the old stacked↔vertical
+remap is no longer needed.
 
-### §7.2 Fonts — referenced families/extensions do not exist
-`shared-assets/config/font-mappings.json` references
-`SourceSansPro-*.{woff2,woff,ttf}` and `Monaco.{ttf,otf}` — **none exist** on
-disk. Disk has only `SourceSans3-*.woff2`. Substitute `SourceSansPro-*` →
-`SourceSans3-*.woff2`; there is **no Monaco** asset — fall back to a system
-monospace or drop monospace usage.
+### §7.2 Fonts — resolved (Source Sans 3 + Roboto), with a path-slash quirk
+`shared-assets/font-mappings.json` now declares family **`Source Sans 3`** and
+references **`/fonts/SourceSans3-{Light,Regular,SemiBold,Bold}.woff2`** — all
+present at `shared-assets/fonts/`. The old `woff`/`ttf` variants and the
+`platform_compatibility` block were removed; only `woff2` is listed now. The
+monospace family was changed from the missing **Monaco** to **`Roboto`**,
+referencing `fonts/Roboto-Regular.ttf`, which **now exists** on disk. So there is
+no remaining missing-font defect.
 
-### §7.3 Icons — referenced but absent
-`branding.json` references `icons/check.svg`, `icons/wrench.svg`,
-`icons/alert.svg` — all **absent**. The **service icons** *do* exist as SVG at
-their exact cited paths. Either supply the three missing icons or remove their
-references.
+> **Flag (path style):** the Source Sans entries use a leading-slash
+> `"/fonts/SourceSans3-*.woff2"` while the Roboto entry uses
+> `"fonts/Roboto-Regular.ttf"` (no leading slash). Neither is the on-disk prefix
+> (`shared-assets/fonts/`). Resolve both relative to `shared-assets/`, stripping
+> any leading slash.
+
+### §7.3 Icons — missing-icon refs removed; service icons resolve
+The `technical_elements.status_indicators` block that referenced
+`icons/check.svg`, `icons/wrench.svg`, and `icons/alert.svg` (all absent) was
+**deleted** from the branding file, so those broken refs no longer exist. The
+remaining `service_icons` refs — `email-icon.svg`, `wifi-icon.svg`,
+`security/shield-icon.svg` — all exist at their cited paths. (Disk also carries
+unreferenced icons: `vpn`, `lock`, `warning`, `cloud`, `server`.)
 
 ---
 
@@ -238,9 +267,10 @@ Deductions: **−50** (critical), **−20** (major), **−5** (minor).
 ### §8.4 In-repo conflicts to reconcile (DO NOT silently resolve)
 1. **Castro logo placement:** `castro/theme.json` allows `bottom_left`, but
    `brand-compliance.json` `prohibited_usage.placement` prohibits it.
-2. **Logo minimum size:** `branding.json` says 2in/1.5in; `brand-compliance.json`
-   says 1in.
-3. **Cool Grey:** `branding.json` `cool_grey = #4D4F53`; Stanford official and
+2. **Logo minimum size:** `stanford-uit-branding.json`
+   (`minimum_width = "2_inches_horizontal_1.5_inches_stacked"`) says 2in/1.5in;
+   `brand-compliance.json` says 1in.
+3. **Cool Grey:** `stanford-uit-branding.json` `cool_grey = #4D4F53`; Stanford official and
    `mission/theme.json` `text_muted = #53565A`. Both hexes confirmed present in
    their files; they disagree.
 4. **Calibri** is not in `approved_fonts` (yet may appear as a fallback).
@@ -253,8 +283,9 @@ Deductions: **−50** (critical), **−20** (major), **−5** (minor).
 ---
 
 ## §9. Edge cases & fallbacks
-- Missing asset → apply §7 substitution; if no substitute exists (Monaco,
-  missing icons), degrade gracefully and log.
+- Missing asset → apply §7 substitution (cardinal logo → `*_cardinal-black.png`;
+  strip leading slash and resolve fonts under `shared-assets/fonts/`). If a
+  referenced asset genuinely has no on-disk match, degrade gracefully and log.
 - Selection uncertain → sunset (§3 Step 1.5).
 - Unit convention → pick px-grid **or** inch-exact (§4.2) and stay consistent.
 - Prohibited-color / placement / size conflicts (§8.4) → surface to the caller;
