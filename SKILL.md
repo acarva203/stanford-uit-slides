@@ -85,6 +85,7 @@ asset substitutions (§7), compliance scoring (§8).
 
 
 ## Critical Criteria to Check before Outputting
-- Is there a logo on each slide in the footer section?
+- Is there a logo on each slide in the footer section with at least a divider or whitespace separating from the rest of the slide?
 - Are all icons correctly sized within their elements, and properly aligned?
+- Make sure the slide deck uses Source Sans 3 as the primary font and Roboto as the supplementary font
 
