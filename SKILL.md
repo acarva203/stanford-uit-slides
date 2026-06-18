@@ -65,6 +65,11 @@ values in `shared-assets/stanford-uit-branding.json`.
 **Compliance score:** ≥95 excellent · ≥85 passing · <85 requires review or is
 blocked.
 
+## Critical Criteria to Check before Outputting
+- Is there a logo on each slide in the footer section with at least a divider or whitespace separating from the rest of the slide?
+- Are all icons correctly sized within their elements, and properly aligned?
+- Make sure the slide deck uses Source Sans 3 as the primary font and Roboto as the supplementary font
+
 ## Workflow
 
 ```
@@ -84,8 +89,5 @@ asset substitutions (§7), compliance scoring (§8).
 - **Compliance failure** → flag for review, or block generation on critical.
 
 
-## Critical Criteria to Check before Outputting
-- Is there a logo on each slide in the footer section with at least a divider or whitespace separating from the rest of the slide?
-- Are all icons correctly sized within their elements, and properly aligned?
-- Make sure the slide deck uses Source Sans 3 as the primary font and Roboto as the supplementary font
+
 
