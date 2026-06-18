@@ -24,9 +24,10 @@
 
 ---
 
-## §2. Inputs (exact paths — all verified to exist)
+## §2. Inputs (paths relative to the skill root)
 
-Repo root: `/Users/asirur/claude_skills/project1_uit/stanford-uit-slides`
+All paths below are relative to the skill's root directory (the folder
+containing `SKILL.md`). Every referenced asset resolves on disk (see §7).
 
 | Purpose | Path |
 |---|---|
@@ -192,40 +193,42 @@ All hexes match `shared-assets/stanford-uit-branding.json` and
 
 ---
 
-## §7. Asset-integrity status (mostly remediated — remaining defects flagged)
+## §7. Asset-integrity status (remediated — all referenced assets resolve)
 
-The recent commits fixed most of the asset-reference defects this section used
-to enumerate. The logo refs were repointed from nonexistent `.svg` to real
-PNGs, the font family was switched to Source Sans 3 / Roboto (both on disk), and
-the missing-icon block was deleted. What remains is one logo-naming mismatch and
-two path-style quirks; everything else now resolves.
+Every asset reference now resolves on disk. This section records the resolution
+for traceability.
 
-### §7.1 > **Flag (path style):** the Source Sans entries use a leading-slash
-> `"/fonts/SourceSans3-*.woff2"` while the Roboto entry uses
-> `"fonts/Roboto-Regular.ttf"` (no leading slash). Neither is the on-disk prefix
-> (`shared-assets/fonts/`). Resolve both relative to `shared-assets/`, stripping
-> any leading slash.
+### §7.1 Logos — resolved
+All 6 logo `file_path` entries in `shared-assets/stanford-uit-branding.json` point
+to real PNGs in `shared-assets/logos/`, including the two cardinal variants
+(`*_cardinal-black.png`, hyphenated). No substitution needed.
 
-### §7.2 Icons — missing-icon refs removed; service icons resolve
-The `technical_elements.status_indicators` block that referenced
-`icons/check.svg`, `icons/wrench.svg`, and `icons/alert.svg` (all absent) was
-**deleted** from the branding file, so those broken refs no longer exist. The
-remaining `service_icons` refs — `email-icon.svg`, `wifi-icon.svg`,
-`security/shield-icon.svg` — all exist at their cited paths. (Disk also carries
-unreferenced icons: `vpn`, `lock`, `warning`, `cloud`, `server`.)
+### §7.2 Fonts — resolved
+`shared-assets/font-mappings.json` references `fonts/SourceSans3-{Light,Regular,SemiBold,Bold}.ttf`
+and `fonts/Roboto-Regular.ttf` — all present, all relative paths (no leading
+slash), all `.ttf` (the web-only `.woff2` set was removed). PowerPoint embeds
+`.ttf`/`.otf`, so this is the correct format.
+
+### §7.3 Icons — resolved
+The obsolete `status_indicators` icon refs (`check/wrench/alert.svg`) were removed.
+The remaining `service_icons` — `email-icon.svg`, `wifi-icon.svg`,
+`security/shield-icon.svg` — all exist. (Disk also carries unreferenced icons:
+`vpn`, `lock`, `warning`, `cloud`, `server`.)
 
 ---
 
 ## §8. Compliance evaluator (runnable, cited to `brand-compliance.json`)
 
-### §8.1 Prohibited-color check
-Flag any element color in `prohibited_colors.low_contrast`
-(`#CCCCCC`, `#EEEEEE`).
+### §8.1 Prohibited-color check (background-aware)
+Do **not** flag colors by hex alone. `prohibited_colors.low_contrast` is now a
+**background-aware rule**: compute the WCAG contrast ratio of each
+text/background pair (§8.2) and flag only pairs below **4.5:1** (3:1 large text).
+`#CCCCCC` / `#EEEEEE` are listed as `commonly_failing_on_light_backgrounds` — they
+are *compliant* on dark backgrounds.
 
-> **Flag (see §8.4):** Castro uses `#CCCCCC` pervasively (theme `body_font`,
-> layouts content_area/subtitle/stat_label, master-slides, title_slide
-> subtitle). A literal prohibited-color check therefore flags **every Castro
-> content slide**. Reconcile before enforcing.
+> **Resolved:** Castro's `#CCCCCC` body sits on `#000000` (~15:1) — it **passes**
+> the ratio check and is no longer flagged. The earlier "flags every Castro slide"
+> problem was the flat hex list, which has been replaced.
 
 ### §8.2 WCAG contrast (formula verified)
 Relative luminance per channel `c`: `cs = c/255`; `lin = cs/12.92 if cs ≤
@@ -252,18 +255,18 @@ Deductions: **−50** (critical), **−20** (major), **−5** (minor).
 2. **Logo minimum size:** `stanford-uit-branding.json`
    (`minimum_width = "2_inches_horizontal_1.5_inches_stacked"`) says 2in/1.5in;
    `brand-compliance.json` says 1in.
-3. **Cool Grey:** `stanford-uit-branding.json` `cool_grey = #4D4F53`; Stanford official and
-   `mission/theme.json` `text_muted = #53565A`. Both hexes confirmed present in
-   their files; they disagree.
+3. **Cool Grey — RESOLVED:** `stanford-uit-branding.json` `cool_grey = #4D4F53` is
+   now the canonical value (see its `palette_authority` note); Mission's
+   `#53565A` occurrences were reconciled to `#4D4F53`. Use the canonical value
+   for any shared-semantic color.
 4. **Fonts standardized:** all templates now use **Source Sans 3** (primary) with
    **Roboto** (fallback). Earlier per-template fonts (Georgia/Calibri/Arial Black)
    have been removed from the configs; verify `approved_fonts` lists Source Sans 3
    and Roboto.
 5. **Castro stat font size:** theme.json 72pt vs layouts.json 64pt (§5.1).
-6. **Castro `#CCCCCC` body text** is on the prohibited `low_contrast` list yet is
-   the documented Castro body color (§8.1). `castro/metadata.json` even
-   instructs "Body text should use #CCCCCC or lighter" — directly contradicting
-   the prohibited list. Decide policy before enforcing the §8.1 check.
+6. **Castro `#CCCCCC` body text — RESOLVED:** the `low_contrast` check is now
+   background-aware (§8.1), so `#CCCCCC` on Castro's dark background passes and is
+   no longer a conflict.
 
 ---
 

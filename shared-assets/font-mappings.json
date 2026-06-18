@@ -11,7 +11,7 @@
         "light": {
           "font_weight": "300",
           "font_files": {
-            "ttf": "/fonts/SourceSans3-Light.ttf"
+            "ttf": "fonts/SourceSans3-Light.ttf"
           },
           "fallback_sequence": [
             "Source Sans 3 Light",
@@ -22,7 +22,7 @@
         "regular": {
           "font_weight": "400",
           "font_files": {
-            "ttf": "/fonts/SourceSans3-Regular.ttf"
+            "ttf": "fonts/SourceSans3-Regular.ttf"
           },
           "fallback_sequence": [
             "Source Sans 3",
@@ -33,7 +33,7 @@
         "semibold": {
           "font_weight": "600",
           "font_files": {
-            "ttf": "/fonts/SourceSans3-SemiBold.ttf"
+            "ttf": "fonts/SourceSans3-SemiBold.ttf"
           },
           "fallback_sequence": [
             "Source Sans 3 SemiBold",
@@ -44,7 +44,7 @@
         "bold": {
           "font_weight": "700",
           "font_files": {
-            "ttf": "/fonts/SourceSans3-Bold.ttf"
+            "ttf": "fonts/SourceSans3-Bold.ttf"
           },
           "fallback_sequence": [
             "Source Sans 3 Bold",

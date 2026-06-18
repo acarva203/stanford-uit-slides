@@ -188,7 +188,7 @@
           "height": 131,
           "font_family": "Source Sans 3",
           "font_size": "18pt",
-          "color": "#53565A",
+          "color": "#4D4F53",
           "text_align": "center"
         }
       }
@@ -226,7 +226,7 @@
           "width": 225,
           "height": 33,
           "font_size": "13.5pt",
-          "color": "#53565A"
+          "color": "#4D4F53"
         }
       }
     },
@@ -812,7 +812,7 @@
       "layout_index": 19,
       "pptx_name": "Divider - Thank You",
       "description": "Closing/thank-you slide on dark gray background",
-      "background": "#53565A",
+      "background": "#4D4F53",
       "elements": {
         "title": {
           "type": "ctrTitle",

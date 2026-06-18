@@ -20,7 +20,7 @@
           "height": 33,
           "font_size": "13.5pt",
           "font_family": "Source Sans 3",
-          "color": "#53565A",
+          "color": "#4D4F53",
           "content": "{{slide_number}}",
           "note": "Present in all layouts via sldNum placeholder"
         }
@@ -56,7 +56,7 @@
           "family": "Source Sans 3",
           "fallback": "Roboto",
           "size": "13.5pt",
-          "color": "#53565A"
+          "color": "#4D4F53"
         }
       },
       "slide_layouts": [
@@ -107,7 +107,7 @@
       "size": "18pt",
       "weight": "Regular",
       "color_on_dark": "#FFFFFF",
-      "color_on_light": "#53565A"
+      "color_on_light": "#4D4F53"
     },
     "body": {
       "font": "Source Sans 3",
@@ -123,7 +123,7 @@
       "font": "Source Sans 3",
       "fallback": "Roboto",
       "size": "13.5pt",
-      "color": "#53565A"
+      "color": "#4D4F53"
     }
   }
 }

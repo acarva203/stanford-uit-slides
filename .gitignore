@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Microsoft Office lock/owner files
+~$*
+
+# Temp
+*.tmp
+*.bak

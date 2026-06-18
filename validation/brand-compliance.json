@@ -27,7 +27,13 @@
       "prohibited_colors": {
         "unapproved_reds": ["#FF0000", "#CC0000", "#990000"],
         "brand_conflicting": ["#FF6600", "#0066CC"],
-        "low_contrast": ["#CCCCCC", "#EEEEEE"]
+        "low_contrast": {
+          "rule": "background_aware_contrast",
+          "description": "Do NOT flag colors by hex alone. Evaluate the WCAG contrast ratio of each text/background pair and flag only pairs below the 4.5:1 minimum (3:1 for large text). The colors below are commonly-failing light greys, but they are compliant on dark backgrounds (e.g. Castro #CCCCCC body on #000000 ~= 15:1).",
+          "commonly_failing_on_light_backgrounds": ["#CCCCCC", "#EEEEEE"],
+          "minimum_ratio": "4.5:1",
+          "minimum_ratio_large_text": "3:1"
+        }
       },
       
       "color_usage_rules": {
@@ -40,18 +46,13 @@
     "typography_compliance": {
       "approved_fonts": {
         "primary": {
-          "family": "Source Sans Pro",
+          "family": "Source Sans 3",
           "weights": ["Light", "Regular", "Semibold", "Bold"],
           "usage": "preferred_for_all_text"
         },
-        "alternative_sans_serif": {
-          "families": ["Arial", "Helvetica"],
-          "usage": "fallback_only_when_source_sans_unavailable"
-        },
-        "approved_serif": {
-          "family": "Georgia", 
-          "usage": "headlines_in_mission_template_only",
-          "restriction": "mission_template_specific"
+        "secondary": {
+          "family": "Roboto",
+          "usage": "fallback_for_all_text_and_code_snippets"
         }
       },
       
@@ -103,7 +104,7 @@
     "department_identification": {
       "required_text": "University IT",
       "placement": "with_stanford_wordmark",
-      "typography": "Source Sans Pro Semibold",
+      "typography": "Source Sans 3 Semibold",
       "color": "stanford_black_or_white"
     },
     
@@ -122,7 +123,7 @@
     
     "technical_content_standards": {
       "code_display": {
-        "font": "Monaco_or_monospace_fallback",
+        "font": "Roboto_or_monospace_fallback",
         "background": "light_grey_#F5F5F5",
         "size": "14pt_minimum"
       },
@@ -208,13 +209,7 @@
   },
 
   "exception_handling": {
-    "approved_exceptions": {
-      "mission_template_fonts": {
-        "exception": "Georgia_headlines_allowed",
-        "justification": "official_template_design",
-        "scope": "mission_template_only"
-      }
-    },
+    "approved_exceptions": {},
     
    "exception_approval_process": {
       "requester": "presentation_creator",
@@ -268,7 +263,6 @@
     "mission": {
       "brand_profile": "stanford_uit_narrative",
       "critical_requirements": [
-        "georgia_headlines_approved_exception",
         "expanded_brand_palette_usage",
         "16:10_aspect_ratio_maintained"
       ],

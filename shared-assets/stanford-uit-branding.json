@@ -1,8 +1,9 @@
 {
   "branding_version": "1.0",
   "organization": "Stanford University IT Department",
-  "last_updated": "2026-06-17",
-  
+  "last_updated": "2026-06-18",
+  "palette_authority": "This file's `colors` block is the CANONICAL source for Stanford UIT brand and status colors (cardinal, cool grey, status green/orange/red, tech blue). Per-template `theme.json` palettes are template-specific design derivations extracted from each source .pptx and MAY differ for decorative accents (e.g. Mission's expanded print palette uses poppy #E98300 where the canonical maintenance/warning status is #EAAB00). For any color with a shared semantic meaning (cool grey, status colors), use the values here.",
+
   "colors": {
     "stanford_cardinal": {
       "hex": "#8C1515",
@@ -66,7 +67,7 @@
         }
       },
       "stanford_uit_horizontal_cardinal": {
-        "file_path": "logos/University-IT_wordmark_horizontal_cardinal_black.png", 
+        "file_path": "logos/University-IT_wordmark_horizontal_cardinal-black.png", 
         "description": "Stanford | University IT - cardinal red Stanford, black University IT",
         "usage": "branded_emphasis_light_backgrounds",
         "layout": "horizontal_pipe_separator",
@@ -101,7 +102,7 @@
         }
       },
       "stanford_uit_stacked_cardinal": {
-        "file_path": "logos/University-IT_wordmark_vertical_cardinal_black.png",
+        "file_path": "logos/University-IT_wordmark_vertical_cardinal-black.png",
         "description": "Stanford over University IT - cardinal Stanford, black University IT",
         "usage": "branded_compact_spaces",
         "layout": "vertical_stack", 
@@ -170,11 +171,10 @@
       "fallback_logo": "stanford_uit_stacked_cardinal"
     }
   },
-  
- 
-    "service_icons": {
-      "email": "icons/tech-services/email-icon.svg",
-      "wifi": "icons/tech-services/wifi-icon.svg",
-      "security": "icons/security/shield-icon.svg"
-    }
+
+  "service_icons": {
+    "email": "icons/tech-services/email-icon.svg",
+    "wifi": "icons/tech-services/wifi-icon.svg",
+    "security": "icons/security/shield-icon.svg"
   }
+}

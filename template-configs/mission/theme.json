@@ -11,7 +11,7 @@
     "muted": "#E7E6E6",
     "text_dark": "#2E2C28",
     "text_light": "#FFFFFF",
-    "text_muted": "#53565A",
+    "text_muted": "#4D4F53",
     "brand_colors": {
       "cardinal_red": "#8C1515",
       "black": "#2E2D29",
@@ -28,7 +28,7 @@
       "palo_verde": "#279989",
       "sky": "#4298B5",
       "plum": "#620059",
-      "thank_you": "#53565A"
+      "thank_you": "#4D4F53"
     }
   },
   "typography": {
@@ -63,7 +63,7 @@
       "fallback": "Roboto",
       "weight": "Regular",
       "size": "13.5pt",
-      "color": "#53565A"
+      "color": "#4D4F53"
     },
     "stat_font": {
       "family": "Source Sans 3",
