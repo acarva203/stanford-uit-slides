@@ -14,6 +14,26 @@ description: Creates Stanford University IT technology branded presentations and
 
 Creates brand-compliant PowerPoint presentations for Stanford University IT using official templates and automated Stanford identity guidelines.
 
+> **Build procedure lives in [`skill-complementary.md`](skill-complementary.md).**
+> This file (`SKILL.md`) is the declarative spec — *what* the skill is, *which*
+> templates and content types exist, and the *brand promises*. The companion
+> file `skill-complementary.md` is the executable HOW: exact input paths, the
+> end-to-end generation procedure, CSS→EMU unit translation, per-slide-type
+> python-pptx recipes, branding application, asset-integrity status, and a
+> runnable compliance evaluator. **Read `SKILL.md` first for context, then
+> `skill-complementary.md` to execute.**
+>
+> Repo layout the build steps reference:
+> - `skill-complementary.md` — build procedure (start here to generate)
+> - `integration/template-selector.json` — template selection logic
+> - `integration/pptx-handoff-config.json` — canvas / handoff config
+> - `shared-assets/stanford-uit-branding.json` — brand colors, typography, logo & icon refs
+> - `shared-assets/font-mappings.json` — font family → file mappings
+> - `shared-assets/{fonts,logos,icons}/` — on-disk assets
+> - `validation/brand-compliance.json` — compliance rules & scoring
+> - `template-configs/<tpl>/` — per-template `theme/layouts/master-slides/metadata.json`
+>   for `<tpl>` ∈ {`sunset`, `noe`, `castro`, `mission`}
+
 
 
 ### **Template Selection Guide (Contextual Layer)**
@@ -110,6 +130,11 @@ Each presentation receives automatic validation:
 ### Skill Workflow
 
 User Request → Template Selection → Content Structuring → Brand Application → pptx Generation
+
+> Each stage above is specified step-by-step in
+> [`skill-complementary.md`](skill-complementary.md): template selection (§3),
+> unit translation (§4), per-slide recipes (§5), branding application (§6),
+> asset-integrity substitutions (§7), and compliance scoring (§8).
 
 
 ### Performance Characteristics
