@@ -66,7 +66,7 @@
         }
       },
       "stanford_uit_horizontal_cardinal": {
-        "file_path": "logos/University-IT_wordmark_horizontal_cardinal.png", 
+        "file_path": "logos/University-IT_wordmark_horizontal_cardinal_black.png", 
         "description": "Stanford | University IT - cardinal red Stanford, black University IT",
         "usage": "branded_emphasis_light_backgrounds",
         "layout": "horizontal_pipe_separator",
@@ -101,7 +101,7 @@
         }
       },
       "stanford_uit_stacked_cardinal": {
-        "file_path": "logos/University-IT_wordmark_vertical_cardinal.png",
+        "file_path": "logos/University-IT_wordmark_vertical_cardinal_black.png",
         "description": "Stanford over University IT - cardinal Stanford, black University IT",
         "usage": "branded_compact_spaces",
         "layout": "vertical_stack", 

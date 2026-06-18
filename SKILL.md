@@ -83,3 +83,8 @@ asset substitutions (§7), compliance scoring (§8).
   §7 substitutions).
 - **Compliance failure** → flag for review, or block generation on critical.
 
+
+## Critical Criteria to Check before Outputting
+- Is there a logo on each slide in the footer section?
+- Are all icons correctly sized within their elements, and properly aligned?
+

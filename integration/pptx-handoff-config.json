@@ -129,7 +129,7 @@
     "lazy_loading": ["extended_color_palettes", "optional_icons"],
     "compression_settings": {
       "images": "png_optimized",
-      "fonts": "woff2_preferred"
+      "fonts": "ttf_preferred"
     }
   }
 }

@@ -200,41 +200,13 @@ PNGs, the font family was switched to Source Sans 3 / Roboto (both on disk), and
 the missing-icon block was deleted. What remains is one logo-naming mismatch and
 two path-style quirks; everything else now resolves.
 
-### §7.1 Logos — now PNGs; **only the cardinal refs are still broken**
-`shared-assets/stanford-uit-branding.json` now references 6 PNGs (was 6 missing
-`.svg`). The black and white refs match disk exactly. The **two cardinal refs
-do not**:
-
-| Referenced in branding.json | Real on-disk file | Status |
-|---|---|---|
-| `University-IT_wordmark_horizontal_black.png` | same | ✅ OK |
-| `University-IT_wordmark_horizontal_white.png` | same | ✅ OK |
-| `University-IT_wordmark_vertical_black.png` | same | ✅ OK |
-| `University-IT_wordmark_vertical_white.png` | same | ✅ OK |
-| `University-IT_wordmark_horizontal_cardinal.png` | `…horizontal_cardinal-black.png` | ❌ missing `-black` |
-| `University-IT_wordmark_vertical_cardinal.png` | `…vertical_cardinal-black.png` | ❌ missing `-black` |
-
-Rule: when resolving a `*_cardinal.png` ref, substitute
-**`*_cardinal-black.png`** (the only cardinal variant on disk). The horizontal
-"stacked" naming is now `vertical` on both sides, so the old stacked↔vertical
-remap is no longer needed.
-
-### §7.2 Fonts — resolved (Source Sans 3 + Roboto), with a path-slash quirk
-`shared-assets/font-mappings.json` now declares family **`Source Sans 3`** and
-references **`/fonts/SourceSans3-{Light,Regular,SemiBold,Bold}.woff2`** — all
-present at `shared-assets/fonts/`. The old `woff`/`ttf` variants and the
-`platform_compatibility` block were removed; only `woff2` is listed now. The
-monospace family was changed from the missing **Monaco** to **`Roboto`**,
-referencing `fonts/Roboto-Regular.ttf`, which **now exists** on disk. So there is
-no remaining missing-font defect.
-
-> **Flag (path style):** the Source Sans entries use a leading-slash
+### §7.1 > **Flag (path style):** the Source Sans entries use a leading-slash
 > `"/fonts/SourceSans3-*.woff2"` while the Roboto entry uses
 > `"fonts/Roboto-Regular.ttf"` (no leading slash). Neither is the on-disk prefix
 > (`shared-assets/fonts/`). Resolve both relative to `shared-assets/`, stripping
 > any leading slash.
 
-### §7.3 Icons — missing-icon refs removed; service icons resolve
+### §7.2 Icons — missing-icon refs removed; service icons resolve
 The `technical_elements.status_indicators` block that referenced
 `icons/check.svg`, `icons/wrench.svg`, and `icons/alert.svg` (all absent) was
 **deleted** from the branding file, so those broken refs no longer exist. The
