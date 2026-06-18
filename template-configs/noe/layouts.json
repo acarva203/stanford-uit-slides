@@ -1,11 +1,13 @@
 {
   "template_name": "noe",
   "slide_size": {
-    "width": "13.33in",
-    "height": "7.5in"
+    "width": "10in",
+    "height": "5.625in",
+    "emu_width": 9144000,
+    "emu_height": 5143500
   },
   "design_principles": {
-    "note": "Noe is a minimalist template. Generous whitespace is a core design element — do not fill every available area. Prefer understated over decorative.",
+    "note": "Noe is a minimalist template. Generous whitespace is a core design element \u2014 do not fill every available area. Prefer understated over decorative.",
     "min_margin": "60px",
     "max_content_width": "85%"
   },
@@ -32,7 +34,7 @@
           "text_align": "center",
           "font_size": "48pt",
           "font_style": "italic",
-          "font_family": "Georgia",
+          "font_family": "Source Sans 3",
           "color": "#1A1A2E"
         },
         "thin_rule": {
@@ -63,7 +65,7 @@
       }
     },
     "section_divider": {
-      "description": "Minimal section break — number + title only, high whitespace",
+      "description": "Minimal section break \u2014 number + title only, high whitespace",
       "background": "solid_white",
       "elements": {
         "section_number": {
@@ -72,7 +74,7 @@
           "width": "80px",
           "font_size": "72pt",
           "font_style": "italic",
-          "font_family": "Georgia",
+          "font_family": "Source Sans 3",
           "color": "#E0E0E0"
         },
         "section_title": {
@@ -81,7 +83,7 @@
           "width": "65%",
           "font_size": "36pt",
           "font_style": "italic",
-          "font_family": "Georgia",
+          "font_family": "Source Sans 3",
           "color": "#1A1A2E"
         },
         "accent_dot": {
@@ -94,7 +96,7 @@
       }
     },
     "content_slide": {
-      "description": "Standard content slide — no header bar, title floats in generous top margin",
+      "description": "Standard content slide \u2014 no header bar, title floats in generous top margin",
       "background": "solid_white",
       "elements": {
         "slide_title": {
@@ -104,7 +106,7 @@
           "height": "72px",
           "font_size": "28pt",
           "font_style": "italic",
-          "font_family": "Georgia",
+          "font_family": "Source Sans 3",
           "color": "#1A1A2E"
         },
         "thin_rule": {
@@ -161,7 +163,7 @@
       }
     },
     "image_right": {
-      "description": "Text left, image flush right — editorial feel",
+      "description": "Text left, image flush right \u2014 editorial feel",
       "background": "solid_white",
       "inherits_header_footer": false,
       "elements": {
@@ -189,7 +191,7 @@
           "y": "28%",
           "font_size": "120pt",
           "font_style": "italic",
-          "font_family": "Georgia",
+          "font_family": "Source Sans 3",
           "color": "#E8F0FA",
           "content": "\u201c"
         },
@@ -199,7 +201,7 @@
           "width": "75%",
           "font_size": "28pt",
           "font_style": "italic",
-          "font_family": "Georgia",
+          "font_family": "Source Sans 3",
           "color": "#1A1A2E",
           "line_height": "1.5"
         },
@@ -213,7 +215,7 @@
       }
     },
     "closing_slide": {
-      "description": "Minimal closing — single centered line",
+      "description": "Minimal closing \u2014 single centered line",
       "background": "solid_white",
       "elements": {
         "closing_text": {
@@ -223,7 +225,7 @@
           "text_align": "center",
           "font_size": "40pt",
           "font_style": "italic",
-          "font_family": "Georgia",
+          "font_family": "Source Sans 3",
           "color": "#1A1A2E"
         },
         "contact_info": {

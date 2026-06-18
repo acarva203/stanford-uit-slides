@@ -6,7 +6,7 @@
   "description": "A refined minimalist template built around editorial whitespace and italic serif typography. Noe prioritizes legibility and calm authority over visual decoration.",
   "visual_style": {
     "mood": "clean, editorial, sophisticated",
-    "density": "low — whitespace is a feature",
+    "density": "low \u2014 whitespace is a feature",
     "color_weight": "near-pure white with navy text and blue accents",
     "imagery_style": "high-quality photography, editorial illustration; no clipart or icons without purpose"
   },
@@ -36,16 +36,16 @@
     "master_ink"
   ],
   "font_requirements": {
-    "primary_serif": "Georgia",
-    "primary_sans": "Calibri",
-    "fallback_serif": "Cambria",
-    "fallback_sans": "Arial",
-    "note": "Georgia is used for titles and display text; Calibri for body. Both are widely available on Windows and macOS."
+    "primary_serif": "Source Sans 3",
+    "primary_sans": "Source Sans 3",
+    "fallback_serif": "Roboto",
+    "fallback_sans": "Roboto",
+    "note": "Source Sans 3 is used for all text; Roboto is the fallback."
   },
   "asset_placeholders": {
-    "logo": "Top-right, max 140×48px. Prefer monochrome or dark version on light master.",
+    "logo": "Top-right, max 140\u00d748px. Prefer monochrome or dark version on light master.",
     "logo_light": "White/inverted logo for the ink (dark navy) master.",
-    "hero_image": "Right-bleed or full-bleed photography. Minimum 1920×1080px; crop-safe center composition recommended."
+    "hero_image": "Right-bleed or full-bleed photography. Minimum 1920\u00d71080px; crop-safe center composition recommended."
   },
   "accessibility": {
     "min_contrast_ratio": "4.5:1",

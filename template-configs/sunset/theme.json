@@ -1,21 +1,22 @@
 {
   "template_name": "sunset",
   "extracted_from": "Powerpoint_Slide_Template_A-Sunset.pptx",
-  "extraction_date": "2024-01-15",
+  "extraction_date": "2026-06-18",
+  "extraction_note": "Palette trued to the file's theme clrScheme (standard Stanford palette); fonts standardized to Source Sans 3 (Roboto fallback) across all four templates. (The source .pptx embeds 'Source Sans Pro', which Adobe renamed to Source Sans 3.)",
   "color_palette": {
     "primary": "#8C1515",
     "secondary": "#FFFFFF",
-    "accent": "#2E2D29",
-    "background": "#F9F9F9",
-    "highlight": "#B83A4D",
-    "muted": "#D4D4D4",
-    "text_dark": "#1A1A1A",
+    "accent": "#2E2C28",
+    "background": "#FFFFFF",
+    "highlight": "#FEC51D",
+    "muted": "#E7E6E6",
+    "text_dark": "#2E2C28",
     "text_light": "#FFFFFF"
   },
   "typography": {
     "title_font": {
-      "family": "Source Sans Pro",
-      "fallback": "Calibri",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "Bold",
       "size_large": "44pt",
       "size_medium": "32pt",
@@ -23,26 +24,26 @@
       "color": "#8C1515"
     },
     "heading_font": {
-      "family": "Source Sans Pro",
-      "fallback": "Calibri",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "SemiBold",
       "size": "24pt",
-      "color": "#2E2D29"
+      "color": "#2E2C28"
     },
     "body_font": {
-      "family": "Source Sans Pro",
-      "fallback": "Calibri",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "Regular",
       "size": "18pt",
       "line_height": "1.4",
-      "color": "#1A1A1A"
+      "color": "#2E2C28"
     },
     "caption_font": {
-      "family": "Source Sans Pro",
-      "fallback": "Calibri",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "Regular",
       "size": "11pt",
-      "color": "#6B6B6B"
+      "color": "#595959"
     }
   },
   "logo_placement": {
@@ -55,13 +56,15 @@
   "decorative": {
     "divider_color": "#8C1515",
     "divider_weight": "2px",
-    "card_background": "#F5F5F5",
+    "card_background": "#E7E6E6",
     "card_border_radius": "4px",
     "icon_circle_color": "#8C1515"
   },
   "slide_dimensions": {
-    "width": "13.33in",
-    "height": "7.5in",
-    "aspect_ratio": "16:9"
+    "width": "10in",
+    "height": "5.625in",
+    "aspect_ratio": "16:9",
+    "emu_width": 9144000,
+    "emu_height": 5143500
   }
 }

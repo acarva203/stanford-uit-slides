@@ -3,10 +3,10 @@
   "display_name": "Castro",
   "source_file": "Powerpoint_Slide_Template_C-Castro.pptx",
   "version": "1.0.0",
-  "description": "A high-impact dark template built around bold uppercase typography and sharp yellow accents. Castro commands attention from the first slide — ideal for pitches, launches, and data-driven storytelling.",
+  "description": "A high-impact dark template built around bold uppercase typography and sharp yellow accents. Castro commands attention from the first slide \u2014 ideal for pitches, launches, and data-driven storytelling.",
   "visual_style": {
     "mood": "bold, energetic, authoritative",
-    "density": "moderate-high — content is chunky, not verbose",
+    "density": "moderate-high \u2014 content is chunky, not verbose",
     "color_weight": "dark dominant with yellow accent pops",
     "imagery_style": "high-contrast photography, simple geometric icons; full-bleed images work well"
   },
@@ -36,21 +36,21 @@
     "master_yellow"
   ],
   "font_requirements": {
-    "primary_display": "Arial Black",
-    "primary_body": "Arial",
-    "fallback_display": "Arial",
-    "fallback_body": "Calibri",
-    "note": "Arial Black is used for all display/headline text. Arial Regular for body copy. Both are bundled with Windows and macOS."
+    "primary_display": "Source Sans 3",
+    "primary_body": "Source Sans 3",
+    "fallback_display": "Source Sans 3",
+    "fallback_body": "Roboto",
+    "note": "Source Sans 3 is used for all display and body text; Roboto is the fallback."
   },
   "asset_placeholders": {
-    "logo_light": "Bottom-left, max 120×40px. Must be white or light-colored — dark logos will be invisible on the dark master.",
-    "logo_dark": "Bottom-left, max 120×40px. Dark/black version for the yellow section divider master.",
-    "hero_image": "Full-bleed photography for image_full_bleed layout. Minimum 1920×1080px. High-contrast images work best — scrim overlay will darken by 60%."
+    "logo_light": "Bottom-left, max 120\u00d740px. Must be white or light-colored \u2014 dark logos will be invisible on the dark master.",
+    "logo_dark": "Bottom-left, max 120\u00d740px. Dark/black version for the yellow section divider master.",
+    "hero_image": "Full-bleed photography for image_full_bleed layout. Minimum 1920\u00d71080px. High-contrast images work best \u2014 scrim overlay will darken by 60%."
   },
   "accessibility": {
     "min_contrast_ratio": "4.5:1",
     "body_min_size": "16pt",
     "caption_min_size": "11pt",
-    "note": "Muted text (#8A8A8A on #0D0D0D) achieves approximately 4.6:1 contrast — use for non-essential text only. Body text should use #CCCCCC or lighter."
+    "note": "Muted text (#8A8A8A on #0D0D0D) achieves approximately 4.6:1 contrast \u2014 use for non-essential text only. Body text should use #CCCCCC or lighter."
   }
 }

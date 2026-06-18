@@ -14,9 +14,12 @@
       "persistent_elements": {
         "slide_number": {
           "type": "text",
-          "x": 740, "y": 579, "width": 225, "height": 33,
+          "x": 740,
+          "y": 579,
+          "width": 225,
+          "height": 33,
           "font_size": "13.5pt",
-          "font_family": "Calibri",
+          "font_family": "Source Sans 3",
           "color": "#53565A",
           "content": "{{slide_number}}",
           "note": "Present in all layouts via sldNum placeholder"
@@ -24,34 +27,34 @@
       },
       "font_defaults": {
         "title": {
-          "family": "Georgia",
-          "fallback": "Cambria",
+          "family": "Source Sans 3",
+          "fallback": "Roboto",
           "size": "32pt",
           "color_scheme": "tx1",
           "resolved_color": "#8C1515",
           "note": "Master title uses scheme tx1 = cardinal red #8C1515"
         },
         "body_level_1": {
-          "family": "Calibri Light",
-          "fallback": "Calibri",
+          "family": "Source Sans 3",
+          "fallback": "Roboto",
           "size": "23pt",
           "color_scheme": "tx1"
         },
         "body_level_2": {
-          "family": "Calibri Light",
-          "fallback": "Calibri",
+          "family": "Source Sans 3",
+          "fallback": "Roboto",
           "size": "18pt",
           "color_scheme": "tx1"
         },
         "body_levels_3_to_5": {
-          "family": "Calibri Light",
-          "fallback": "Calibri",
+          "family": "Source Sans 3",
+          "fallback": "Roboto",
           "size": "18pt",
           "color_scheme": "tx1"
         },
         "caption_footer": {
-          "family": "Calibri",
-          "fallback": "Arial",
+          "family": "Source Sans 3",
+          "fallback": "Roboto",
           "size": "13.5pt",
           "color": "#53565A"
         }
@@ -83,8 +86,8 @@
   ],
   "placeholder_defaults": {
     "ctrTitle": {
-      "font": "Georgia",
-      "fallback": "Cambria",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "45pt",
       "weight": "Regular",
       "color_scheme": "bg1",
@@ -92,23 +95,23 @@
       "resolved_color_on_light": "#2E2C28"
     },
     "title": {
-      "font": "Georgia",
-      "fallback": "Cambria",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "32pt",
       "weight": "Regular",
       "color": "#2E2C28"
     },
     "subTitle": {
-      "font": "Calibri",
-      "fallback": "Arial",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "18pt",
       "weight": "Regular",
       "color_on_dark": "#FFFFFF",
       "color_on_light": "#53565A"
     },
     "body": {
-      "font": "Calibri",
-      "fallback": "Arial",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "18pt",
       "weight": "Regular",
       "line_height": "1.4",
@@ -117,8 +120,8 @@
       "bullet_indent": "0.25in"
     },
     "sldNum": {
-      "font": "Calibri",
-      "fallback": "Arial",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "13.5pt",
       "color": "#53565A"
     }

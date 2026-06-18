@@ -1,8 +1,10 @@
 {
   "template_name": "sunset",
   "slide_size": {
-    "width": "13.33in",
-    "height": "7.5in"
+    "width": "10in",
+    "height": "5.625in",
+    "emu_width": 9144000,
+    "emu_height": 5143500
   },
   "layouts": {
     "title_slide": {

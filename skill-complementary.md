@@ -55,10 +55,14 @@ where `<tpl>` ∈ {`sunset`, `noe`, `castro`, `mission`}.
 > longer a `shared-assets/config/` directory; `font-mappings.json` is now at
 > `shared-assets/font-mappings.json`.
 
-> **Canvas note (16:9):** `integration/pptx-handoff-config.json` declares
-> `"width": "13.33in"` (lines 11/20/29 for the 16:9 templates; line 38 is the
-> 10in 4:3 variant). See §4.2 for the **13.33-vs-13.333-vs-px-grid** nuance —
-> do not treat 12,192,000 EMU as the inch-exact width.
+> **Canvas note (corrected — verified against the source `.pptx`):** all three
+> 16:9 templates are **10in × 5.625in** (`9,144,000 × 5,143,500 EMU`) — the legacy
+> PowerPoint 16:9 size, read directly from each file's
+> `p:sldSz cx="9144000" cy="5143500"`. Earlier drafts of this file and the configs
+> claimed `13.33in × 7.5in`; that was **wrong** and has been corrected here, in the
+> three `theme.json`, and in `integration/pptx-handoff-config.json`. Mission is
+> 16:10 at **10in × 6.25in** (`9,144,000 × 5,715,000 EMU`). See §4 for the
+> unit math on the true canvas.
 
 ---
 
@@ -100,42 +104,46 @@ an avoided template for the stated audience, warn and prefer an allowed one.
 python-pptx geometry uses **EMU**. Constants:
 `1 inch = 914400 EMU`, `1 pt = 12700 EMU`.
 
-### §4.1 px → EMU
-The configs are authored on a **1280×720 px grid mapped to a 13.333in canvas**,
-so the px→EMU factor is `13.333/1280 in` per px. Two conventions coexist in the
-repo; pick one consistently:
-- **px-grid convention:** `1 px = 9525 EMU` (i.e. 96 px/in). `9525 × 1280 =
-  12,192,000 EMU`.
-- **inch-exact convention:** `1 px = (13.333/1280) × 914400 ≈ 9524.77 EMU`.
+### §4.1 Units the layouts actually use
+The 16:9 `layouts.json` files are **percentage / keyword based** (`"100%"`,
+`"80%"`, `"center"`, `"38%"`), with only small absolute `px` values for
+decorative offsets (borders, gaps — none exceed ~110px). There is **no
+1280×720 grid**; that claim in earlier drafts was fabricated. Mission declares an
+explicit **1000×625 px grid** (`mission/theme.json` `px_width/px_height`), i.e.
+**100 px/in**, so for Mission `1 px = 9144 EMU`. Apply the same 100 px/in to the
+stray px offsets in the other templates unless a layout says otherwise.
 
-### §4.2 Canvas (16:9) — width is a flagged nuance
-| Declared form | Exact EMU |
-|---|---|
-| `13.333in` (used by px-grid math) | **12,191,695 EMU** |
-| `13.33in` (literal handoff-config value) | **12,188,952 EMU** |
-| `1280 px × 9525` (px-grid) | **12,192,000 EMU** |
-| Height `7.5in` | `6,858,000 EMU` |
+Resolution rules:
+- **`%`** → fraction × the **canvas EMU** for that axis (see §4.2).
+- **`px`** → `px × 9144 EMU` (100 px/in grid).
+- **`center` / keywords** → compute from element size against the canvas.
 
-> **Flag:** Do **not** state "13.333in = 12,192,000 EMU." 12,192,000 is the
-> *px-grid* figure and is only internally consistent if you adopt `1px = 9525
-> EMU` exactly. The handoff config literally declares **`13.33in`**
-> (= 12,188,952 EMU). The 0.003in difference is real; use one convention end to
-> end and note which.
+### §4.2 Canvas EMU (verified from each source `.pptx`)
+| Template(s) | Inches | Width EMU | Height EMU |
+|---|---|---|---|
+| Sunset / Noe / Castro (16:9) | 10 × 5.625 | **9,144,000** | **5,143,500** |
+| Mission (16:10) | 10 × 6.25 | **9,144,000** | **5,715,000** |
+
+All four templates are **10in (9,144,000 EMU) wide**; only the height differs.
+Do not use 13.33in / 12,192,000 EMU anywhere — that canvas does not exist in
+these files.
 
 ### §4.3 % → EMU
-`pct_of_width × 12,191,695` (13.333in basis) — but see the calc rows below for
-exact values.
+`pct_of_width × 9,144,000` (all templates, since width is uniform), and
+`pct_of_height ×` 5,143,500 (16:9) or 5,715,000 (Mission).
 
-### §4.4 Worked `calc()` examples (corrected)
+### §4.4 Worked `calc()` examples (recomputed on the true 10in canvas)
+At 100 px/in (`1px = 9144 EMU`, `width = 9,144,000 EMU`):
+
 | Field | CSS | Inches | EMU |
 |---|---|---|---|
-| `two_column` right_column x | `calc(52% + 0px)` | `0.52×13.333 = 6.93316in` | **6,339,682** |
-| `content_slide` content_area w | `calc(100% − 80px)` | `12.4997in` | **11,429,714** |
+| `two_column` right_column x | `calc(52% + 0px)` | `0.52×10 = 5.2in` | **4,754,880** |
+| `content_slide` content_area w | `calc(100% − 80px)` | `10in − 0.8in = 9.2in` | **8,412,480** |
 
-> **Flag:** earlier drafts rounded these to clean inches (6.9343in /
-> 12.500in → 6,340,800 / 11,430,000). Those are the *rounded-inch* EMU, not the
-> calc-exact EMU. Use the exact values above; 11,430,000 EMU = exactly 12.5in,
-> which the calc does not produce.
+> **Flag:** these replace the old 13.333in-basis figures (6,339,682 /
+> 11,429,714), which were computed against a canvas width that does not exist.
+> The px term uses the 100 px/in grid Mission declares; if a 16:9 layout proves
+> to use a different dpi for its px offsets, recompute that term accordingly.
 
 ### §4.5 Verified spacing/logo constants (no change)
 `76200`, `762000`, `380990 ≈ 381000`, `1047750`, `2606040`; logo dims
@@ -153,8 +161,10 @@ element's `x/y/w/h` per §4, set fonts/colors per §6, then place text/shapes.
 - **Noe** title slide `overline_label`: **11pt** — source
   `noe/layouts.json` (overline_label `font_size "11pt"`). Note `noe/theme.json`
   `label_font` is 10pt; if challenged, cite the **layout**.
-- **Castro** `stat_callout` → `stat_number`: **64pt**, family `Arial Black`,
-  weight 900, color `#F5C518` — source `castro/layouts.json` (lines 219–224).
+- **Castro** `stat_callout` → `stat_number`: **64pt**, family `Source Sans 3`
+  (fallback Roboto), weight 900, color `#F5C518` — source `castro/layouts.json`
+  (lines 219–224). Note: the stat color in `layouts.json` is still `#F5C518`
+  while `castro/theme.json` now uses the true Stanford gold `#FEC51D`; reconcile.
   > **Flag:** `castro/theme.json` `stat_font` declares **72pt** (line 57). This
   > 72pt-vs-64pt divergence is a real in-repo conflict (see §8.4); render from
   > the layout (64pt) and flag.
@@ -273,7 +283,10 @@ Deductions: **−50** (critical), **−20** (major), **−5** (minor).
 3. **Cool Grey:** `stanford-uit-branding.json` `cool_grey = #4D4F53`; Stanford official and
    `mission/theme.json` `text_muted = #53565A`. Both hexes confirmed present in
    their files; they disagree.
-4. **Calibri** is not in `approved_fonts` (yet may appear as a fallback).
+4. **Fonts standardized:** all templates now use **Source Sans 3** (primary) with
+   **Roboto** (fallback). Earlier per-template fonts (Georgia/Calibri/Arial Black)
+   have been removed from the configs; verify `approved_fonts` lists Source Sans 3
+   and Roboto.
 5. **Castro stat font size:** theme.json 72pt vs layouts.json 64pt (§5.1).
 6. **Castro `#CCCCCC` body text** is on the prohibited `low_contrast` list yet is
    the documented Castro body color (§8.1). `castro/metadata.json` even

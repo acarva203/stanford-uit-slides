@@ -5,16 +5,16 @@
   "version": "1.0.0",
   "created_by": "University Communications",
   "created_date": "Jan 2023",
-  "description": "Stanford University's official multi-layout presentation template. Balances institutional authority with visual flexibility — one master drives 21 distinct layouts spanning title slides, content, data, dividers, and closing. The most fully-featured of the four templates.",
+  "description": "Stanford University's official multi-layout presentation template. Balances institutional authority with visual flexibility \u2014 one master drives 21 distinct layouts spanning title slides, content, data, dividers, and closing. The most fully-featured of the four templates.",
   "visual_style": {
     "mood": "institutional, trustworthy, versatile",
-    "density": "moderate — layouts range from text-heavy to data-forward",
+    "density": "moderate \u2014 layouts range from text-heavy to data-forward",
     "color_weight": "white-dominant with cardinal red accents; dividers use the full brand palette",
     "imagery_style": "photography in designated image placeholders; clean iconography from PowerPoint's Insert > Icons library per Stanford Identity Guide"
   },
   "critical_notes": [
-    "16:10 aspect ratio (10×6.25in) — NOT standard 16:9. Optimized for MacBook displays and office monitors.",
-    "Do not add fonts beyond Georgia (headlines) and Calibri (body). Template instructions explicitly prohibit additional fonts.",
+    "16:10 aspect ratio (10\u00d76.25in) \u2014 NOT standard 16:9. Optimized for MacBook displays and office monitors.",
+    "All text uses Source Sans 3 (Roboto fallback). Do not introduce additional font families.",
     "Do not add colors outside the pre-defined brand palette. See brand_colors in theme.json.",
     "For icons, use PowerPoint's Insert > Icons library following the Stanford Identity Guide Iconography page."
   ],
@@ -57,31 +57,31 @@
     "master_stanford"
   ],
   "font_requirements": {
-    "headline": "Georgia",
-    "body": "Calibri",
-    "sub_header": "Calibri Light",
-    "fallback_headline": "Cambria",
-    "fallback_body": "Arial",
-    "note": "Georgia, Calibri, and Calibri Light are all widely available on Windows and macOS. No additional fonts should be added per template guidelines."
+    "headline": "Source Sans 3",
+    "body": "Source Sans 3",
+    "sub_header": "Source Sans 3",
+    "fallback_headline": "Roboto",
+    "fallback_body": "Roboto",
+    "note": "Source Sans 3 (with Roboto fallback) is used throughout. No additional fonts should be added."
   },
   "asset_placeholders": {
-    "image_panels": "Sized per layout — see layouts.json for exact px dimensions. Minimum 1920×1080px source images recommended; PPTX will crop to fit.",
+    "image_panels": "Sized per layout \u2014 see layouts.json for exact px dimensions. Minimum 1920\u00d71080px source images recommended; PPTX will crop to fit.",
     "icons": "Use PowerPoint Insert > Icons. Follow Stanford Identity Guide Iconography page for style guidance."
   },
   "brand_color_usage": {
-    "cardinal_red": "Primary brand color — title slides, background accents, stat callouts",
+    "cardinal_red": "Primary brand color \u2014 title slides, background accents, stat callouts",
     "black": "Body text, dark backgrounds",
-    "poppy": "Divider slides — energetic section breaks",
-    "illuminating_dark": "Divider slides — attention-grabbing yellow; use dark text on this background",
+    "poppy": "Divider slides \u2014 energetic section breaks",
+    "illuminating_dark": "Divider slides \u2014 attention-grabbing yellow; use dark text on this background",
     "lagunita": "Hyperlinks and interactive elements",
-    "palo_verde": "Divider slides — calm, nature-forward sections",
-    "sky": "Divider slides — open, accessible tone",
-    "plum": "Divider slides — distinctive, high-contrast sections"
+    "palo_verde": "Divider slides \u2014 calm, nature-forward sections",
+    "sky": "Divider slides \u2014 open, accessible tone",
+    "plum": "Divider slides \u2014 distinctive, high-contrast sections"
   },
   "accessibility": {
     "min_contrast_ratio": "4.5:1",
     "body_min_size": "18pt",
     "caption_min_size": "13.5pt",
-    "note": "Illuminating Dark (#FEC51D) backgrounds require dark text (#2E2C28) — do not use white text on yellow."
+    "note": "Illuminating Dark (#FEC51D) backgrounds require dark text (#2E2C28) \u2014 do not use white text on yellow."
   }
 }

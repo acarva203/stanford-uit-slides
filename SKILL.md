@@ -21,7 +21,7 @@ evaluator. Read this first for selection, then that to generate.
 | **Sunset** | Balanced, professional | 16:9 | General purpose; the default |
 | **Noe** | Minimal, data-dense | 16:9 | Technical / detailed audiences |
 | **Castro** | Bold, high-impact | 16:9 | Executive / leadership |
-| **Mission** | Narrative, Georgia headlines | 16:10 | Strategic / cultural content |
+| **Mission** | Narrative storytelling | 16:10 | Strategic / cultural content |
 
 **Auto-selection** keys off the brief (full logic in
 `integration/template-selector.json`): *data / metrics / analysis* → Noe;
@@ -55,7 +55,7 @@ values in `shared-assets/stanford-uit-branding.json`.
 
 - **Color:** Stanford Cardinal `#8C1515` + approved palette; status colors —
   green (operational), orange (maintenance), red (incident).
-- **Typography:** Source Sans 3 (Mission uses Georgia headlines); Roboto for code.
+- **Typography:** Source Sans 3 across all templates, with Roboto as the fallback/secondary.
 - **Logos:** official Stanford | University IT wordmarks, 6 variants
   (horizontal/vertical × black/cardinal/white).
 - **Markings:** standard vs. "Internal Use Only" footers; clear-space and
@@ -78,7 +78,7 @@ asset substitutions (§7), compliance scoring (§8).
 ## Fallbacks
 
 - **Uncertain template** → Sunset.
-- **Missing font** → fall back to Arial/Helvetica, styling preserved.
+- **Missing font** → fall back from Source Sans 3 to Roboto, styling preserved.
 - **Missing asset** → graceful degradation with core Stanford branding (see
   §7 substitutions).
 - **Compliance failure** → flag for review, or block generation on critical.

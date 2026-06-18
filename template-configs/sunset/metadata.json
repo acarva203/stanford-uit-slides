@@ -3,7 +3,7 @@
   "display_name": "Sunset",
   "source_file": "Powerpoint_Slide_Template_A-Sunset.pptx",
   "version": "1.0.0",
-  "description": "A professional template anchored in Stanford cardinal red. Balances warmth and authority — suited to academic presentations, institutional reports, and leadership communications.",
+  "description": "A professional template anchored in Stanford cardinal red. Balances warmth and authority \u2014 suited to academic presentations, institutional reports, and leadership communications.",
   "visual_style": {
     "mood": "professional, authoritative, warm",
     "density": "moderate",
@@ -37,14 +37,14 @@
     "master_bold_red"
   ],
   "font_requirements": {
-    "primary": "Source Sans Pro",
-    "fallback": "Calibri",
-    "note": "Source Sans Pro must be installed on the presenter's machine for exact rendering. Calibri is the safe fallback."
+    "primary": "Source Sans 3",
+    "fallback": "Roboto",
+    "note": "Source Sans 3 must be installed for exact rendering. Roboto is the safe fallback."
   },
   "asset_placeholders": {
-    "logo": "Top-left logo, max 160×60px. Prefer color version on light slides.",
+    "logo": "Top-left logo, max 160\u00d760px. Prefer color version on light slides.",
     "logo_light": "White/inverted logo for dark and red masters.",
-    "hero_image": "Full-bleed or half-bleed photography. Minimum 1920×1080px recommended."
+    "hero_image": "Full-bleed or half-bleed photography. Minimum 1920\u00d71080px recommended."
   },
   "accessibility": {
     "min_contrast_ratio": "4.5:1",

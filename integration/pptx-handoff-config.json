@@ -8,8 +8,8 @@
       "source_template": "template-configs/sunset/",
       "aspect_ratio": "16:9",
       "slide_dimensions": {
-        "width": "13.33in",
-        "height": "7.5in"
+        "width": "10in",
+        "height": "5.625in"
       },
       "branding_profile": "stanford_uit_standard"
     },
@@ -17,8 +17,8 @@
       "source_template": "template-configs/noe/",
       "aspect_ratio": "16:9", 
       "slide_dimensions": {
-        "width": "13.33in", 
-        "height": "7.5in"
+        "width": "10in",
+        "height": "5.625in"
       },
       "branding_profile": "stanford_uit_minimal"
     },
@@ -26,8 +26,8 @@
       "source_template": "template-configs/castro/",
       "aspect_ratio": "16:9",
       "slide_dimensions": {
-        "width": "13.33in",
-        "height": "7.5in" 
+        "width": "10in",
+        "height": "5.625in"
       },
       "branding_profile": "stanford_uit_bold"
     },
@@ -40,8 +40,8 @@
       },
       "branding_profile": "stanford_uit_narrative",
       "special_requirements": {
-        "font_primary": "Georgia",
-        "font_body": "Calibri", 
+        "font_primary": "Source Sans 3",
+        "font_body": "Roboto", 
         "expanded_color_palette": true,
         "divider_slide_colors": ["poppy", "illuminating_dark", "palo_verde", "sky", "plum"]
       }
@@ -98,7 +98,7 @@
     "stanford_uit_narrative": {
       "primary_logo": "horizontal_cardinal_black",
       "color_emphasis": "expanded_brand_palette",
-      "typography_weight": "georgia_headlines_calibri_body",
+      "typography_weight": "source_sans_3_throughout",
       "special_features": {
         "section_dividers": true,
         "storytelling_layouts": true,
@@ -116,7 +116,7 @@
     ],
     "template_specific_validation": {
       "mission": [
-        "georgia_font_availability",
+        "source_sans_3_font_availability",
         "16:10_aspect_ratio_confirmation",
         "expanded_color_palette_implementation"
       ]

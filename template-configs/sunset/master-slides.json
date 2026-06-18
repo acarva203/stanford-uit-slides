@@ -4,7 +4,7 @@
     {
       "id": "master_default",
       "name": "Sunset Default Master",
-      "description": "Primary master slide — light background with cardinal red branding",
+      "description": "Primary master slide \u2014 light background with cardinal red branding",
       "background": {
         "type": "solid",
         "color": "#F9F9F9"
@@ -60,7 +60,7 @@
     {
       "id": "master_dark",
       "name": "Sunset Dark Master",
-      "description": "Dark accent master — used for section dividers and closing slides",
+      "description": "Dark accent master \u2014 used for section dividers and closing slides",
       "background": {
         "type": "solid",
         "color": "#2E2D29"
@@ -85,7 +85,7 @@
     {
       "id": "master_bold_red",
       "name": "Sunset Bold Red Master",
-      "description": "Cardinal red master — high-impact section openers",
+      "description": "Cardinal red master \u2014 high-impact section openers",
       "background": {
         "type": "solid",
         "color": "#8C1515"
@@ -108,23 +108,23 @@
   ],
   "placeholder_defaults": {
     "title": {
-      "font": "Source Sans Pro",
-      "fallback": "Calibri",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "32pt",
       "weight": "Bold",
       "color": "#8C1515"
     },
     "body": {
-      "font": "Source Sans Pro",
-      "fallback": "Calibri",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "18pt",
       "weight": "Regular",
       "color": "#1A1A1A",
       "bullet_color": "#8C1515"
     },
     "subtitle": {
-      "font": "Source Sans Pro",
-      "fallback": "Calibri",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "22pt",
       "weight": "Regular",
       "color": "#2E2D29"

@@ -33,41 +33,41 @@
   },
   "typography": {
     "title_font": {
-      "family": "Georgia",
-      "fallback": "Cambria",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "Regular",
       "size_large": "45pt",
       "size_medium": "32pt",
       "size_small": "23pt",
       "color": "#2E2C28",
-      "note": "Georgia is the headline font per template instructions; Calibri Light used for sub-headers"
+      "note": "All headings use Source Sans 3 (Roboto fallback) \u2014 standardized across all four templates"
     },
     "heading_font": {
-      "family": "Calibri Light",
-      "fallback": "Calibri",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "Light",
       "size": "23pt",
       "color": "#2E2C28"
     },
     "body_font": {
-      "family": "Calibri",
-      "fallback": "Arial",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "Regular",
       "size": "18pt",
       "line_height": "1.4",
       "color": "#2E2C28",
-      "note": "Calibri is the body copy font per template instructions"
+      "note": "Body copy uses Source Sans 3 (Roboto fallback)"
     },
     "caption_font": {
-      "family": "Calibri",
-      "fallback": "Arial",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "Regular",
       "size": "13.5pt",
       "color": "#53565A"
     },
     "stat_font": {
-      "family": "Georgia",
-      "fallback": "Cambria",
+      "family": "Source Sans 3",
+      "fallback": "Roboto",
       "weight": "Regular",
       "size": "48pt",
       "color": "#8C1515"
@@ -85,6 +85,6 @@
     "emu_height": 5715000,
     "px_width": 1000,
     "px_height": 625,
-    "note": "Mission template is 16:10 (not standard 16:9) — optimized for MacBook and office monitor presentations"
+    "note": "Mission template is 16:10 (not standard 16:9) \u2014 optimized for MacBook and office monitor presentations"
   }
 }

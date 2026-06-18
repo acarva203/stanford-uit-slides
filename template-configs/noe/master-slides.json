@@ -4,7 +4,7 @@
     {
       "id": "master_light",
       "name": "Noe Light Master",
-      "description": "Primary master — pure white, minimal persistent chrome",
+      "description": "Primary master \u2014 pure white, minimal persistent chrome",
       "background": {
         "type": "solid",
         "color": "#FFFFFF"
@@ -26,7 +26,7 @@
           "width": "48px",
           "height": "24px",
           "font_size": "11pt",
-          "font_family": "Calibri",
+          "font_family": "Source Sans 3",
           "color": "#B0B0BC",
           "content": "{{slide_number}}"
         }
@@ -67,7 +67,7 @@
           "width": "48px",
           "height": "24px",
           "font_size": "11pt",
-          "font_family": "Calibri",
+          "font_family": "Source Sans 3",
           "color": "#4A4A6A",
           "content": "{{slide_number}}"
         }
@@ -79,15 +79,15 @@
   ],
   "placeholder_defaults": {
     "title": {
-      "font": "Georgia",
-      "fallback": "Cambria",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "28pt",
       "style": "italic",
       "color": "#1A1A2E"
     },
     "body": {
-      "font": "Calibri",
-      "fallback": "Arial",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "16pt",
       "weight": "Regular",
       "color": "#1A1A2E",
@@ -95,15 +95,15 @@
       "line_height": "1.6"
     },
     "subtitle": {
-      "font": "Calibri",
-      "fallback": "Arial",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "18pt",
       "weight": "Regular",
       "color": "#7A7A8C"
     },
     "label": {
-      "font": "Calibri",
-      "fallback": "Arial",
+      "font": "Source Sans 3",
+      "fallback": "Roboto",
       "size": "10pt",
       "weight": "Bold",
       "color": "#4A90D9",
