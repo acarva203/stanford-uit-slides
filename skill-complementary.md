@@ -280,3 +280,4 @@ Deductions: **−50** (critical), **−20** (major), **−5** (minor).
 - Is there a logo on each slide in the footer section with at least a divider or whitespace separating from the rest of the slide?
 - Are all icons correctly sized within their elements, and properly aligned?
 - Make sure the slide deck uses Source Sans 3 as the primary font and Roboto as the supplementary font.
+- Are the primary colors for the slide deck cardinal, black, white, or soft grey?
