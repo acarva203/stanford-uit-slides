@@ -5,18 +5,16 @@
   
   "primary_fonts": {
     "source_sans_pro": {
-      "family_name": "Source Sans Pro",
+      "family_name": "Source Sans 3",
       "category": "sans_serif",
       "weights": {
         "light": {
           "font_weight": "300",
           "font_files": {
-            "woff2": "fonts/SourceSansPro-Light.woff2",
-            "woff": "fonts/SourceSansPro-Light.woff",
-            "ttf": "fonts/SourceSansPro-Light.ttf"
+            "woff2": "/fonts/SourceSans3-Light.woff2"
           },
           "fallback_sequence": [
-            "Source Sans Pro Light",
+            "Source Sans 3 Light",
             "Helvetica Neue Light",
             "Arial",
             "sans-serif"
@@ -25,12 +23,10 @@
         "regular": {
           "font_weight": "400",
           "font_files": {
-            "woff2": "fonts/SourceSansPro-Regular.woff2",
-            "woff": "fonts/SourceSansPro-Regular.woff", 
-            "ttf": "fonts/SourceSansPro-Regular.ttf"
+            "woff2": "/fonts/SourceSans3-Regular.woff2"
           },
           "fallback_sequence": [
-            "Source Sans Pro",
+            "Source Sans 3",
             "Helvetica Neue",
             "Arial",
             "sans-serif"
@@ -39,12 +35,10 @@
         "semibold": {
           "font_weight": "600",
           "font_files": {
-            "woff2": "fonts/SourceSansPro-SemiBold.woff2",
-            "woff": "fonts/SourceSansPro-SemiBold.woff",
-            "ttf": "fonts/SourceSansPro-SemiBold.ttf"
+            "woff2": "/fonts/SourceSans3-SemiBold.woff2"
           },
           "fallback_sequence": [
-            "Source Sans Pro SemiBold",
+            "Source Sans 3 SemiBold",
             "Helvetica Neue Medium",
             "Arial Bold",
             "sans-serif"
@@ -53,12 +47,10 @@
         "bold": {
           "font_weight": "700",
           "font_files": {
-            "woff2": "fonts/SourceSansPro-Bold.woff2",
-            "woff": "fonts/SourceSansPro-Bold.woff",
-            "ttf": "fonts/SourceSansPro-Bold.ttf"
+            "woff2": "/fonts/SourceSans3-Bold.woff2"
           },
           "fallback_sequence": [
-            "Source Sans Pro Bold",
+            "Source Sans 3 Bold",
             "Helvetica Neue Bold",
             "Arial Bold",
             "sans-serif"
@@ -68,18 +60,16 @@
     },
     
     "monaco": {
-      "family_name": "Monaco",
+      "family_name": "Roboto",
       "category": "monospace",
       "usage": "code_snippets_technical_content",
       "weights": {
         "regular": {
           "font_weight": "400",
           "font_files": {
-            "ttf": "fonts/Monaco.ttf",
-            "otf": "fonts/Monaco.otf"
-          },
+            "ttf": "fonts/Roboto-Regular.ttf"         },
           "fallback_sequence": [
-            "Monaco",
+            "Roboto",
             "Menlo",
             "Consolas",
             "Courier New",
@@ -90,45 +80,6 @@
     }
   },
 
-  "platform_compatibility": {
-    "web_browsers": {
-      "modern": {
-        "preferred_format": "woff2",
-        "fallback_format": "woff",
-        "css_font_face": true
-      },
-      "legacy": {
-        "preferred_format": "woff",
-        "fallback_format": "ttf"
-      }
-    },
-    "operating_systems": {
-      "windows": {
-        "system_fonts": {
-          "sans_serif": ["Segoe UI", "Arial", "sans-serif"],
-          "monospace": ["Consolas", "Courier New", "monospace"]
-        },
-        "font_rendering": "cleartype",
-        "line_height_adjustment": "+5%"
-      },
-      "mac": {
-        "system_fonts": {
-          "sans_serif": ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
-          "monospace": ["Menlo", "Monaco", "Courier", "monospace"]
-        },
-        "font_rendering": "subpixel_antialiasing",
-        "line_height_adjustment": "default"
-      },
-      "linux": {
-        "system_fonts": {
-          "sans_serif": ["Liberation Sans", "Arial", "sans-serif"],
-          "monospace": ["Liberation Mono", "Courier New", "monospace"]
-        },
-        "font_rendering": "fontconfig",
-        "line_height_adjustment": "+3%"
-      }
-    }
-  },
 
   "presentation_contexts": {
     "slide_titles": {

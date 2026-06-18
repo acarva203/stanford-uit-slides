@@ -55,7 +55,7 @@
   "logos": {
     "horizontal_layouts": {
       "stanford_uit_horizontal_black": {
-        "file_path": "logos/stanford-uit-horizontal-black.svg",
+        "file_path": "logos/University-IT_wordmark_horizontal_black.png",
         "description": "Stanford | University IT - black text on light backgrounds",
         "usage": "primary_option_white_backgrounds",
         "layout": "horizontal_pipe_separator",
@@ -66,7 +66,7 @@
         }
       },
       "stanford_uit_horizontal_cardinal": {
-        "file_path": "logos/stanford-uit-horizontal-cardinal.svg", 
+        "file_path": "logos/University-IT_wordmark_horizontal_cardinal.png", 
         "description": "Stanford | University IT - cardinal red Stanford, black University IT",
         "usage": "branded_emphasis_light_backgrounds",
         "layout": "horizontal_pipe_separator",
@@ -77,7 +77,7 @@
         }
       },
       "stanford_uit_horizontal_white": {
-        "file_path": "logos/stanford-uit-horizontal-white.svg",
+        "file_path": "logos/University-IT_wordmark_horizontal_white.png",
         "description": "Stanford | University IT - white text for dark backgrounds", 
         "usage": "dark_backgrounds_overlays",
         "layout": "horizontal_pipe_separator",
@@ -91,7 +91,7 @@
     
     "stacked_layouts": {
       "stanford_uit_stacked_black": {
-        "file_path": "logos/stanford-uit-stacked-black.svg",
+        "file_path": "logos/University-IT_wordmark_vertical_black.png",
         "description": "Stanford over University IT - black text",
         "usage": "compact_spaces_square_formats",
         "layout": "vertical_stack",
@@ -101,7 +101,7 @@
         }
       },
       "stanford_uit_stacked_cardinal": {
-        "file_path": "logos/stanford-uit-stacked-cardinal.svg",
+        "file_path": "logos/University-IT_wordmark_vertical_cardinal.png",
         "description": "Stanford over University IT - cardinal Stanford, black University IT",
         "usage": "branded_compact_spaces",
         "layout": "vertical_stack", 
@@ -111,7 +111,7 @@
         }
       },
       "stanford_uit_stacked_white": {
-        "file_path": "logos/stanford-uit-stacked-white.svg",
+        "file_path": "logos/University-IT_wordmark_vertical_white.png",
         "description": "Stanford over University IT - white text for dark backgrounds",
         "usage": "dark_backgrounds_compact",
         "layout": "vertical_stack",
@@ -171,12 +171,7 @@
     }
   },
   
-  "technical_elements": {
-    "status_indicators": {
-      "operational": {"color": "success_green", "icon": "icons/check.svg"},
-      "maintenance": {"color": "warning_orange", "icon": "icons/wrench.svg"},
-      "incident": {"color": "error_red", "icon": "icons/alert.svg"}
-    },
+ 
     "service_icons": {
       "email": "icons/tech-services/email-icon.svg",
       "wifi": "icons/tech-services/wifi-icon.svg",

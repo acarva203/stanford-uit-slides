@@ -14,18 +14,6 @@ description: Creates Stanford University IT technology branded presentations and
 
 Creates brand-compliant PowerPoint presentations for Stanford University IT using official templates and automated Stanford identity guidelines.
 
-## Core Capability
-Generates professional IT presentations by selecting appropriate templates (Sunset, Noe, Castro, Mission), applying Stanford/UIT branding, and structuring content for technical audiences.
-
-**Dependencies**: Requires `pptx` skill for PowerPoint generation.
-
-## Basic Usage
-- "Create a technical briefing for the cloud migration project"
-- "Build security training slides for staff workshop" 
-- "Generate executive presentation for CIO budget review"
-- "Make department vision slides for strategic planning"
-
-The skill automatically selects templates and applies branding based on your content and audience.
 
 
 ### **Template Selection Guide (Contextual Layer)**
