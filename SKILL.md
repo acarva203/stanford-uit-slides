@@ -65,20 +65,16 @@ values in `shared-assets/stanford-uit-branding.json`.
 **Compliance score:** ≥95 excellent · ≥85 passing · <85 requires review or is
 blocked.
 
-## Critical Criteria to Check before Outputting
-- Is there a logo on each slide in the footer section with at least a divider or whitespace separating from the rest of the slide?
-- Are all icons correctly sized within their elements, and properly aligned?
-- Make sure the slide deck uses Source Sans 3 as the primary font and Roboto as the supplementary font
 
 ## Workflow
 
 ```
-Request → Template Selection → Content Structuring → Brand Application → pptx Generation
+Request → Template Selection → Content Structuring → Brand Application → Check Criteria → pptx Generation
 ```
 
 Each stage is specified in [`skill-complementary.md`](skill-complementary.md):
 selection (§3), unit translation (§4), per-slide recipes (§5), branding (§6),
-asset substitutions (§7), compliance scoring (§8).
+asset substitutions (§7), compliance scoring (§8,10).
 
 ## Fallbacks
 

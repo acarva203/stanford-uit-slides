@@ -275,3 +275,8 @@ Deductions: **−50** (critical), **−20** (major), **−5** (minor).
 - Unit convention → pick px-grid **or** inch-exact (§4.2) and stay consistent.
 - Prohibited-color / placement / size conflicts (§8.4) → surface to the caller;
   do not auto-resolve.
+
+## §10. Critical Criteria to Confirm
+- Is there a logo on each slide in the footer section with at least a divider or whitespace separating from the rest of the slide?
+- Are all icons correctly sized within their elements, and properly aligned?
+- Make sure the slide deck uses Source Sans 3 as the primary font and Roboto as the supplementary font.
