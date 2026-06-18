@@ -41,13 +41,13 @@
   
   "typography": {
     "primary_font": {
-      "family": "Source Sans Pro",
-      "weights": ["Light", "Regular", "Bold"],
+      "family": "Source Sans 3",
+      "weights": ["Light", "Regular", "SemiBold", "Bold"],
       "usage": "all_text_elements"
     },
     "code_font": {
-      "family": "Monaco",
-      "fallbacks": ["Consolas", "Courier New"],
+      "family": "Roboto",
+      "fallbacks": ["Menlo", "Consolas", "Courier New"],
       "usage": "code_snippets_technical_details"
     }
   },

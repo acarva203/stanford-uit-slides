@@ -1,173 +1,85 @@
 ---
 name: stanford-uit-slides
-description: Creates Stanford University IT technology branded presentations and slide decks . Use when user asks to create a “slides”, “slide deck”, “presentation”, and “deck". This skill MUST prompt the user for permission before executing and ask if they are sure they want to use this stanford-uit-slides skill or the  pptx skill.
+description: Creates Stanford University IT branded presentations and slide decks. Use when the user asks to create a "slide deck", "presentation", "slides", or "deck". This skill MUST prompt the user for permission before executing and ask whether they want to use this stanford-uit-slides skill or the pptx skill.
 
 ---
 
-
-# stanford-uit-slides
-## Skill.md Structure Aligned with Progressive Disclosure
-
-### **Core Skill Definition (Essential Layer)**
-
 # Stanford UIT Presentations
 
-Creates brand-compliant PowerPoint presentations for Stanford University IT using official templates and automated Stanford identity guidelines.
+Creates brand-compliant PowerPoint decks for Stanford University IT from official
+templates, applying Stanford identity guidelines automatically.
 
-> **Build procedure lives in [`skill-complementary.md`](skill-complementary.md).**
-> This file (`SKILL.md`) is the declarative spec — *what* the skill is, *which*
-> templates and content types exist, and the *brand promises*. The companion
-> file `skill-complementary.md` is the executable HOW: exact input paths, the
-> end-to-end generation procedure, CSS→EMU unit translation, per-slide-type
-> python-pptx recipes, branding application, asset-integrity status, and a
-> runnable compliance evaluator. **Read `SKILL.md` first for context, then
-> `skill-complementary.md` to execute.**
->
-> Repo layout the build steps reference:
-> - `skill-complementary.md` — build procedure (start here to generate)
-> - `integration/template-selector.json` — template selection logic
-> - `integration/pptx-handoff-config.json` — canvas / handoff config
-> - `shared-assets/stanford-uit-branding.json` — brand colors, typography, logo & icon refs
-> - `shared-assets/font-mappings.json` — font family → file mappings
-> - `shared-assets/{fonts,logos,icons}/` — on-disk assets
-> - `validation/brand-compliance.json` — compliance rules & scoring
-> - `template-configs/<tpl>/` — per-template `theme/layouts/master-slides/metadata.json`
->   for `<tpl>` ∈ {`sunset`, `noe`, `castro`, `mission`}
+**This file is the *what*. The build procedure (the *how*) lives in
+[`skill-complementary.md`](skill-complementary.md)** — exact paths, CSS→EMU unit
+math, per-slide python-pptx recipes, branding application, and the compliance
+evaluator. Read this first for selection, then that to generate.
 
+## Templates
 
+| Template | Style | Aspect | Best for |
+|---|---|---|---|
+| **Sunset** | Balanced, professional | 16:9 | General purpose; the default |
+| **Noe** | Minimal, data-dense | 16:9 | Technical / detailed audiences |
+| **Castro** | Bold, high-impact | 16:9 | Executive / leadership |
+| **Mission** | Narrative, Georgia headlines | 16:10 | Strategic / cultural content |
 
-### **Template Selection Guide (Contextual Layer)**
-## Template Options
+**Auto-selection** keys off the brief (full logic in
+`integration/template-selector.json`): *data / metrics / analysis* → Noe;
+*leadership / strategic / CIO* → Castro; *mission / culture / storytelling* →
+Mission; *update / briefing / routine* → Sunset. When uncertain, default to
+**Sunset**.
 
-### When Templates Are Auto-Selected
-The skill chooses based on keywords and context:
-- **Technical content** ("data", "metrics", "analysis") → **Noe** template
-- **Executive content** ("leadership", "strategic", "CIO") → **Castro** template  
-- **Vision content** ("mission", "culture", "storytelling") → **Mission** template
-- **Standard content** ("update", "briefing", "routine") → **Sunset** template
+**Manual override:** name the template, e.g. "Use Castro for this security
+briefing." For executive audiences prefer Castro/Mission; for technical staff,
+Noe/Sunset.
 
-### Manual Template Selection
-Override automatic selection by specifying:
-- "Use Castro template for this network security briefing"
-- "Create this with the Mission template style"
-- "Generate using Noe template for detailed technical content"
+## Presentation types
 
-## Template Characteristics
-- **Sunset**: Standard professional (16:9) - general purpose
-- **Noe**: Minimal, data-focused (16:9) - technical audiences
-- **Castro**: Bold, high-impact (16:9) - executive audiences  
-- **Mission**: Narrative storytelling (16:10) - strategic/cultural content
+Each type auto-structures its sections:
 
+| Type | Section flow | Suggested templates |
+|---|---|---|
+| Technical Briefing | Exec Summary → Current State → Proposed Changes → Timeline → Next Steps | Sunset, Castro |
+| Security Training | Objectives → Policies → Best Practices → Demo → Assessment → Resources | Mission, Noe |
+| Service Update | Summary → Impact → Timeline → User Actions → Support | Sunset, Noe |
+| Project Proposal | Problem → Solution → Implementation → Budget → Timeline | Castro, Mission |
+| Incident Report | Summary → Timeline → Impact → Root Cause → Prevention | Noe, Sunset |
 
-### **Content Types & Structure (Functional Layer)**
+Specify audience, technical depth, or emphasis to tune content (e.g.
+"executive-level cloud migration briefing").
 
-## Supported Presentation Types
+## Brand standards
 
-### Technical Briefing
-**Auto-structure**: Executive Summary → Current State → Proposed Changes → Timeline → Next Steps
-**Best for**: Project updates, system reviews, technical proposals
-**Templates**: Sunset (standard), Castro (executive audience)
+Applied automatically; rules and scoring in `validation/brand-compliance.json`,
+values in `shared-assets/stanford-uit-branding.json`.
 
-### Security Training  
-**Auto-structure**: Objectives → Policies → Best Practices → Demo → Assessment → Resources
-**Best for**: Staff education, awareness training, policy updates
-**Templates**: Mission (engaging), Noe (detailed)
+- **Color:** Stanford Cardinal `#8C1515` + approved palette; status colors —
+  green (operational), orange (maintenance), red (incident).
+- **Typography:** Source Sans 3 (Mission uses Georgia headlines); Roboto for code.
+- **Logos:** official Stanford | University IT wordmarks, 6 variants
+  (horizontal/vertical × black/cardinal/white).
+- **Markings:** standard vs. "Internal Use Only" footers; clear-space and
+  minimum-size rules enforced.
+- **Accessibility:** text contrast checked to a 4.5:1 minimum.
 
-### Service Update
-**Auto-structure**: Summary → Impact → Timeline → User Actions → Support
-**Best for**: Maintenance announcements, service changes, outage communications
-**Templates**: Sunset (standard), Noe (technical details)
+**Compliance score:** ≥95 excellent · ≥85 passing · <85 requires review or is
+blocked.
 
-### Project Proposal
-**Auto-structure**: Problem → Solution → Implementation → Budget → Timeline
-**Best for**: Initiative pitches, resource requests, strategic proposals  
-**Templates**: Castro (executive), Mission (strategic vision)
+## Workflow
 
-### Incident Report
-**Auto-structure**: Summary → Timeline → Impact → Root Cause → Prevention
-**Best for**: Post-mortems, security incidents, service disruptions
-**Templates**: Noe (technical), Sunset (general audience)
+```
+Request → Template Selection → Content Structuring → Brand Application → pptx Generation
+```
 
-## Content Customization
-Specify audience, technical depth, or emphasis:
-- "Executive-level cloud migration briefing"
-- "Detailed technical analysis of network performance" 
-- "High-impact presentation for board strategic review"
+Each stage is specified in [`skill-complementary.md`](skill-complementary.md):
+selection (§3), unit translation (§4), per-slide recipes (§5), branding (§6),
+asset substitutions (§7), compliance scoring (§8).
 
+## Fallbacks
 
-### **Brand Standards & Compliance (Implementation Layer)**
-
-## Stanford Brand Compliance
-
-### Automatic Brand Application
-- **Stanford Cardinal Red** (#8C1515) and approved color palette
-- **Official Stanford wordmarks** with University IT identification
-- **Source Sans Pro typography** (Mission template uses Georgia headlines)
-- **Proper spacing, sizing, and layout** per Stanford Identity Guidelines
-
-### UIT-Specific Elements
-- **Department identification**: "Stanford University IT" branding
-- **Technical status indicators**: Green (operational), Orange (maintenance), Red (incident)
-- **Confidentiality markings**: Standard vs. "Internal Use Only" footers
-- **IT service iconography**: Email, WiFi, security, infrastructure symbols
-
-### Quality Validation
-- Real-time brand guideline compliance checking
-- Color contrast validation for accessibility (4.5:1 minimum)
-- Logo placement and clear space verification
-- Typography consistency across all slides
-
-## Brand Compliance Score
-Each presentation receives automatic validation:
-- **95+ points**: Excellent Stanford brand compliance
-- **85+ points**: Meets minimum brand standards  
-- **<85 points**: Requires manual review or correction
-
-
-### **Advanced Features & Integration (Technical Layer)**
-## Technical Integration
-
-### Skill Workflow
-
-User Request → Template Selection → Content Structuring → Brand Application → pptx Generation
-
-> Each stage above is specified step-by-step in
-> [`skill-complementary.md`](skill-complementary.md): template selection (§3),
-> unit translation (§4), per-slide recipes (§5), branding application (§6),
-> asset-integrity substitutions (§7), and compliance scoring (§8).
-
-
-### Performance Characteristics
-- **Template loading**: ~10ms (pre-processed JSON configs)
-- **Brand application**: Real-time validation during generation
-- **File generation**: Integrated with `pptx` skill for PowerPoint output
-- **Asset management**: Cached logos, fonts, and configurations
-
-### Advanced Customization
-
-#### Template-Specific Features
-- **Mission template**: 16:10 aspect ratio, expanded color palette, Georgia headlines
-- **Castro template**: Bold typography emphasis, high-impact layouts
-- **Noe template**: Minimal design, maximum content space, data-optimized
-- **Sunset template**: Balanced professional design, versatile layouts
-
-#### Audience Adaptations
-- **Executive audiences**: Prefer Castro/Mission, avoid technical details
-- **Technical staff**: Prefer Noe/Sunset, include detailed information
-- **Mixed audiences**: Default to Sunset, balanced content depth
-- **External stakeholders**: Prefer Mission/Castro, emphasize Stanford branding
-
-### Asset Management
-- **Logo files**: 6 variations (horizontal/vertical × black/cardinal/white)
-- **Font files**: Source Sans Pro family, Monaco monospace, fallback sequences
-- **Color configurations**: Stanford brand + UIT technical status colors
-- **Icon library**: Technical services, security, infrastructure categories
-
-## Error Handling & Fallbacks
-- **Template selection uncertainty**: Defaults to Sunset template
-- **Font unavailability**: Automatic fallback to Arial/Helvetica with preserved styling
-- **Brand compliance failures**: Flags for manual review or blocks generation
-- **Asset loading issues**: Graceful degradation with core Stanford branding
-
-
+- **Uncertain template** → Sunset.
+- **Missing font** → fall back to Arial/Helvetica, styling preserved.
+- **Missing asset** → graceful degradation with core Stanford branding (see
+  §7 substitutions).
+- **Compliance failure** → flag for review, or block generation on critical.
 
