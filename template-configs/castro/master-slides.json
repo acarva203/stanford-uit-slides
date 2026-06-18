@@ -56,7 +56,7 @@
       "description": "Yellow accent master \u2014 used exclusively for section dividers",
       "background": {
         "type": "solid",
-        "color": "#F5C518"
+        "color": "#FEC51D"
       },
       "persistent_elements": {
         "logo_dark": {
@@ -90,7 +90,7 @@
       "size": "16pt",
       "weight": "Regular",
       "color": "#CCCCCC",
-      "bullet_color": "#F5C518",
+      "bullet_color": "#FEC51D",
       "line_height": "1.5"
     },
     "subtitle": {
@@ -105,7 +105,7 @@
       "fallback": "Roboto",
       "size": "22pt",
       "weight": "Bold",
-      "color": "#F5C518",
+      "color": "#FEC51D",
       "text_transform": "uppercase",
       "letter_spacing": "0.05em"
     }

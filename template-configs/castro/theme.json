@@ -2,7 +2,7 @@
   "template_name": "castro",
   "extracted_from": "Powerpoint_Slide_Template_C-Castro.pptx",
   "extraction_date": "2026-06-18",
-  "extraction_note": "Castro is a dark deck (dominant fill #000000 + #FFFFFF). The signature accent is Stanford illuminating gold #FEC51D (theme accent2) \u2014 the prior #F5C518 does not appear in the file. NOTE: castro/layouts.json still uses #F5C518 for stat_number; reconcile. Fonts standardized to Source Sans 3 (Roboto fallback); the prior Arial Black/Arial did not match the file.",
+  "extraction_note": "Castro is a dark deck (dominant fill #000000 + #FFFFFF). The signature accent is Stanford illuminating gold #FEC51D (theme accent2) \u2014 the prior #F5C518 does not appear in the file. Fonts standardized to Source Sans 3 (Roboto fallback); the prior Arial Black/Arial did not match the file.",
   "color_palette": {
     "primary": "#000000",
     "secondary": "#FEC51D",

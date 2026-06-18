@@ -15,8 +15,7 @@
           },
           "fallback_sequence": [
             "Source Sans 3 Light",
-            "Helvetica Neue Light",
-            "Arial",
+            "Roboto",
             "sans-serif"
           ]
         },
@@ -27,8 +26,7 @@
           },
           "fallback_sequence": [
             "Source Sans 3",
-            "Helvetica Neue",
-            "Arial",
+            "Roboto",
             "sans-serif"
           ]
         },
@@ -39,8 +37,7 @@
           },
           "fallback_sequence": [
             "Source Sans 3 SemiBold",
-            "Helvetica Neue Medium",
-            "Arial Bold",
+            "Roboto Medium",
             "sans-serif"
           ]
         },
@@ -51,23 +48,23 @@
           },
           "fallback_sequence": [
             "Source Sans 3 Bold",
-            "Helvetica Neue Bold",
-            "Arial Bold",
+            "Roboto",
             "sans-serif"
           ]
         }
       }
     },
     
-    "monaco": {
+    "roboto": {
       "family_name": "Roboto",
-      "category": "monospace",
-      "usage": "code_snippets_technical_content",
+      "category": "sans_serif",
+      "usage": "secondary_font_and_code_snippets",
       "weights": {
         "regular": {
           "font_weight": "400",
           "font_files": {
-            "ttf": "fonts/Roboto-Regular.ttf"         },
+            "ttf": "fonts/Roboto-Regular.ttf"
+          },
           "fallback_sequence": [
             "Roboto",
             "Menlo",
@@ -124,7 +121,7 @@
       "line_height": "1.5"
     },
     "code_snippets": {
-      "font_family": "monaco",
+      "font_family": "roboto",
       "font_weight": "regular",
       "size_mapping": {
         "large": "16pt",
@@ -183,7 +180,7 @@
 
   "loading_strategy": {
     "preload_fonts": ["source_sans_pro_regular", "source_sans_pro_bold"],
-    "lazy_load": ["monaco"],
+    "lazy_load": ["roboto"],
     "font_display": "swap",
     "timeout": "3000ms"
   }

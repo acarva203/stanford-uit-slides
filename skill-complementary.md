@@ -162,9 +162,9 @@ element's `x/y/w/h` per §4, set fonts/colors per §6, then place text/shapes.
   `noe/layouts.json` (overline_label `font_size "11pt"`). Note `noe/theme.json`
   `label_font` is 10pt; if challenged, cite the **layout**.
 - **Castro** `stat_callout` → `stat_number`: **64pt**, family `Source Sans 3`
-  (fallback Roboto), weight 900, color `#F5C518` — source `castro/layouts.json`
-  (lines 219–224). Note: the stat color in `layouts.json` is still `#F5C518`
-  while `castro/theme.json` now uses the true Stanford gold `#FEC51D`; reconcile.
+  (fallback Roboto), weight 900, color `#FEC51D` (true Stanford gold) — source
+  `castro/layouts.json` (lines 219–224). Both `layouts.json` and `theme.json` now
+  use `#FEC51D` consistently.
   > **Flag:** `castro/theme.json` `stat_font` declares **72pt** (line 57). This
   > 72pt-vs-64pt divergence is a real in-repo conflict (see §8.4); render from
   > the layout (64pt) and flag.

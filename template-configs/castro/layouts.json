@@ -22,7 +22,7 @@
           "y": "36%",
           "width": "80px",
           "height": "6px",
-          "fill": "#F5C518"
+          "fill": "#FEC51D"
         },
         "title": {
           "x": "48px",
@@ -55,7 +55,7 @@
     },
     "section_divider": {
       "description": "Full-bleed color break with large section number and title",
-      "background": "#F5C518",
+      "background": "#FEC51D",
       "elements": {
         "section_number": {
           "x": "48px",
@@ -97,7 +97,7 @@
           "y": "0",
           "width": "6px",
           "height": "88px",
-          "fill": "#F5C518"
+          "fill": "#FEC51D"
         },
         "slide_title": {
           "x": "28px",
@@ -216,13 +216,13 @@
         "stat_card": {
           "background": "#1E1E1E",
           "padding": "32px",
-          "border_left": "4px solid #F5C518"
+          "border_left": "4px solid #FEC51D"
         },
         "stat_number": {
           "font_size": "64pt",
           "font_family": "Source Sans 3",
           "font_weight": "900",
-          "color": "#F5C518",
+          "color": "#FEC51D",
           "text_align": "left"
         },
         "stat_label": {
@@ -245,7 +245,7 @@
           "y": "0",
           "width": "100%",
           "height": "6px",
-          "fill": "#F5C518"
+          "fill": "#FEC51D"
         },
         "yellow_bar_bottom": {
           "type": "rectangle",
@@ -253,7 +253,7 @@
           "y": "calc(100% - 6px)",
           "width": "100%",
           "height": "6px",
-          "fill": "#F5C518"
+          "fill": "#FEC51D"
         },
         "closing_text": {
           "x": "center",
