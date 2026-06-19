@@ -281,7 +281,7 @@ Deductions: **−50** (critical), **−20** (major), **−5** (minor).
   do not auto-resolve.
 
 ## §10. Critical Criteria to Confirm
-- Is there a logo on each slide in the footer section with at least a divider or whitespace separating from the rest of the slide?
+- Is there a logo on each slide with at least a divider or whitespace separating from the rest of the slide? Is the logo correctly sized? Make sure the logo is not vertically or horizontally compressed. If the logo is present, there is no need to mention "Stanford University IT" on the slide.
 - Are all icons correctly sized within their elements, and properly aligned?
 - Make sure the slide deck uses Source Sans 3 as the primary font and Roboto as the supplementary font.
 - Are the primary colors for the slide deck cardinal, black, white, or soft grey?
