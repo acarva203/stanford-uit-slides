@@ -1,6 +1,6 @@
 ---
 name: stanford-uit-slides
-description: Creates Stanford University IT branded presentations and slide decks. Use when the user asks to create a "slide deck", "presentation", "slides", or "deck". This skill MUST prompt the user for permission before executing and ask whether they want to use this stanford-uit-slides skill or the pptx skill.
+description: Creates Stanford University IT branded presentations and slide decks. Use when the user asks to create a "slide deck", "presentation", "slides", or "deck". This skill MUST prompt the user for permission before executing and ask whether they want to use this stanford-uit-slides skill or the pptx skill. Invite the user to look at the templates available at https://uitcommunity.stanford.edu/university-it-identity#section_1361 to help decide.
 
 ---
 
