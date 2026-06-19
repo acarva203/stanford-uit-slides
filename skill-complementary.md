@@ -13,6 +13,38 @@
 
 ---
 
+## §0. CRITICAL — Always build from the original .pptx template files
+
+**Do NOT reconstruct slides from scratch.** The four source `.pptx` files contain the
+slide master, theme, embedded graphics, background fills, and color theme that
+define the Stanford UIT look. Building from scratch will miss all of this.
+
+**Always use python-pptx's template loading:**
+```python
+from pptx import Presentation
+prs = Presentation("reference-materials/original-templates/Powerpoint Slide Template A-Sunset.pptx")
+# Now add slides using layouts from prs.slide_layouts
+# (Do NOT call prs.slides.add_slide on a blank Presentation())
+```
+
+**Template file → python-pptx path mapping:**
+| Template ID | File |
+|---|---|
+| sunset | `reference-materials/original-templates/Powerpoint Slide Template A-Sunset.pptx` |
+| noe | `reference-materials/original-templates/Powerpoint Slide Template B-Noe.pptx` |
+| castro | `reference-materials/original-templates/Powerpoint Slide Template C-Castro.pptx` |
+| mission | `reference-materials/original-templates/Powerpoint Slide Template D-Mission.pptx` |
+
+When the skill root is at `/mnt/skills/user/stanford-uit-slides/`, prefix paths accordingly.
+
+**Layout lookup — use the exact string names** from the source file (see SKILL.md §2):
+```python
+layout_map = {l.name: l for l in prs.slide_layouts}
+slide = prs.slides.add_slide(layout_map["Title and Content"])
+```
+
+---
+
 ## §1. Purpose & relationship to SKILL.md
 
 - **SKILL.md** = declarative spec (templates, content types, brand promises).
@@ -163,10 +195,9 @@ element's `x/y/w/h` per §4, set fonts/colors per §6, then place text/shapes.
   `noe/layouts.json` (overline_label `font_size "11pt"`). Note `noe/theme.json`
   `label_font` is 10pt; if challenged, cite the **layout**.
 - **Castro** `stat_callout` → `stat_number`: **64pt**, family `Source Sans 3`
-  (fallback Roboto), weight 900, color **`#FFFFFF`** — source `castro/layouts.json`.
-  The card's `border_left` carries the cardinal accent (`#8C1515`); the number
-  itself is white because cardinal-on-dark fails contrast. (Castro's accent was
-  swapped from gold to Stanford cardinal — see `castro/theme.json` `extraction_note`.)
+  (fallback Roboto), weight 900, color `#FEC51D` (true Stanford gold) — source
+  `castro/layouts.json` (lines 219–224). Both `layouts.json` and `theme.json` now
+  use `#FEC51D` consistently.
   > **Flag:** `castro/theme.json` `stat_font` declares **72pt** (line 57). This
   > 72pt-vs-64pt divergence is a real in-repo conflict (see §8.4); render from
   > the layout (64pt) and flag.
@@ -281,7 +312,112 @@ Deductions: **−50** (critical), **−20** (major), **−5** (minor).
   do not auto-resolve.
 
 ## §10. Critical Criteria to Confirm
-- Is there a logo on each slide with at least a divider or whitespace separating from the rest of the slide? Is the logo correctly sized? Make sure the logo is not vertically or horizontally compressed. If the logo is present, there is no need to mention "Stanford University IT" on the slide.
+- Is there a logo on each slide in the footer section with at least a divider or whitespace separating from the rest of the slide?
 - Are all icons correctly sized within their elements, and properly aligned?
 - Make sure the slide deck uses Source Sans 3 as the primary font and Roboto as the supplementary font.
 - Are the primary colors for the slide deck cardinal, black, white, or soft grey?
+
+---
+
+## §11. Practical python-pptx recipe (ground truth from actual templates)
+
+### §11.1 Complete minimal build pattern
+
+```python
+from pptx import Presentation
+from pptx.util import Pt, Emu, Inches
+from pptx.dml.color import RGBColor
+
+SKILL_ROOT = "/mnt/skills/user/stanford-uit-slides"
+TEMPLATE_FILES = {
+    "sunset": f"{SKILL_ROOT}/reference-materials/original-templates/Powerpoint Slide Template A-Sunset.pptx",
+    "noe":    f"{SKILL_ROOT}/reference-materials/original-templates/Powerpoint Slide Template B-Noe.pptx",
+    "castro": f"{SKILL_ROOT}/reference-materials/original-templates/Powerpoint Slide Template C-Castro.pptx",
+    "mission":f"{SKILL_ROOT}/reference-materials/original-templates/Powerpoint Slide Template D-Mission.pptx",
+}
+
+def build_deck(template_id, slides_data, output_path):
+    prs = Presentation(TEMPLATE_FILES[template_id])
+    layout_map = {l.name: l for l in prs.slide_layouts}
+
+    # Remove existing slides (the .pptx ships with demo slides)
+    from pptx.oxml.ns import qn
+    from lxml import etree
+    sldIdLst = prs.presentation.element.find(qn('p:sldIdLst'))
+    for sldId in list(sldIdLst):
+        sldIdLst.remove(sldId)
+    prs.part._slides = []
+
+    for s in slides_data:
+        layout = layout_map.get(s["layout"], layout_map["Title and Content"])
+        slide = prs.slides.add_slide(layout)
+        # Set title placeholder (idx=0)
+        if slide.placeholders and s.get("title"):
+            try:
+                slide.placeholders[0].text = s["title"]
+            except: pass
+        # Set body placeholder (idx=1)
+        if s.get("body"):
+            try:
+                slide.placeholders[1].text = s["body"]
+            except: pass
+
+    prs.save(output_path)
+```
+
+### §11.2 Verified layout names for common slide types
+
+**Sunset/Castro:**
+- Cover: `"Title Slide txt only"` or `"Title Slide w/image"`
+- Content: `"Title and Content"`
+- Two-column: `"TWO_OBJECTS"`
+- Section break: `"Divider - Sky"`, `"Divider - Poppy"`, etc.
+- Closing: `"Divider - Thank You"`
+
+**Noe:**
+- Cover: `"TITLE"`
+- Content: `"TITLE_AND_BODY"`
+- Two-col: `"TITLE_AND_TWO_COLUMNS"`
+- Big stat: `"BIG_NUMBER"`
+- Section: `"SECTION_HEADER"`
+- Closing: use `"TITLE"` with "Thank You" content
+
+**Mission:**
+- Cover: `"Title Slide txt only"` or `"Title Slide w/image"`
+- Content: `"Title and Content"`
+- Content tinted: `"Title and Content w/bkgd"`
+- Two-col: `"Two Column Content"`
+- Section: `"Divider - Sky"`, `"Divider - Poppy"`, etc.
+- Closing: `"Divider - Thank You"`
+
+### §11.3 Font application
+
+```python
+from pptx.util import Pt
+from pptx.dml.color import RGBColor
+
+def style_text(tf, font_name="Source Sans 3", size_pt=18,
+               bold=False, color_hex="2E2D29"):
+    for para in tf.paragraphs:
+        for run in para.runs:
+            run.font.name = font_name
+            run.font.size = Pt(size_pt)
+            run.font.bold = bold
+            run.font.color.rgb = RGBColor.from_string(color_hex)
+```
+
+### §11.4 Adding the logo to a slide
+
+```python
+from pptx.util import Inches, Emu
+
+LOGO_PATH = f"{SKILL_ROOT}/shared-assets/logos/University-IT_wordmark_horizontal_cardinal-black.png"
+
+def add_logo(slide, prs):
+    # Place in bottom-right footer area
+    w = Inches(1.5)
+    h = Inches(0.35)
+    left = prs.slide_width - w - Emu(457200)   # ~0.5in from right
+    top  = prs.slide_height - h - Emu(228600)  # ~0.25in from bottom
+    slide.shapes.add_picture(LOGO_PATH, left, top, w, h)
+```

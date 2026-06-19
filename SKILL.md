@@ -1,89 +1,185 @@
 ---
 name: stanford-uit-slides
-description: Creates Stanford University IT branded presentations and slide decks. Use when the user asks to create a "slide deck", "presentation", "slides", or "deck". This skill MUST prompt the user for permission before executing and ask whether they want to use this stanford-uit-slides skill or the pptx skill. Invite the user to look at the templates available at https://uitcommunity.stanford.edu/university-it-identity#section_1361 to help decide.
+description: Creates Stanford University IT branded PowerPoint (.pptx) presentations. Use whenever the user asks for a "slide deck", "slides", "presentation", "deck", or "Stanford UIT deck". MUST ask the user which skill to use (stanford-uit-slides vs generic pptx) before building. Produces brand-compliant .pptx files from four official Stanford UIT templates (Sunset, Noe, Castro, Mission), applying Stanford identity guidelines automatically. Use even when the user only says "make me slides about X" if they're in a Stanford UIT context. Invite the user to look at the templates available at https://uitcommunity.stanford.edu/university-it-identity#section_1361 to help decide.
 
 ---
 
-# Stanford UIT Presentations
+# Stanford UIT Slides Skill
 
-Creates brand-compliant PowerPoint decks for Stanford University IT from official
-templates, applying Stanford identity guidelines automatically.
+Produces `.pptx` files matching the four official Stanford UIT PowerPoint templates.
+**This file is the WHAT. The HOW lives in [`skill-complementary.md`](skill-complementary.md)** — exact build steps, EMU math, python-pptx recipes, asset paths, and the compliance evaluator.
 
-**This file is the *what*. The build procedure (the *how*) lives in
-[`skill-complementary.md`](skill-complementary.md)** — exact paths, CSS→EMU unit
-math, per-slide python-pptx recipes, branding application, and the compliance
-evaluator. Read this first for selection, then that to generate.
+## 0. Before you start
 
-## Templates
+**Ask the user:** "Would you like me to use the Stanford UIT template skill, or the generic pptx skill?" Then proceed based on their answer.
 
-| Template | Style | Aspect | Best for |
+---
+
+## 1. Templates (grounded in the actual .pptx files)
+
+All four source files live in `reference-materials/original-templates/`. Build by using those files as the `pptx` skill template base — do NOT reconstruct from scratch.
+
+| ID | File | Aspect | Size (in) | Slide layouts | Best for |
+|---|---|---|---|---|---|
+| **sunset** | `Powerpoint Slide Template A-Sunset.pptx` | 16:9 | 10×5.625 | 25 layouts | General purpose; **default** |
+| **noe** | `Powerpoint Slide Template B-Noe.pptx` | 16:9 | 10×5.625 | 11 layouts | Technical / data-dense |
+| **castro** | `Powerpoint Slide Template C-Castro.pptx` | 16:9 | 10×5.625 | 23 layouts | Executive / high-impact |
+| **mission** | `Powerpoint Slide Template D-Mission.pptx` | 16:10 | 10×6.25 | 21 layouts | Narrative / storytelling |
+
+EMU dimensions: 16:9 = `9,144,000 × 5,143,500`; Mission = `9,144,000 × 5,715,000`.
+
+### 1.1 Template auto-selection
+
+| Keywords in brief | Template |
+|---|---|
+| executive, leadership, pitch, board, high-impact | castro |
+| data, metrics, analysis, technical, detailed | noe |
+| mission, vision, culture, storytelling, strategic narrative | mission |
+| update, briefing, routine, general, service | sunset |
+| *uncertain / not matched* | **sunset** |
+
+Explicit user override wins over all keyword rules.
+
+---
+
+## 2. Available layouts per template (real names from the .pptx files)
+
+### Sunset & Castro (shared layout vocabulary, different styling)
+
+| Layout name | Use for |
+|---|---|
+| `Title Slide txt only` | Cover — text only |
+| `Title Slide w/image` | Cover — with full-bleed or half image |
+| `Title Slide w/txt & graphic elements` | Cover — with decorative Stanford graphics |
+| `Title Slide w/txt on white` | Cover — clean white background |
+| `Title and Content` | Standard content slide |
+| `Title and Content w/image` | Content + right-side image |
+| `TWO_OBJECTS` | Two-column content |
+| `Objective Slide` | Three-row objective / goals layout |
+| `Data slide` | Data + metrics layout |
+| `Three story inset w/images` | 3-column image + caption |
+| `Three story inset w/images (Cardinal bkgd)` | Same on Cardinal background |
+| `Divider - Sky` / `Poppy` / `Palo Verde` / `Plum` / `Illuminating (Dark)` | Color-block section dividers |
+| `Divider - Thank You` | Closing slide |
+| `TITLE_ONLY` | Title bar only, free content area |
+| `BLANK` | Fully blank slide |
+
+Castro also has `SLIDE 6` (agenda-style layout).
+
+### Noe layouts
+
+| Layout name | Use for |
+|---|---|
+| `TITLE` | Cover / title slide |
+| `SECTION_HEADER` | Section divider |
+| `TITLE_AND_BODY` | Standard content |
+| `TITLE_AND_TWO_COLUMNS` | Two-column layout |
+| `ONE_COLUMN_TEXT` | Single wide text column |
+| `MAIN_POINT` | Big-statement slide |
+| `SECTION_TITLE_AND_DESCRIPTION` | Section intro |
+| `CAPTION_ONLY` | Image/chart with caption |
+| `BIG_NUMBER` | Stat callout (large number + label) |
+| `TITLE_ONLY` / `BLANK` | Utility layouts |
+
+### Mission layouts
+
+| Layout name | Use for |
+|---|---|
+| `Title Slide txt only` / `w/image` / `w/image + graphic elements` / `w/txt & graphic elements` / `w/txt on white` | Cover variants |
+| `Title and Content` | Standard content |
+| `Title and Content w/bkgd` | Content on tinted background |
+| `Title and Content w/image` | Content + image column |
+| `Two Column Content` | Side-by-side columns |
+| `Data slide` | Data/metrics |
+| `Objective Slide` | Three-row objectives |
+| `Three story inset w/images` / `(Cardinal bkgd)` | 3-column image+caption |
+| `Divider - Poppy/Illuminating (Dark)/Palo Verde/Sky/Plum` | Section dividers |
+| `Divider - Thank You` | Closing slide |
+| `Title Only` / `Blank` | Utility |
+
+---
+
+## 3. Brand standards (from actual template files)
+
+### 3.1 Typography (verified from source .pptx)
+
+| Template | Headlines | Body copy | Fallbacks |
 |---|---|---|---|
-| **Sunset** | Balanced, professional | 16:9 | General purpose; the default |
-| **Noe** | Minimal, data-dense | 16:9 | Technical / detailed audiences |
-| **Castro** | Bold, high-impact | 16:9 | Executive / leadership |
-| **Mission** | Narrative storytelling | 16:10 | Strategic / cultural content |
+| Sunset | Georgia | Source Sans Pro | Calibri, Roboto |
+| Noe | Georgia | Source Sans Pro | Calibri, Roboto, Roboto Condensed |
+| Castro | Georgia | Source Sans Pro | Calibri, Roboto, Comfortaa |
+| Mission | Georgia | Calibri | (system fonts only) |
 
-**Auto-selection** keys off the brief (full logic in
-`integration/template-selector.json`): *data / metrics / analysis* → Noe;
-*leadership / strategic / CIO* → Castro; *mission / culture / storytelling* →
-Mission; *update / briefing / routine* → Sunset. When uncertain, default to
-**Sunset**.
+For generated slides, use **Source Sans 3** (primary body) with **Roboto** as fallback for Sunset/Noe/Castro; **Calibri** for Mission body.
 
-**Manual override:** name the template, e.g. "Use Castro for this security
-briefing." For executive audiences prefer Castro/Mission; for technical staff,
-Noe/Sunset.
+### 3.2 Color palettes (verified from source .pptx)
 
-## Presentation types
+**Shared Stanford brand colors (all templates):**
+- Cardinal Red: `#8C1515`
+- Lagunita (teal): `#007C92`
+- Black: `#2E2D29`
+- White: `#FFFFFF`
+- Cool Grey: `#4D4F53`
+- Warm Grey: `#7F7776`
+- Light Grey: `#E7E6E6`
 
-Each type auto-structures its sections:
+**Extended per-template palettes:**
 
-| Type | Section flow | Suggested templates |
+| Color name | Hex | Templates |
 |---|---|---|
-| Technical Briefing | Exec Summary → Current State → Proposed Changes → Timeline → Next Steps | Sunset, Castro |
-| Security Training | Objectives → Policies → Best Practices → Demo → Assessment → Resources | Mission, Noe |
-| Service Update | Summary → Impact → Timeline → User Actions → Support | Sunset, Noe |
-| Project Proposal | Problem → Solution → Implementation → Budget → Timeline | Castro, Mission |
-| Incident Report | Summary → Timeline → Impact → Root Cause → Prevention | Noe, Sunset |
+| Poppy (orange) | `#E98300` | All |
+| Illuminating (gold) | `#FEC51D` | All |
+| Palo Verde (green) | `#279989` | All |
+| Plum | `#620059` | All |
+| Sky (light blue) | `#67AFD2` | Sunset, Castro |
+| Robin (lighter teal) | `#8FDAFF` | Castro |
 
-Specify audience, technical depth, or emphasis to tune content (e.g.
-"executive-level cloud migration briefing").
+### 3.3 Logos
+Six official University IT wordmarks in `shared-assets/logos/`:
+- `University-IT_wordmark_horizontal_black.png`
+- `University-IT_wordmark_horizontal_cardinal-black.png`
+- `University-IT_wordmark_horizontal_white.png`
+- `University-IT_wordmark_vertical_black.png`
+- `University-IT_wordmark_vertical_cardinal-black.png`
+- `University-IT_wordmark_vertical_white.png`
 
-## Brand standards
+Minimum size: 1 inch (per brand-compliance.json). Place in footer area with clear space.
 
-Applied automatically; rules and scoring in `validation/brand-compliance.json`,
-values in `shared-assets/stanford-uit-branding.json`.
+---
 
-- **Color:** Stanford Cardinal `#8C1515` + approved palette; status colors —
-  green (operational), orange (maintenance), red (incident).
-- **Typography:** Source Sans 3 across all templates, with Roboto as the fallback/secondary.
-- **Logos:** official Stanford | University IT wordmarks, 6 variants
-  (horizontal/vertical × black/cardinal/white).
-- **Markings:** standard vs. "Internal Use Only" footers; clear-space and
-  minimum-size rules enforced.
-- **Accessibility:** text contrast checked to a 4.5:1 minimum.
+## 4. Presentation types and slide sequences
 
-**Compliance score:** ≥95 excellent · ≥85 passing · <85 requires review or is
-blocked.
+| Type | Slide sequence |
+|---|---|
+| Technical Briefing | Cover → Agenda → Current State → Proposed Changes → Timeline → Next Steps → Thank You |
+| Security Training | Cover → Objectives → Policies → Best Practices → Demo/Examples → Assessment → Resources → Thank You |
+| Service Update | Cover → Summary → Impact → Timeline → User Actions → Support → Thank You |
+| Project Proposal | Cover → Problem → Solution → Implementation → Budget → Timeline → Thank You |
+| Incident Report | Cover → Summary → Impact Timeline → Root Cause → Prevention → Thank You |
 
+---
 
-## Workflow
+## 5. Build workflow
 
 ```
-Request → Template Selection → Content Structuring → Brand Application → Check Criteria → pptx Generation
+1. Clarify template (auto-select or user override)
+2. Read skill-complementary.md for exact build steps
+3. Load source .pptx from reference-materials/original-templates/
+4. Select layouts from template's real layout list (§2)
+5. Populate placeholders (titles, body, images)
+6. Apply brand colors and fonts (§3)
+7. Add logo to footer
+8. Run compliance check (see skill-complementary.md §8)
+9. Output final .pptx
 ```
 
-Each stage is specified in [`skill-complementary.md`](skill-complementary.md):
-selection (§3), unit translation (§4), per-slide recipes (§5), branding (§6),
-asset substitutions (§7), compliance scoring (§8,10).
+**Always use the original .pptx as template base** — this preserves the slide master, theme colors, and embedded graphic elements.
 
-## Fallbacks
+---
 
-- **Uncertain template** → Sunset.
-- **Missing font** → fall back from Source Sans 3 to Roboto, styling preserved.
-- **Missing asset** → graceful degradation with core Stanford branding (see
-  §7 substitutions).
-- **Compliance failure** → flag for review, or block generation on critical.
+## 6. Fallbacks
 
-
-
-
+- Uncertain template → **sunset**
+- Missing Source Sans 3 → Roboto → Calibri
+- Missing asset → log and degrade gracefully (see skill-complementary.md §7)
+- Compliance score < 85 → flag for review; < 70 (critical) → block generation
