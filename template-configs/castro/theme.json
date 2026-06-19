@@ -2,10 +2,10 @@
   "template_name": "castro",
   "extracted_from": "Powerpoint_Slide_Template_C-Castro.pptx",
   "extraction_date": "2026-06-18",
-  "extraction_note": "Castro is a dark deck (dominant fill #000000 + #FFFFFF). The signature accent is Stanford illuminating gold #FEC51D (theme accent2) \u2014 the prior #F5C518 does not appear in the file. Fonts standardized to Source Sans 3 (Roboto fallback); the prior Arial Black/Arial did not match the file.",
+  "extraction_note": "Castro is a dark deck (dominant fill #000000 + #FFFFFF). Accent swapped from Stanford gold #FEC51D to Stanford cardinal #8C1515 per request. Cardinal is dark, so it is used only for STRUCTURAL accents (bars, borders, the full-bleed section-divider background); headings and stat numbers are WHITE because cardinal-on-black is ~1.9:1 and fails the contrast minimum. Fonts: Source Sans 3 (Roboto fallback).",
   "color_palette": {
     "primary": "#000000",
-    "secondary": "#FEC51D",
+    "secondary": "#8C1515",
     "accent": "#FFFFFF",
     "background": "#000000",
     "highlight": "#151516",
@@ -13,7 +13,7 @@
     "text_dark": "#000000",
     "text_light": "#FFFFFF",
     "text_muted": "#969696",
-    "brand_yellow": "#FEC51D"
+    "brand_accent": "#8C1515"
   },
   "typography": {
     "title_font": {
@@ -32,7 +32,7 @@
       "fallback": "Roboto",
       "weight": "Bold",
       "size": "22pt",
-      "color": "#FEC51D",
+      "color": "#FFFFFF",
       "text_transform": "uppercase",
       "letter_spacing": "0.05em"
     },
@@ -56,7 +56,7 @@
       "fallback": "Roboto",
       "weight": "900",
       "size": "72pt",
-      "color": "#FEC51D"
+      "color": "#FFFFFF"
     }
   },
   "logo_placement": {
@@ -67,12 +67,12 @@
     "max_width": "120px"
   },
   "decorative": {
-    "divider_color": "#FEC51D",
+    "divider_color": "#8C1515",
     "divider_weight": "3px",
     "card_background": "#151516",
     "card_border": "1px solid #595959",
     "card_border_radius": "0px",
-    "highlight_bar_color": "#FEC51D",
+    "highlight_bar_color": "#8C1515",
     "highlight_bar_width": "6px"
   },
   "slide_dimensions": {

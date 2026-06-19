@@ -3,11 +3,11 @@
   "display_name": "Castro",
   "source_file": "Powerpoint_Slide_Template_C-Castro.pptx",
   "version": "1.0.0",
-  "description": "A high-impact dark template built around bold uppercase typography and sharp yellow accents. Castro commands attention from the first slide \u2014 ideal for pitches, launches, and data-driven storytelling.",
+  "description": "A high-impact dark template built around bold uppercase typography and sharp cardinal accents. Castro commands attention from the first slide \u2014 ideal for pitches, launches, and data-driven storytelling.",
   "visual_style": {
     "mood": "bold, energetic, authoritative",
     "density": "moderate-high \u2014 content is chunky, not verbose",
-    "color_weight": "dark dominant with yellow accent pops",
+    "color_weight": "dark dominant with cardinal accent pops",
     "imagery_style": "high-contrast photography, simple geometric icons; full-bleed images work well"
   },
   "best_used_for": [
@@ -33,7 +33,7 @@
   ],
   "available_masters": [
     "master_dark",
-    "master_yellow"
+    "master_cardinal"
   ],
   "font_requirements": {
     "primary_display": "Source Sans 3",
@@ -44,7 +44,7 @@
   },
   "asset_placeholders": {
     "logo_light": "Bottom-left, max 120\u00d740px. Must be white or light-colored \u2014 dark logos will be invisible on the dark master.",
-    "logo_dark": "Bottom-left, max 120\u00d740px. Dark/black version for the yellow section divider master.",
+    "logo_dark": "Bottom-left, max 120\u00d740px. White version for the cardinal section divider master.",
     "hero_image": "Full-bleed photography for image_full_bleed layout. Minimum 1920\u00d71080px. High-contrast images work best \u2014 scrim overlay will darken by 60%."
   },
   "accessibility": {

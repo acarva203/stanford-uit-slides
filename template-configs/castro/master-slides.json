@@ -4,7 +4,7 @@
     {
       "id": "master_dark",
       "name": "Castro Dark Master",
-      "description": "Primary master \u2014 near-black background, white text, yellow accents",
+      "description": "Primary master \u2014 near-black background, white text, cardinal accents",
       "background": {
         "type": "solid",
         "color": "#0D0D0D"
@@ -51,12 +51,12 @@
       ]
     },
     {
-      "id": "master_yellow",
-      "name": "Castro Yellow Master",
-      "description": "Yellow accent master \u2014 used exclusively for section dividers",
+      "id": "master_cardinal",
+      "name": "Castro Cardinal Master",
+      "description": "Cardinal accent master \u2014 used exclusively for section dividers",
       "background": {
         "type": "solid",
-        "color": "#FEC51D"
+        "color": "#8C1515"
       },
       "persistent_elements": {
         "logo_dark": {
@@ -67,7 +67,7 @@
           "max_width": "120px",
           "max_height": "40px",
           "z_index": 10,
-          "note": "Use dark/black version of logo on yellow master"
+          "note": "Use white version of logo on cardinal master"
         }
       },
       "slide_layouts": [
@@ -90,7 +90,7 @@
       "size": "16pt",
       "weight": "Regular",
       "color": "#CCCCCC",
-      "bullet_color": "#FEC51D",
+      "bullet_color": "#8C1515",
       "line_height": "1.5"
     },
     "subtitle": {
@@ -105,7 +105,7 @@
       "fallback": "Roboto",
       "size": "22pt",
       "weight": "Bold",
-      "color": "#FEC51D",
+      "color": "#FFFFFF",
       "text_transform": "uppercase",
       "letter_spacing": "0.05em"
     }
